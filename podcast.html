@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts – Slay Radio</title>
+
+    <!-- Tailwind + config identique à vos pages -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        sidebar: {
+                            DEFAULT: 'hsl(var(--sidebar-background))',
+                            foreground: 'hsl(var(--sidebar-foreground))',
+                        },
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background text-foreground">
+    <!-- ========= NAVBAR (copie conforme) ========= -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a class="flex items-center gap-3" href="./index.html">
+                    <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
+                    <span class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                        href="./index.html">Accueil</a>
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                        href="./live.html">Live Radio</a>
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                        href="./artistes.html">Artistes</a>
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                        href="./boutique.html">Boutique</a>
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                        href="./apropos.html">À propos</a>
+                </div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <button
+                        class="h-10 w-10 grid place-items-center hover:bg-muted rounded-md text-muted-foreground hover:text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" class="w-5 h-5">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path
+                                d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                        </svg>
+                    </button>
+                    <a href="./login.html"><button
+                            class="px-3 py-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm">Connexion</button></a>
+                    <a href="./dashbord.html"><button
+                            class="px-3 py-2 rounded-md gradient-primary text-primary-foreground text-sm glow-primary">Espace
+                            DJ</button></a>
+                </div>
+                <button class="lg:hidden p-2 text-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        class="w-6 h-6">
+                        <line x1="4" x2="20" y1="12" y2="12" />
+                        <line x1="4" x2="20" y1="6" y2="6" />
+                        <line x1="4" x2="20" y1="18" y2="18" />
+                    </svg></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========= MAIN ========= -->
+    <main class="pt-24 pb-20">
+        <div class="container mx-auto px-4 max-w-6xl">
+
+            <!-- Titre + barre recherche -->
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-2"><span
+                        class="text-gradient">Podcasts</span></h1>
+                <p class="text-muted-foreground max-w-2xl mx-auto">Rediffusions, mixes et émissions audio des DJs de la
+                    communauté.</p>
+            </div>
+
+            <!-- Recherche / Filtres -->
+            <div class="flex flex-col md:flex-row gap-4 mb-8 items-center">
+                <div class="relative w-full md:w-96">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2"
+                        class="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                    <input id="searchPodcasts" type="text" placeholder="Rechercher un podcast..."
+                        class="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-muted text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                    <button onclick="filterPod('all')"
+                        class="filter-pod px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                        data-pod="all">Tous</button>
+                    <button onclick="filterPod('mix')"
+                        class="filter-pod px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                        data-pod="mix">Mix</button>
+                    <button onclick="filterPod('emission')"
+                        class="filter-pod px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                        data-pod="emission">Émission</button>
+                    <button onclick="filterPod('live')"
+                        class="filter-pod px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                        data-pod="live">Live replay</button>
+                </div>
+            </div>
+
+            <!-- Grille podcasts -->
+            <div id="podcastsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
+                    data-pod="mix" data-title="deep house vibes">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
+                        alt="Deep House Vibes" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Mix</span>
+                            <span class="text-xs text-muted-foreground">1 h 12 min</span>
+                        </div>
+                        <h3 class="font-semibold text-foreground mb-1">Deep House Vibes</h3>
+                        <p class="text-sm text-muted-foreground mb-3">DJ MaxFlow</p>
+                        <audio controls preload="none" class="w-full h-8">
+                            <source src="audio/deep-house-vibes.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas l'audio HTML5.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
+                    data-pod="emission" data-title="interview luna beats">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
+                        alt="Interview" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Émission</span>
+                            <span class="text-xs text-muted-foreground">42 min</span>
+                        </div>
+                        <h3 class="font-semibold text-foreground mb-1">Interview Luna Beats</h3>
+                        <p class="text-sm text-muted-foreground mb-3">Luna Beats</p>
+                        <audio controls preload="none" class="w-full h-8">
+                            <source src="audio/interview-luna.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas l'audio HTML5.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
+                    data-pod="live" data-title="live replay techno underground">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
+                        alt="Techno Underground" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Live
+                                replay</span>
+                            <span class="text-xs text-muted-foreground">2 h 05 min</span>
+                        </div>
+                        <h3 class="font-semibold text-foreground mb-1">Techno Underground Live</h3>
+                        <p class="text-sm text-muted-foreground mb-3">NightWave</p>
+                        <audio controls preload="none" class="w-full h-8">
+                            <source src="audio/techno-live.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas l'audio HTML5.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
+                    data-pod="mix" data-title="afro fusion set">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
+                        alt="Afro Fusion" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Mix</span>
+                            <span class="text-xs text-muted-foreground">58 min</span>
+                        </div>
+                        <h3 class="font-semibold text-foreground mb-1">Afro Fusion Set</h3>
+                        <p class="text-sm text-muted-foreground mb-3">Kenzo</p>
+                        <audio controls preload="none" class="w-full h-8">
+                            <source src="audio/afro-fusion.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas l'audio HTML5.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
+                    data-pod="emission" data-title="focus progressive house">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
+                        alt="Progressive House" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Émission</span>
+                            <span class="text-xs text-muted-foreground">1 h 02 min</span>
+                        </div>
+                        <h3 class="font-semibold text-foreground mb-1">Focus Progressive House</h3>
+                        <p class="text-sm text-muted-foreground mb-3">NightWave</p>
+                        <audio controls preload="none" class="w-full h-8">
+                            <source src="audio/progressive-focus.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas l'audio HTML5.
+                        </audio>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
+                    data-pod="mix" data-title="minimal session 008">
+                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
+                        alt="Minimal Session" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Mix</span>
+                            <span class="text-xs text-muted-foreground">1 h 30 min</span>
+                        </div>
+                        <h3 class="font-semibold text-foreground mb-1">Minimal Session #008</h3>
+                        <p class="text-sm text-muted-foreground mb-3">DJ Nova</p>
+                        <audio controls preload="none" class="w-full h-8">
+                            <source src="audio/minimal-008.mp3" type="audio/mpeg">
+                            Votre navigateur ne supporte pas l'audio HTML5.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (même que autres pages) -->
+    <footer class="bg-card border-t border-border">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <a class="flex items-center gap-3" href="./index.html">
+                        <img src="./image/logo.jpg" alt="Slay Radio" class="h-12 w-auto rounded-lg">
+                        <span class="text-xl font-bold text-primary">SLAY RADIO</span>
+                    </a>
+                    <p class="text-sm text-muted-foreground">La plateforme radiophonique dédiée aux DJs locaux.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./index.html">Accueil</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./live.html">Live Radio</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./artistes.html">Artistes</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./apropos.html">À propos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./login.html">Connexion</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./dashbord.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-foreground mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-muted-foreground">contact@slay.live</li>
+                        <li class="text-sm text-muted-foreground">+33 1 23 45 67 89</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border mt-8 pt-8 text-center">
+                <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie. Tous
+                    droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS : recherche + filtres -->
+    <script>
+        const search = document.getElementById('searchPodcasts');
+        const grid = document.getElementById('podcastsGrid');
+
+        function filterPod(type) {
+            document.querySelectorAll('.filter-pod').forEach(b => b.classList.remove('bg-primary', 'text-primary-foreground'));
+            document.querySelector(`.filter-pod[data-pod="${type}"]`).classList.add('bg-primary', 'text-primary-foreground');
+
+            grid.querySelectorAll('.gradient-card').forEach(card => {
+                const cardType = card.dataset.pod;
+                const inFilter = (type === 'all' || cardType === type);
+                card.style.display = inFilter ? 'flex' : 'none';
+            });
+        }
+
+        search.addEventListener('input', () => {
+            const mots = search.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            grid.querySelectorAll('.gradient-card').forEach(card => {
+                const titre = card.dataset.title.toLowerCase();
+                card.style.display = titre.includes(mots) ? 'flex' : 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

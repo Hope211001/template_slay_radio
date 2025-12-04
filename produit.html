@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slay Radio - La Radio des DJs Locaux</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))',
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))',
+                        },
+                        sidebar: {
+                            DEFAULT: 'hsl(var(--sidebar-background))',
+                            foreground: 'hsl(var(--sidebar-foreground))',
+                            primary: 'hsl(var(--sidebar-primary))',
+                            'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+                            accent: 'hsl(var(--sidebar-accent))',
+                            'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+                            border: 'hsl(var(--sidebar-border))',
+                            ring: 'hsl(var(--sidebar-ring))',
+                        },
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Votre fichier CSS personnalisé -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="min-h-screen bg-background">
+            <aside class="fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border flex flex-col">
+                <div class="p-6 border-b border-sidebar-border">
+                    <a class="flex items-center gap-2" href="./index.html">
+                        <div class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
+                            <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
+                        </div>
+                        <span class="text-lg font-bold text-gradient">SLAY RADIO</span>
+                    </a>
+                </div>
+                <nav class="flex-1 p-4 space-y-2">
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all bg-sidebar-accent gradient-primary text-primary-foreground"
+                        href="./dashbord.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-layout-dashboard w-5 h-5">
+                            <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                            <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                            <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                            <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                        </svg>Dashboard</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="/dashboard/music"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music w-5 h-5">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>Mes Musiques</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./coiffeur/upload.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload w-5 h-5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" x2="12" y1="3" y2="15"></line>
+                        </svg>Upload</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./table.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-5 h-5">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                        </svg>Table model</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="/dashboard/stats"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column w-5 h-5">
+                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                            <path d="M18 17V9"></path>
+                            <path d="M13 17V5"></path>
+                            <path d="M8 17v-3"></path>
+                        </svg>Statistiques</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="/dashboard/settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-5 h-5">
+                            <path
+                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                            </path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>Paramètres</a>
+
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./produit.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-5 h-5">
+                            <path
+                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                            </path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>Produits</a>
+
+                </nav>
+                <div class="p-4 border-t border-sidebar-border">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-muted flex items-center justify-center"><span
+                                class="text-sm font-bold text-foreground">DJ</span></div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-sidebar-foreground truncate">DJ MaxFlow</p>
+                            <p class="text-xs text-muted-foreground truncate">maxflow@slayradio.com</p>
+                        </div>
+                    </div><a
+                        class="flex items-center gap-2 text-sm text-muted-foreground hover:text-destructive transition-colors"
+                        href="/login"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-log-out w-4 h-4">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" x2="9" y1="12" y2="12"></line>
+                        </svg>Déconnexion</a>
+                </div>
+            </aside>
+            <main class="ml-64 p-8">
+                <section class="p-6 bg-gray-100 min-h-screen">
+
+                    <!-- Titre -->
+                    <div class="flex flex-col gap-4 mb-6">
+
+                        <!-- Ligne 1 : Recherche -->
+                        <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+                            <h2 class="text-2xl font-bold">Gestion des Produits (Super Admin)</h2>
+
+                            <div class="flex w-full md:w-auto gap-2">
+                                <input type="text" placeholder="Rechercher un produit..."
+                                    class="flex-1 md:w-72 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <button class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">
+                                    Rechercher
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Ligne 2 : Filtres + Boutons -->
+                        <div class="flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+
+                            <!-- Filtres -->
+                            <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+                                <!-- Filtre Catégorie -->
+                                <select
+                                    class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Toutes les catégories</option>
+                                    <option>Casques</option>
+                                    <option>Micros</option>
+                                    <option>Mixage</option>
+                                </select>
+
+                                <!-- Filtre Statut -->
+                                <select
+                                    class="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Tous les statuts</option>
+                                    <option>Disponible</option>
+                                    <option>Rupture</option>
+                                </select>
+                            </div>
+
+                            <!-- Boutons Actions -->
+                            <div class="flex gap-2 w-full md:w-auto">
+                                <button
+                                    class="flex-1 md:flex-none bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+                                    + Ajouter Produit
+                                </button>
+                                <button
+                                    class="flex-1 md:flex-none bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">
+                                    + Ajouter Catégorie
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Tableau Responsive -->
+                    <div class="overflow-x-auto bg-white rounded-xl shadow">
+
+                        <table class="min-w-full text-sm text-gray-700">
+
+                            <!-- En-tête -->
+                            <thead class="bg-blue-600 text-white">
+                                <tr>
+                                    <th class="px-4 py-3 text-left">#</th>
+                                    <th class="px-4 py-3 text-left">Produit</th>
+                                    <th class="px-4 py-3 text-left">Prix</th>
+                                    <th class="px-4 py-3 text-left">Stock</th>
+                                    <th class="px-4 py-3 text-left">Statut</th>
+                                    <th class="px-4 py-3 text-center">Actions</th>
+                                </tr>
+                            </thead>
+
+                            <!-- Corps -->
+                            <tbody class="divide-y">
+
+                                <!-- Produit 1 -->
+                                <tr>
+                                    <td class="px-4 py-3">1</td>
+                                    <td class="px-4 py-3 font-medium">Casque DJ Pro</td>
+                                    <td class="px-4 py-3 text-green-600 font-semibold">45 000 Ar</td>
+                                    <td class="px-4 py-3">12</td>
+                                    <td class="px-4 py-3">
+                                        <span class="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700">
+                                            Disponible
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-3 flex gap-2 justify-center">
+                                        <button class="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
+                                            Modifier
+                                        </button>
+                                        <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                                            Supprimer
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Produit 2 -->
+                                <tr>
+                                    <td class="px-4 py-3">2</td>
+                                    <td class="px-4 py-3 font-medium">Micro Studio</td>
+                                    <td class="px-4 py-3 text-green-600 font-semibold">60 000 Ar</td>
+                                    <td class="px-4 py-3">0</td>
+                                    <td class="px-4 py-3">
+                                        <span class="px-3 py-1 text-xs rounded-full bg-red-100 text-red-700">
+                                            Rupture
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-3 flex gap-2 justify-center">
+                                        <button class="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
+                                            Modifier
+                                        </button>
+                                        <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                                            Supprimer
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Produit 3 -->
+                                <tr>
+                                    <td class="px-4 py-3">3</td>
+                                    <td class="px-4 py-3 font-medium">Table de Mixage</td>
+                                    <td class="px-4 py-3 text-green-600 font-semibold">120 000 Ar</td>
+                                    <td class="px-4 py-3">5</td>
+                                    <td class="px-4 py-3">
+                                        <span class="px-3 py-1 text-xs rounded-full bg-green-100 text-green-700">
+                                            Disponible
+                                        </span>
+                                    </td>
+                                    <td class="px-4 py-3 flex gap-2 justify-center">
+                                        <button class="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500">
+                                            Modifier
+                                        </button>
+                                        <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+                                            Supprimer
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Modal de confirmation (caché par défaut) -->
+                <div id="deleteModal"
+                    class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div class="bg-background border border-primary-foreground/20 rounded-lg p-6 max-w-md w-full">
+                        <h3 class="text-xl font-bold text-primary-foreground mb-4">Confirmer la suppression</h3>
+                        <p class="text-primary-foreground/70 mb-6">Êtes-vous sûr de vouloir supprimer ce produit ?</p>
+                        <div class="flex gap-3 justify-end">
+                            <button onclick="closeModal()"
+                                class="px-4 py-2 border border-primary-foreground/20 rounded-lg text-primary-foreground hover:bg-primary-foreground/10 transition-colors">
+                                Annuler
+                            </button>
+                            <button onclick="confirmDelete()"
+                                class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">
+                                Supprimer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // Données exemple de produits
+                    const products = [
+                        { id: 1, name: 'Casque Audio Pro', category: 'Audio', price: 89.99, stock: 25, status: 'En stock', image: '🎧' },
+                        { id: 2, name: 'Clavier Mécanique RGB', category: 'Informatique', price: 129.99, stock: 15, status: 'En stock', image: '⌨️' },
+                        { id: 3, name: 'Souris Gaming', category: 'Informatique', price: 49.99, stock: 0, status: 'Rupture', image: '🖱️' },
+                        { id: 4, name: 'Écran 27" 4K', category: 'Moniteurs', price: 399.99, stock: 8, status: 'En stock', image: '🖥️' },
+                        { id: 5, name: 'Webcam HD', category: 'Audio/Vidéo', price: 79.99, stock: 12, status: 'En stock', image: '📷' },
+                        { id: 6, name: 'Microphone USB', category: 'Audio', price: 99.99, stock: 20, status: 'En stock', image: '🎤' },
+                        { id: 7, name: 'Support pour portable', category: 'Accessoires', price: 29.99, stock: 5, status: 'Stock bas', image: '💻' },
+                        { id: 8, name: 'Hub USB-C', category: 'Accessoires', price: 44.99, stock: 30, status: 'En stock', image: '🔌' },
+                    ];
+
+                    let filteredProducts = [...products];
+                    let productToDelete = null;
+
+                    // Fonction pour obtenir la classe de statut
+                    function getStatusClass(status) {
+                        if (status === 'En stock') return 'bg-green-500/20 text-green-400';
+                        if (status === 'Rupture') return 'bg-red-500/20 text-red-400';
+                        return 'bg-yellow-500/20 text-yellow-400';
+                    }
+
+                    // Fonction pour rendre la table desktop
+                    function renderTable() {
+                        const tbody = document.getElementById('tableBody');
+                        tbody.innerHTML = '';
+
+                        filteredProducts.forEach(product => {
+                            const statusClass = getStatusClass(product.status);
+
+                            const row = `
+                    <tr class="hover:bg-primary-foreground/5 transition-colors">
+                        <td class="px-6 py-4">
+                            <div class="w-12 h-12 rounded-lg bg-primary-foreground/10 flex items-center justify-center text-2xl">
+                                ${product.image}
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-sm text-primary-foreground font-medium">${product.name}</td>
+                        <td class="px-6 py-4 text-sm text-primary-foreground/70">${product.category}</td>
+                        <td class="px-6 py-4 text-sm text-primary-foreground font-semibold">${product.price.toFixed(2)} €</td>
+                        <td class="px-6 py-4 text-sm text-primary-foreground">${product.stock} unités</td>
+                        <td class="px-6 py-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium ${statusClass}">
+                                ${product.status}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center justify-center gap-2">
+                                <button onclick="editProduct(${product.id})" class="p-2 text-accent hover:bg-accent/10 rounded-lg transition-colors" title="Modifier">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path>
+                                        <path d="m15 5 4 4"></path>
+                                    </svg>
+                                </button>
+                                <button onclick="deleteProduct(${product.id})" class="p-2 text-red-400 hover:bg-red-500/10 rounded-lg transition-colors" title="Supprimer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                            tbody.innerHTML += row;
+                        });
+                    }
+
+                    // Fonction pour rendre les cards mobile
+                    function renderMobileCards() {
+                        const container = document.getElementById('mobileCards');
+                        container.innerHTML = '';
+
+                        filteredProducts.forEach(product => {
+                            const statusClass = getStatusClass(product.status);
+
+                            const card = `
+                    <div class="bg-primary-foreground/5 backdrop-blur-sm rounded-lg border border-primary-foreground/20 p-4">
+                        <div class="flex gap-4 mb-3">
+                            <div class="w-16 h-16 rounded-lg bg-primary-foreground/10 flex items-center justify-center text-3xl flex-shrink-0">
+                                ${product.image}
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-semibold text-primary-foreground truncate">${product.name}</h3>
+                                <p class="text-sm text-primary-foreground/70">${product.category}</p>
+                                <p class="text-lg font-bold text-accent mt-1">${product.price.toFixed(2)} €</p>
+                            </div>
+                            <span class="px-2 py-1 rounded-full text-xs font-medium ${statusClass} h-fit">
+                                ${product.status}
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-primary-foreground/10">
+                            <div class="text-sm text-primary-foreground/70">
+                                Stock: <span class="text-primary-foreground font-medium">${product.stock} unités</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="editProduct(${product.id})" class="p-2 text-accent hover:bg-accent/10 rounded-lg transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path>
+                                        <path d="m15 5 4 4"></path>
+                                    </svg>
+                                </button>
+                                <button onclick="deleteProduct(${product.id})" class="p-2 text-red-400 hover:bg-red-500/10 rounded-lg transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 6h18"></path>
+                                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                                        <line x1="10" x2="10" y1="11" y2="17"></line>
+                                        <line x1="14" x2="14" y1="11" y2="17"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                            container.innerHTML += card;
+                        });
+                    }
+
+                    // Fonction de recherche
+                    function searchProducts() {
+                        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+                        filteredProducts = products.filter(product =>
+                            product.name.toLowerCase().includes(searchTerm) ||
+                            product.category.toLowerCase().includes(searchTerm)
+                        );
+                        renderTable();
+                        renderMobileCards();
+                        document.getElementById('total').textContent = filteredProducts.length;
+                    }
+
+                    // Fonction pour modifier
+                    function editProduct(id) {
+                        alert('Modifier le produit #' + id);
+                    }
+
+                    // Fonction pour supprimer
+                    function deleteProduct(id) {
+                        productToDelete = id;
+                        document.getElementById('deleteModal').classList.remove('hidden');
+                    }
+
+                    // Fermer le modal
+                    function closeModal() {
+                        document.getElementById('deleteModal').classList.add('hidden');
+                        productToDelete = null;
+                    }
+
+                    // Confirmer la suppression
+                    function confirmDelete() {
+                        if (productToDelete) {
+                            const index = products.findIndex(p => p.id === productToDelete);
+                            if (index > -1) {
+                                products.splice(index, 1);
+                                filteredProducts = [...products];
+                                renderTable();
+                                renderMobileCards();
+                                document.getElementById('total').textContent = products.length;
+                            }
+                        }
+                        closeModal();
+                    }
+
+                    // Event listener pour la recherche
+                    document.getElementById('searchInput').addEventListener('input', searchProducts);
+
+                    // Fermer le modal en cliquant à l'extérieur
+                    document.getElementById('deleteModal').addEventListener('click', function (e) {
+                        if (e.target === this) {
+                            closeModal();
+                        }
+                    });
+
+                    // Initialisation
+                    renderTable();
+                    renderMobileCards();
+                </script>
+            </main>
+        </div>
+    </div>
+
+
+
+    
+    
+
+
+</body>
+
+</html>

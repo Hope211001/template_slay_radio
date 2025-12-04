@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slay Radio - La Radio des DJs Locaux</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        sidebar: {
+                            DEFAULT: 'hsl(var(--sidebar-background))',
+                            foreground: 'hsl(var(--sidebar-foreground))',
+                        },
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+
+
+<body>
+    <div id="root">
+        <div class="min-h-screen bg-background">
+            <!--  navbar -->
+            <nav
+                class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
+                <div class="container mx-auto px-4">
+                    <div class="flex items-center justify-between h-16 md:h-20">
+                        <a class="flex items-center gap-3" href="./index.html"><img src="./image/logo.jpg"
+                                alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg"><span
+                                class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span></a>
+                        <div class="hidden lg:flex items-center gap-8">
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./index.html">Accueil<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./live.html">Live Radio<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./artistes.html">Artistes<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./boutique.html">Boutique<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./apropos.html">À propos<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                        </div>
+                        <div class="hidden lg:flex items-center gap-4">
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-10 w-10 text-muted-foreground hover:text-primary"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-shopping-cart w-5 h-5">
+                                    <circle cx="8" cy="21" r="1"></circle>
+                                    <circle cx="19" cy="21" r="1"></circle>
+                                    <path
+                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                    </path>
+                                </svg></button><a href="./login.html">
+                                <button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background h-9 rounded-md px-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground">Connexion</button></a>
+                            <a href="./dashbord.html">
+                                <button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary text-primary-foreground glow-primary">Espace
+                                    DJ
+                                </button>
+                            </a>
+                        </div>
+                        <button class="lg:hidden p-2 text-foreground">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
+                                <line x1="4" x2="20" y1="12" y2="12"></line>
+                                <line x1="4" x2="20" y1="6" y2="6"></line>
+                                <line x1="4" x2="20" y1="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!--  end navbar -->
+
+            <!--  main -->
+            <main class="pt-24 pb-20">
+                <div class="container mx-auto px-4">
+                    <div class="flex items-center justify-between mb-12">
+                        <div>
+                            <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-2"><span
+                                    class="text-gradient">Boutique</span></h1>
+                            <p class="text-muted-foreground">Produits exclusifs Slay Radio</p>
+                        </div><button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 relative border-border"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart w-5 h-5">
+                                <circle cx="8" cy="21" r="1"></circle>
+                                <circle cx="19" cy="21" r="1"></circle>
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <!-- BARRE DE RECHERCHE + FILTRES -->
+                    <div class="flex flex-col md:flex-row gap-4 mb-8 items-center">
+                        <!-- champ recherche -->
+                        <div class="relative w-full md:w-96">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                            </svg>
+                            <input id="searchBoutique" type="text" placeholder="Rechercher un produit…"
+                                class="w-full pl-10 pr-4 py-2 rounded-lg border border-border bg-muted text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary">
+                        </div>
+
+                        <!-- filtres rapides -->
+                        <div class="flex gap-2 flex-wrap">
+                            <button onclick="filterCat('all')"
+                                class="filter-btn px-3 py-1.5 rounded-md border border-primary bg-primary text-white text-sm hover:bg-transparent hover:text-primary transition"
+                                data-cat="all">Tous</button>
+                            <button onclick="filterCat('vetements')"
+                                class="filter-btn px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                                data-cat="vetements">Vêtements</button>
+                            <button onclick="filterCat('accessoires')"
+                                class="filter-btn px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                                data-cat="accessoires">Accessoires</button>
+                            <button onclick="filterCat('musique')"
+                                class="filter-btn px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                                data-cat="musique">Musique</button>
+                            <button onclick="filterCat('deco')"
+                                class="filter-btn px-3 py-1.5 rounded-md border border-border text-sm hover:bg-muted transition"
+                                data-cat="deco">Déco</button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-8">
+                        <div class="flex-1">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div
+                                    class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                    <div class="aspect-square overflow-hidden bg-muted"><img
+                                            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&amp;h=400&amp;fit=crop"
+                                            alt="T-Shirt Slay Radio"
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </div>
+                                    <div class="p-4"><span class="text-xs text-muted-foreground">Vêtements</span>
+                                        <h3 class="font-semibold text-foreground mt-1">T-Shirt Slay Radio</h3>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <p class="text-xl font-bold text-gradient">29.99€</p>
+                                            <button onclick="addToCart('Casque DJ Pro', '45 000 Ar')"
+                                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                    <circle cx="8" cy="21" r="1"></circle>
+                                                    <circle cx="19" cy="21" r="1"></circle>
+                                                    <path
+                                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                                    </path>
+                                                </svg>Ajouter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                    <div class="aspect-square overflow-hidden bg-muted"><img
+                                            src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&amp;h=400&amp;fit=crop"
+                                            alt="Casquette Logo"
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </div>
+                                    <div class="p-4"><span class="text-xs text-muted-foreground">Accessoires</span>
+                                        <h3 class="font-semibold text-foreground mt-1">Casquette Logo</h3>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <p class="text-xl font-bold text-gradient">24.99€</p>
+                                            <button onclick="addToCart('Casque DJ Pro', '45 000 Ar')"
+                                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                    <circle cx="8" cy="21" r="1"></circle>
+                                                    <circle cx="19" cy="21" r="1"></circle>
+                                                    <path
+                                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                                    </path>
+                                                </svg>Ajouter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                    <div class="aspect-square overflow-hidden bg-muted"><img
+                                            src="https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=400&amp;h=400&amp;fit=crop"
+                                            alt="Vinyle Collector"
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </div>
+                                    <div class="p-4"><span class="text-xs text-muted-foreground">Musique</span>
+                                        <h3 class="font-semibold text-foreground mt-1">Vinyle Collector</h3>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <p class="text-xl font-bold text-gradient">39.99€</p>
+                                            <button onclick="addToCart('Casque DJ Pro', '45 000 Ar')"
+                                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                    <circle cx="8" cy="21" r="1"></circle>
+                                                    <circle cx="19" cy="21" r="1"></circle>
+                                                    <path
+                                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                                    </path>
+                                                </svg>Ajouter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                    <div class="aspect-square overflow-hidden bg-muted"><img
+                                            src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&amp;h=400&amp;fit=crop"
+                                            alt="Hoodie Premium"
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </div>
+                                    <div class="p-4"><span class="text-xs text-muted-foreground">Vêtements</span>
+                                        <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <p class="text-xl font-bold text-gradient">59.99€</p>
+                                            <button onclick="addToCart('Casque DJ Pro', '45 000 Ar')"
+                                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                    <circle cx="8" cy="21" r="1"></circle>
+                                                    <circle cx="19" cy="21" r="1"></circle>
+                                                    <path
+                                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                                    </path>
+                                                </svg>Ajouter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                    <div class="aspect-square overflow-hidden bg-muted"><img
+                                            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=400&amp;h=400&amp;fit=crop"
+                                            alt="Poster Neon"
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </div>
+                                    <div class="p-4"><span class="text-xs text-muted-foreground">Déco</span>
+                                        <h3 class="font-semibold text-foreground mt-1">Poster Neon</h3>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <p class="text-xl font-bold text-gradient">19.99€</p>
+                                            <button onclick="addToCart('Casque DJ Pro', '45 000 Ar')"
+                                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                    <circle cx="8" cy="21" r="1"></circle>
+                                                    <circle cx="19" cy="21" r="1"></circle>
+                                                    <path
+                                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                                    </path>
+                                                </svg>Ajouter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                    <div class="aspect-square overflow-hidden bg-muted"><img
+                                            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&amp;h=400&amp;fit=crop"
+                                            alt="Stickers Pack"
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                    </div>
+                                    <div class="p-4"><span class="text-xs text-muted-foreground">Accessoires</span>
+                                        <h3 class="font-semibold text-foreground mt-1">Stickers Pack</h3>
+                                        <div class="flex items-center justify-between mt-3">
+                                            <p class="text-xl font-bold text-gradient">9.99€</p>
+                                            <button onclick="addToCart('Casque DJ Pro', '45 000 Ar')"
+                                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                    <circle cx="8" cy="21" r="1"></circle>
+                                                    <circle cx="19" cy="21" r="1"></circle>
+                                                    <path
+                                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                                    </path>
+                                                </svg>Ajouter
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!--  end main -->
+            <!-- PANIER MINI -->
+            <div id="cart" class="fixed bg-white bottom-0 left-1/2 -translate-x-1/2 z-50
+            w-[320px] max-w-[90vw]
+            bg-card border border-border rounded-t-xl shadow-lg
+            px-3 py-3 text-xs
+            transition-transform duration-300 translate-y-full">
+
+                <!-- entête -->
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-foreground text-sm">Mon panier</h3>
+                    <button onclick="toggleCart()" class="text-muted-foreground hover:text-foreground">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- corps -->
+                <div id="cartBody" class="space-y-2 max-h-32 overflow-y-auto"></div>
+
+                <!-- total + CTA -->
+                <div class="mt-2 pt-2 border-t border-border">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-muted-foreground">Total</span>
+                        <span id="cartTotal" class="font-semibold text-foreground">0 Ar</span>
+                    </div>
+                    <button
+                        class="w-full gradient-primary text-primary-foreground rounded-md py-1.5 text-sm hover:scale-105 transition-transform">Commander</button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-card border-t border-border">
+                <div class="container mx-auto px-4 py-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="space-y-4">
+                            <a class="flex items-center gap-3" href="./index.html">
+                                <img src="./image/logo.jpg" alt="Slay Radio" class="h-12 w-auto rounded-lg">
+                                <span class="text-xl font-bold text-primary">SLAY RADIO</span>
+                            </a>
+                            <p class="text-sm text-muted-foreground">
+                                La plateforme radiophonique dédiée aux DJs locaux.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
+                            <ul class="space-y-3">
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./index.html">Accueil</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./live.html">Live Radio</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./artistes.html">Artistes</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./apropos.html">À propos</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
+                            <ul class="space-y-3">
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./login.html">Connexion</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./dashbord.html">Dashboard</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-4">Contact</h4>
+                            <ul class="space-y-3">
+                                <li class="text-sm text-muted-foreground">contact@slay.live</li>
+                                <li class="text-sm text-muted-foreground">+33 1 23 45 67 89</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-t border-border mt-8 pt-8 text-center">
+                        <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie.
+                            Tous
+                            droits réservés.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+        </div>
+    </div>
+
+
+
+
+
+    <!-- 3. SCRIPT (toujours APRÈS les éléments qu’il manipule) -->
+    <script>
+        function toggleCart() {
+            document.getElementById('cart').classList.toggle('translate-y-full');
+        }
+
+        function addToCart(name, price, img = 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop') {
+            const body = document.getElementById('cartBody');
+            const exist = [...body.children].find(r => r.dataset.name === name);
+            if (exist) {
+                const qty = exist.querySelector('span');
+                qty.textContent = parseInt(qty.textContent) + 1;
+            } else {
+                body.insertAdjacentHTML('beforeend', `
+        <div class="flex items-center gap-3 position relative" data-name="${name}">
+          <img src="${img}" class="w-14 h-14 rounded-lg object-cover">
+          <div class="flex-1">
+            <p class="text-sm font-medium text-foreground">${name}</p>
+            <p class="text-xs text-muted-foreground">${price}</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="changeQty(this,-1)" class="w-6 h-6 rounded-full bg-muted text-foreground hover:bg-primary hover:text-primary-foreground">-</button>
+            <span class="text-sm w-6 text-center">1</span>
+            <button onclick="changeQty(this,1)" class="w-6 h-6 rounded-full bg-muted text-foreground hover:bg-primary hover:text-primary-foreground">+</button>
+          </div>
+        </div>`);
+            }
+            updateTotals();
+            document.getElementById('cart').classList.remove('translate-y-full');
+        }
+
+        function changeQty(btn, delta) {
+            const span = btn.parentElement.querySelector('span');
+            let q = parseInt(span.textContent) + delta;
+            if (q < 1) q = 1;
+            span.textContent = q;
+            updateTotals();
+        }
+
+        function updateTotals() {
+            let t = 0, items = 0;
+            document.querySelectorAll('#cartBody > div').forEach(r => {
+                const price = parseInt(r.querySelector('.text-xs').textContent.replace(/\D/g, ''));
+                const q = parseInt(r.querySelector('span').textContent);
+                t += price * q;
+                items += q;
+            });
+            /* on teste l’existence avant d’écrire */
+            const totalEl = document.getElementById('cartTotal');
+            const badgeEl = document.getElementById('navCartBadge');
+            if (totalEl) totalEl.textContent = t.toLocaleString() + ' Ar';
+            if (badgeEl) badgeEl.textContent = items;
+        }
+    </script>
+
+</body>
+
+<chatgpt-sidebar data-gpts-theme="light"></chatgpt-sidebar>
+
+</html>

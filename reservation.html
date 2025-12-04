@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slay Radio - La Radio des DJs Locaux</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))',
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))',
+                        },
+                        sidebar: {
+                            DEFAULT: 'hsl(var(--sidebar-background))',
+                            foreground: 'hsl(var(--sidebar-foreground))',
+                            primary: 'hsl(var(--sidebar-primary))',
+                            'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+                            accent: 'hsl(var(--sidebar-accent))',
+                            'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+                            border: 'hsl(var(--sidebar-border))',
+                            ring: 'hsl(var(--sidebar-ring))',
+                        },
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+
+<style>
+    :root {
+        --radius: 0.5rem;
+    }
+
+    .gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .fade-in {
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Indicateurs d'étapes */
+    .booking-step-item.is-active .booking-step-circle {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        transform: scale(1.1);
+    }
+
+    .booking-step-item.is-completed .booking-step-circle {
+        background: #10b981;
+        color: white;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+    }
+
+    .booking-step-item.is-active .booking-step-label {
+        color: #667eea;
+        font-weight: 600;
+    }
+
+    .booking-step-circle {
+        transition: all 0.3s ease;
+    }
+
+    .booking-step-item.is-completed .booking-step-circle::after {
+        content: "✓";
+        position: absolute;
+        font-size: 14px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <div id="root">
+        <div class="min-h-screen bg-background">
+            <!--  navbar -->
+            <nav
+                class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
+                <div class="container mx-auto px-4">
+                    <div class="flex items-center justify-between h-16 md:h-20">
+                        <a class="flex items-center gap-3" href="./index.html">
+                            <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg"><span
+                                class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span></a>
+                        <div class="hidden lg:flex items-center gap-8">
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./index.html">Accueil<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./live.html">Live Radio<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./artistes.html">Artistes<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./boutique.html">Boutique<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                href="./apropos.html">À propos<span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                        </div>
+                        <div class="hidden lg:flex items-center gap-4">
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-10 w-10 text-muted-foreground hover:text-primary"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-shopping-cart w-5 h-5">
+                                    <circle cx="8" cy="21" r="1"></circle>
+                                    <circle cx="19" cy="21" r="1"></circle>
+                                    <path
+                                        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                    </path>
+                                </svg></button>
+                            <a href="./login.html">
+                                <button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background h-9 rounded-md px-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                                    Connexion</button>
+                            </a>
+                            <a href="./dashbord.html">
+                                <button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary text-primary-foreground glow-primary">Espace
+                                    DJ
+                                </button>
+                            </a>
+                        </div>
+                        <button class="lg:hidden p-2 text-foreground">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-menu w-6 h-6">
+                                <line x1="4" x2="20" y1="12" y2="12"></line>
+                                <line x1="4" x2="20" y1="6" y2="6"></line>
+                                <line x1="4" x2="20" y1="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <!--  end navbar -->
+            <main class="pt-20 pb-20">
+
+                <div class="min-h-screen py-8 px-4">
+                    <div class="max-w-4xl mx-auto">
+                        <!-- Header -->
+                        <div class="text-center mb-8">
+                            <h1 class="text-4xl font-bold text-gray-900 mb-2">Réserver un DJ ou un Artiste</h1>
+                            <p class="text-gray-600">Suivez les étapes pour réserver votre artiste préféré</p>
+                        </div>
+
+                        <!-- Step Indicators -->
+                        <div class="flex justify-between items-center mb-12 relative px-4">
+                            <!-- Ligne de fond -->
+                            <div class="absolute top-5 left-0 right-0 h-1 bg-gray-200 rounded-full"></div>
+                            <!-- Barre de progression -->
+                            <div id="booking-progress-bar"
+                                class="absolute top-5 left-0 h-1 gradient-primary transition-all duration-500 rounded-full"
+                                style="width: 0%"></div>
+
+                            <!-- Étape 1 -->
+                            <div class="booking-step-item flex flex-col items-center relative z-10">
+                                <div
+                                    class="booking-step-circle w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold mb-2 relative">
+                                    1
+                                </div>
+                                <span class="booking-step-label text-xs font-medium text-gray-600">Artiste</span>
+                            </div>
+
+                            <!-- Étape 2 -->
+                            <div class="booking-step-item flex flex-col items-center relative z-10">
+                                <div
+                                    class="booking-step-circle w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold mb-2 relative">
+                                    2
+                                </div>
+                                <span class="booking-step-label text-xs font-medium text-gray-600">Date & Heure</span>
+                            </div>
+
+                            <!-- Étape 3 -->
+                            <div class="booking-step-item flex flex-col items-center relative z-10">
+                                <div
+                                    class="booking-step-circle w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold mb-2 relative">
+                                    3
+                                </div>
+                                <span class="booking-step-label text-xs font-medium text-gray-600">Détails</span>
+                            </div>
+
+                            <!-- Étape 4 -->
+                            <div class="booking-step-item flex flex-col items-center relative z-10">
+                                <div
+                                    class="booking-step-circle w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold mb-2 relative">
+                                    4
+                                </div>
+                                <span class="booking-step-label text-xs font-medium text-gray-600">Confirmation</span>
+                            </div>
+                        </div>
+
+                        <!-- Form Container -->
+                        <div class="bg-white rounded-2xl shadow-xl p-8">
+                            <form id="bookingForm">
+                                <!-- Step 1: Sélection de l'artiste -->
+                                <div id="step1" class="step-content fade-in">
+                                    <h2 class="text-2xl font-bold mb-6">Choisissez votre artiste</h2>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                                        <!-- Artiste -->
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Rechercher un DJ
+                                                /
+                                                Artiste</label>
+                                            <select name="artist" required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                                <option value="">Sélectionnez...</option>
+                                                <option value="dj-maxflow">DJ MaxFlow</option>
+                                                <option value="luna-beats">Luna Beats</option>
+                                                <option value="kenzo">Kenzo</option>
+                                                <option value="nightwave">NightWave</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- type evenement -->
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Type d'événement
+                                                *</label>
+                                            <select name="eventType" required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                                <option value="">Sélectionnez...</option>
+                                                <option value="wedding">Mariage</option>
+                                                <option value="birthday">Anniversaire</option>
+                                                <option value="corporate">Événement d'entreprise</option>
+                                                <option value="club">Soirée en club</option>
+                                                <option value="festival">Festival</option>
+                                                <option value="other">Autre</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <!-- Step 2: Date et Heure -->
+                                <div id="step2" class="step-content hidden">
+                                    <h2 class="text-2xl font-bold mb-6">Sélectionnez la date et l'heure</h2>
+
+                                    <!-- Calendrier -->
+                                    <div class="mb-8">
+                                        <div class="flex justify-between items-center mb-4">
+                                            <button type="button" id="prevMonth"
+                                                class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M15 19l-7-7 7-7" />
+                                                </svg>
+                                            </button>
+                                            <h3 id="currentMonth" class="text-xl font-bold"></h3>
+                                            <button type="button" id="nextMonth"
+                                                class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <div class="grid grid-cols-7 gap-2 mb-2">
+                                            <div class="text-center font-bold text-sm text-gray-600">Lun</div>
+                                            <div class="text-center font-bold text-sm text-gray-600">Mar</div>
+                                            <div class="text-center font-bold text-sm text-gray-600">Mer</div>
+                                            <div class="text-center font-bold text-sm text-gray-600">Jeu</div>
+                                            <div class="text-center font-bold text-sm text-gray-600">Ven</div>
+                                            <div class="text-center font-bold text-sm text-gray-600">Sam</div>
+                                            <div class="text-center font-bold text-sm text-gray-600">Dim</div>
+                                        </div>
+
+                                        <div id="calendarDays" class="grid grid-cols-7 gap-2"></div>
+                                    </div>
+
+                                    <!-- Créneaux horaires -->
+                                    <div id="timeSlotsContainer" class="hidden">
+                                        <h3 class="text-lg font-bold mb-4">Choisissez un créneau horaire</h3>
+                                        <div id="timeSlots" class="grid grid-cols-3 md:grid-cols-4 gap-3"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Step 3: Détails de l'événement -->
+                                <div id="step3" class="step-content hidden">
+                                    <h2 class="text-2xl font-bold mb-6">Détails de votre événement</h2>
+
+                                    <div class="space-y-4">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Nom complet
+                                                *</label>
+                                            <input type="text" name="fullName" required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                                            <input type="email" name="email" required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Téléphone
+                                                *</label>
+                                            <input type="tel" name="phone" required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        </div>
+
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Lieu de
+                                                l'événement
+                                                *</label>
+                                            <input type="text" name="location" required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+                                <!-- Step 4: Confirmation -->
+                                <div id="step4" class="step-content hidden">
+                                    <h2 class="text-2xl font-bold mb-6">Détails de votre événement</h2>
+
+                                    <div class="space-y-4 mb-16">
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Nombre d'invités
+                                                estimé
+                                                *</label>
+                                            <input type="number" name="guests" required min="1"
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Durée de la
+                                                prestation
+                                                *</label>
+                                            <select name="duration" required
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                                <option value="">Sélectionnez...</option>
+                                                <option value="2">2 heures</option>
+                                                <option value="3">3 heures</option>
+                                                <option value="4">4 heures</option>
+                                                <option value="5">5 heures</option>
+                                                <option value="6">6 heures +</option>
+                                            </select>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Informations
+                                                complémentaires</label>
+                                            <textarea name="notes" rows="4"
+                                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                                placeholder="Ambiance souhaitée, demandes spéciales, équipement disponible..."></textarea>
+                                        </div>
+                                    </div>
+
+
+
+                                    <label class="flex items-start gap-3 mb-6">
+                                        <input type="checkbox" required
+                                            class="mt-1 w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                        <span class="text-sm text-gray-700">
+                                            J'accepte les <a href="#" class="text-purple-600 hover:underline">conditions
+                                                générales</a> et la <a href="#"
+                                                class="text-purple-600 hover:underline">politique de
+                                                confidentialité</a>
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <div class="flex justify-between mt-8 pt-6 border-t">
+                                    <button type="button" id="prevBtn"
+                                        class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors hidden">
+                                        Précédent
+                                    </button>
+                                    <button type="button" id="nextBtn"
+                                        class="px-6 py-3 gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity ml-auto">
+                                        Suivant
+                                    </button>
+                                    <button type="submit" id="submitBtn"
+                                        class="px-6 py-3 gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity ml-auto hidden">
+                                        Confirmer la réservation
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+
+            <script>
+                // ============================================
+                // VARIABLES GLOBALES
+                // ============================================
+                let currentStep = 1;
+                const totalSteps = 4;
+                let selectedDate = null;
+                let selectedTime = null;
+                let currentMonth = new Date();
+
+                // Dates complètement indisponibles (grises)
+                const unavailableDates = ["2025-12-10", "2025-12-15", "2025-12-25"];
+
+                // Créneaux horaires indisponibles pour certaines dates
+                const unavailableSlots = {
+                    "2025-12-20": ["18:00", "19:00", "20:00"],
+                    "2025-12-22": ["14:00", "15:00"]
+                };
+
+                // ============================================
+                // ÉLÉMENTS DOM
+                // ============================================
+                const nextBtn = document.getElementById('nextBtn');
+                const prevBtn = document.getElementById('prevBtn');
+                const submitBtn = document.getElementById('submitBtn');
+
+                // ============================================
+                // NAVIGATION ENTRE LES ÉTAPES
+                // ============================================
+                nextBtn.addEventListener('click', () => {
+                    if (validateStep(currentStep)) {
+                        if (currentStep < totalSteps) {
+                            currentStep++;
+                            updateStep();
+                        }
+                    }
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    if (currentStep > 1) {
+                        currentStep--;
+                        updateStep();
+                    }
+                });
+
+                // ============================================
+                // VALIDATION DES ÉTAPES
+                // ============================================
+                function validateStep(step) {
+                    if (step === 1) {
+                        const artistSelect = document.querySelector('select[name="artist"]');
+                        const eventTypeSelect = document.querySelector('select[name="eventType"]');
+
+                        if (!artistSelect.value) {
+                            alert('Veuillez sélectionner un DJ ou un Artiste');
+                            return false;
+                        }
+
+                        if (!eventTypeSelect.value) {
+                            alert('Veuillez sélectionner le type d\'événement');
+                            return false;
+                        }
+                    }
+                    else if (step === 2) {
+                        if (!selectedDate || !selectedTime) {
+                            alert('Veuillez sélectionner une date et un créneau horaire');
+                            return false;
+                        }
+                    } else if (step === 3) {
+                        const form = document.getElementById('bookingForm');
+                        const inputs = form.querySelectorAll('#step3 input[required], #step3 select[required]');
+                        for (let input of inputs) {
+                            if (!input.value) {
+                                alert('Veuillez remplir tous les champs obligatoires');
+                                return false;
+                            }
+                        }
+                    }
+                    return true;
+                }
+
+                // ============================================
+                // MISE À JOUR DE L'AFFICHAGE DES ÉTAPES
+                // ============================================
+                function updateStep() {
+                    // Masquer toutes les étapes
+                    document.querySelectorAll('.step-content').forEach(step => {
+                        step.classList.add('hidden');
+                        step.classList.remove('fade-in');
+                    });
+
+                    // Afficher l'étape actuelle
+                    const currentStepEl = document.getElementById(`step${currentStep}`);
+                    currentStepEl.classList.remove('hidden');
+                    setTimeout(() => currentStepEl.classList.add('fade-in'), 10);
+
+                    // Mettre à jour les indicateurs d'étapes
+                    document.querySelectorAll('.booking-step-item').forEach((indicator, index) => {
+                        const stepNum = index + 1;
+                        const circle = indicator.querySelector('.booking-step-circle');
+
+                        if (stepNum < currentStep) {
+                            indicator.classList.add('is-completed');
+                            indicator.classList.remove('is-active');
+                            // Masquer le numéro pour les étapes complétées
+                            circle.textContent = '';
+                        } else if (stepNum === currentStep) {
+                            indicator.classList.add('is-active');
+                            indicator.classList.remove('is-completed');
+                            circle.textContent = stepNum;
+                        } else {
+                            indicator.classList.remove('is-active', 'is-completed');
+                            circle.textContent = stepNum;
+                        }
+                    });
+
+                    // Mettre à jour la barre de progression
+                    const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
+                    document.getElementById('booking-progress-bar').style.width = progress + '%';
+
+                    // Mettre à jour les boutons
+                    prevBtn.classList.toggle('hidden', currentStep === 1);
+                    nextBtn.classList.toggle('hidden', currentStep === totalSteps);
+                    submitBtn.classList.toggle('hidden', currentStep !== totalSteps);
+
+                    // Charger le récapitulatif sur l'étape 4
+                    if (currentStep === 4) {
+                        loadSummary();
+                    }
+                }
+
+                // ============================================
+                // CALENDRIER
+                // ============================================
+                function renderCalendar() {
+                    const year = currentMonth.getFullYear();
+                    const month = currentMonth.getMonth();
+
+                    const monthNames = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin',
+                        'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+
+                    document.getElementById('currentMonth').textContent = `${monthNames[month]} ${year}`;
+
+                    const firstDay = new Date(year, month, 1);
+                    const lastDay = new Date(year, month + 1, 0);
+                    const startDay = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+
+                    const calendarDays = document.getElementById('calendarDays');
+                    calendarDays.innerHTML = '';
+
+                    // Espaces vides au début
+                    for (let i = 0; i < startDay; i++) {
+                        calendarDays.innerHTML += '<div></div>';
+                    }
+
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+
+                    // Générer les jours du mois
+                    for (let day = 1; day <= lastDay.getDate(); day++) {
+                        const dateObj = new Date(year, month, day);
+                        const dateStr = dateObj.toISOString().split('T')[0];
+
+                        const isPast = dateObj < today;
+                        const isFullyUnavailable = unavailableDates.includes(dateStr);
+
+                        const btn = document.createElement("button");
+                        btn.type = "button";
+                        btn.textContent = day;
+
+                        btn.className = "calendar-day aspect-square rounded-lg border flex items-center justify-center font-medium transition-colors";
+
+                        if (isPast || isFullyUnavailable) {
+                            btn.classList.add("bg-gray-200", "text-gray-400", "cursor-not-allowed");
+                            btn.disabled = true;
+                        } else {
+                            btn.classList.add("hover:bg-purple-100", "hover:border-purple-300");
+                            if (selectedDate === dateStr) {
+                                btn.classList.add("selected", "bg-purple-500", "text-white", "border-purple-500");
+                            }
+                            btn.addEventListener("click", () => selectDate(dateStr, btn));
+                        }
+
+                        calendarDays.appendChild(btn);
+                    }
+                }
+
+                function selectDate(dateStr, element) {
+                    // Retirer la sélection de tous les jours
+                    document.querySelectorAll('.calendar-day').forEach(day => {
+                        day.classList.remove('selected', 'bg-purple-500', 'text-white', 'border-purple-500');
+                    });
+
+                    // Ajouter la sélection au jour cliqué
+                    element.classList.add('selected', 'bg-purple-500', 'text-white', 'border-purple-500');
+
+                    selectedDate = dateStr;
+                    selectedTime = null; // Réinitialiser l'heure sélectionnée
+
+                    renderTimeSlots(dateStr);
+                    document.getElementById('timeSlotsContainer').classList.remove('hidden');
+                }
+
+                // ============================================
+                // CRÉNEAUX HORAIRES
+                // ============================================
+                function renderTimeSlots(date) {
+                    const timeSlots = document.getElementById('timeSlots');
+                    timeSlots.innerHTML = '';
+
+                    const slots = [
+                        '10:00', '11:00', '12:00', '13:00', '14:00', '15:00',
+                        '16:00', '17:00', '18:00', '19:00', '20:00', '21:00',
+                        '22:00', '23:00', '00:00', '01:00'
+                    ];
+
+                    const unavailable = unavailableSlots[date] || [];
+
+                    slots.forEach(slot => {
+                        const isUnavailable = unavailable.includes(slot);
+                        const slotEl = document.createElement('button');
+                        slotEl.type = 'button';
+                        slotEl.className = `time-slot px-4 py-3 border-2 rounded-lg font-medium transition-colors ${isUnavailable
+                            ? 'bg-gray-200 text-gray-400 cursor-not-allowed border-gray-300'
+                            : 'border-gray-200 hover:border-purple-500 hover:bg-purple-50'
+                            }`;
+                        slotEl.textContent = slot;
+                        slotEl.disabled = isUnavailable;
+
+                        if (!isUnavailable) {
+                            slotEl.addEventListener('click', () => selectTime(slot, slotEl));
+                        }
+
+                        timeSlots.appendChild(slotEl);
+                    });
+                }
+
+                function selectTime(time, element) {
+                    // Retirer la sélection de tous les créneaux
+                    document.querySelectorAll('.time-slot').forEach(slot => {
+                        slot.classList.remove('selected', 'bg-purple-500', 'text-white', 'border-purple-500');
+                        if (!slot.disabled) {
+                            slot.classList.add('border-gray-200');
+                        }
+                    });
+
+                    // Ajouter la sélection au créneau cliqué
+                    element.classList.remove('border-gray-200');
+                    element.classList.add('selected', 'bg-purple-500', 'text-white', 'border-purple-500');
+                    selectedTime = time;
+                }
+
+                // ============================================
+                // NAVIGATION DU CALENDRIER
+                // ============================================
+                document.getElementById('prevMonth').addEventListener('click', () => {
+                    currentMonth.setMonth(currentMonth.getMonth() - 1);
+                    renderCalendar();
+                    document.getElementById('timeSlotsContainer').classList.add('hidden');
+                    selectedDate = null;
+                    selectedTime = null;
+                });
+
+                document.getElementById('nextMonth').addEventListener('click', () => {
+                    currentMonth.setMonth(currentMonth.getMonth() + 1);
+                    renderCalendar();
+                    document.getElementById('timeSlotsContainer').classList.add('hidden');
+                    selectedDate = null;
+                    selectedTime = null;
+                });
+
+                // ============================================
+                // SOUMISSION DU FORMULAIRE
+                // ============================================
+                document.getElementById('bookingForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Réservation envoyée !',
+                        text: 'Vous recevrez un email de confirmation sous 24-48h.',
+                        confirmButtonText: 'OK',
+                        timer: 5000
+                    });
+
+                    // Optionnel : reset du formulaire après confirmation
+                    // document.getElementById('bookingForm').reset();
+                });
+
+
+                // ============================================
+                // INITIALISATION
+                // ============================================
+                renderCalendar();
+            </script>
+
+
+            <!-- Footer -->
+            <footer class="bg-card border-t border-border">
+                <div class="container mx-auto px-4 py-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="space-y-4">
+                            <a class="flex items-center gap-3" href="./index.html">
+                                <img src="./image/logo.jpg" alt="Slay Radio" class="h-12 w-auto rounded-lg">
+                                <span class="text-xl font-bold text-primary">SLAY RADIO</span>
+                            </a>
+                            <p class="text-sm text-muted-foreground">
+                                La plateforme radiophonique dédiée aux DJs locaux.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
+                            <ul class="space-y-3">
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./index.html">Accueil</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./live.html">Live Radio</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./artistes.html">Artistes</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./apropos.html">À propos</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
+                            <ul class="space-y-3">
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./login.html">Connexion</a></li>
+                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                        href="./dashbord.html">Dashboard</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground mb-4">Contact</h4>
+                            <ul class="space-y-3">
+                                <li class="text-sm text-muted-foreground">contact@slay.live</li>
+                                <li class="text-sm text-muted-foreground">+33 1 23 45 67 89</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="border-t border-border mt-8 pt-8 text-center">
+                        <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie.
+                            Tous
+                            droits réservés.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+<chatgpt-sidebar data-gpts-theme="light"></chatgpt-sidebar>
+
+</html>

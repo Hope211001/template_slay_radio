@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slay Radio - La Radio des DJs Locaux</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(var(--popover))',
+                            foreground: 'hsl(var(--popover-foreground))',
+                        },
+                        card: {
+                            DEFAULT: 'hsl(var(--card))',
+                            foreground: 'hsl(var(--card-foreground))',
+                        },
+                        sidebar: {
+                            DEFAULT: 'hsl(var(--sidebar-background))',
+                            foreground: 'hsl(var(--sidebar-foreground))',
+                            primary: 'hsl(var(--sidebar-primary))',
+                            'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+                            accent: 'hsl(var(--sidebar-accent))',
+                            'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+                            border: 'hsl(var(--sidebar-border))',
+                            ring: 'hsl(var(--sidebar-ring))',
+                        },
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Votre fichier CSS personnalisé -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="root">
+        <div class="min-h-screen bg-background">
+            <aside class="fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border flex flex-col">
+                <div class="p-6 border-b border-sidebar-border">
+                    <a class="flex items-center gap-2" href="./index.html">
+                        <div class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
+                            <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
+                        </div>
+                        <span class="text-lg font-bold text-gradient">SLAY RADIO</span>
+                    </a>
+                </div>
+                <nav class="flex-1 p-4 space-y-2">
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all bg-sidebar-accent gradient-primary text-primary-foreground"
+                        href="./dashbord.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-layout-dashboard w-5 h-5">
+                            <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                            <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                            <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                            <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                        </svg>Dashboard</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="/dashboard/music"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music w-5 h-5">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>Mes Musiques</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./upload.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload w-5 h-5">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" x2="12" y1="3" y2="15"></line>
+                        </svg>Upload</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./table.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-5 h-5">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                        </svg>Table model</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="/dashboard/stats"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column w-5 h-5">
+                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                            <path d="M18 17V9"></path>
+                            <path d="M13 17V5"></path>
+                            <path d="M8 17v-3"></path>
+                        </svg>Statistiques</a>
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="/dashboard/settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-5 h-5">
+                            <path
+                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                            </path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>Paramètres</a>
+
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./produit.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-5 h-5">
+                            <path
+                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
+                            </path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>Produits</a>
+
+                </nav>
+                <div class="p-4 border-t border-sidebar-border">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-muted flex items-center justify-center"><span
+                                class="text-sm font-bold text-foreground">DJ</span></div>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-sidebar-foreground truncate">DJ MaxFlow</p>
+                            <p class="text-xs text-muted-foreground truncate">maxflow@slayradio.com</p>
+                        </div>
+                    </div><a
+                        class="flex items-center gap-2 text-sm text-muted-foreground hover:text-destructive transition-colors"
+                        href="/login"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-log-out w-4 h-4">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" x2="9" y1="12" y2="12"></line>
+                        </svg>Déconnexion</a>
+                </div>
+            </aside>
+            <main class="ml-64 p-8">
+                <div class="p-6 bg-slate-100 min-h-screen">
+
+                    <!-- UPLOAD FORM -->
+                    <section class="gradient-card rounded-xl p-6 border border-border max-w-2xl mx-auto">
+                        <h2 class="text-lg font-semibold text-foreground mb-4">Uploader une piste</h2>
+
+                        <form id="uploadForm" class="space-y-4">
+                            <!-- Pochette -->
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Pochette</label>
+                                <div class="flex items-center gap-4">
+                                    <img id="coverPreview"
+                                        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=120&h=120&fit=crop"
+                                        class="w-24 h-24 rounded-lg object-cover border border-border">
+                                    <button type="button" onclick="document.getElementById('coverInput').click()"
+                                        class="px-3 py-2 rounded-md border border-border text-sm hover:bg-muted transition">
+                                        Choisir image
+                                    </button>
+                                    <input id="coverInput" type="file" accept="image/*" class="hidden">
+                                </div>
+                            </div>
+
+                            <!-- Fichier audio -->
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Fichier audio</label>
+                                <div id="audioDrop"
+                                    class="border-2 border-dashed border-border rounded-lg p-6 text-center cursor-pointer hover:border-primary transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2"
+                                        class="mx-auto mb-2 text-muted-foreground">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                        <polyline points="17 8 12 3 7 8" />
+                                        <line x1="12" x2="12" y1="3" y2="15" />
+                                    </svg>
+                                    <p class="text-sm text-muted-foreground">Clique ici ou dépose un fichier audio</p>
+                                    <input id="audioInput" type="file" accept="audio/*" class="hidden">
+                                    <p id="audioName" class="text-xs text-primary mt-2"></p>
+                                </div>
+                            </div>
+
+                            <!-- Métadonnées -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <input id="title" type="text" placeholder="Titre" required
+                                    class="w-full px-3 py-2 rounded-md border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary">
+                                <input id="genre" type="text" placeholder="Genre"
+                                    class="w-full px-3 py-2 rounded-md border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <textarea id="desc" rows="3" placeholder="Description (optionnel)"
+                                class="w-full px-3 py-2 rounded-md border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+
+                            <!-- Bouton -->
+                            <button type="submit"
+                                class="w-full gradient-primary text-primary-foreground rounded-md py-2.5 hover:scale-105 transition-transform">
+                                Uploader
+                            </button>
+                        </form>
+                    </section>
+
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // preview pochette
+        document.getElementById('coverInput').addEventListener('change', e => {
+            const file = e.target.files[0];
+            if (file) document.getElementById('coverPreview').src = URL.createObjectURL(file);
+        });
+
+        // zone drag-and-drop audio
+        const audioDrop = document.getElementById('audioDrop');
+        const audioInput = document.getElementById('audioInput');
+        const audioName = document.getElementById('audioName');
+
+        audioDrop.addEventListener('click', () => audioInput.click());
+
+        audioInput.addEventListener('change', e => {
+            const file = e.target.files[0];
+            if (file) audioName.textContent = file.name;
+        });
+
+        // évite le rechargement de page (à remplacer par ton vrai upload)
+        document.getElementById('uploadForm').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Fichier prêt à être envoyé !\nBranche ici ton appel API.');
+        });
+    </script>
+</body>
+
+</html>

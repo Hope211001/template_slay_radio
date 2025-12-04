@@ -1,0 +1,401 @@
+/* ============================================
+   GOOGLE FONTS IMPORT
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+/* ============================================
+   CSS VARIABLES - LIGHT & DARK THEMES
+   ============================================ */
+:root {
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+    --primary: 220 90% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 220 20% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 88%;
+    --input: 220 15% 92%;
+    --ring: 220 90% 50%;
+    --radius: 0.75rem;
+    --gradient-primary: linear-gradient(135deg, hsl(220, 90%, 50%), hsl(220, 70%, 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(220, 90%, 50%) 0%, hsl(220, 70%, 40%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%), hsl(220, 15%, 97%));
+    --glow-primary: 0 0 30px hsl(220, 90%, 50%, 0.3);
+    --glow-secondary: 0 0 30px hsl(220, 70%, 60%, 0.3);
+    --glow-accent: 0 0 20px hsl(45, 100%, 55%, 0.3);
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 220 90% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 220 90% 50%;
+}
+
+.dark {
+    --background: 220 20% 8%;
+    --foreground: 0 0% 98%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 220 90% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 220 20% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 22%;
+    --input: 220 15% 18%;
+    --ring: 220 90% 55%;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+* {
+    border-color: hsl(var(--border));
+}
+
+body {
+    background-color: hsl(var(--background));
+    font-family: 'Sora', system-ui, sans-serif;
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================
+   CUSTOM GRADIENT CLASSES
+   ============================================ */
+.gradient-primary {
+    background: var(--gradient-primary);
+}
+
+.gradient-hero {
+    background: var(--gradient-hero);
+}
+
+.gradient-card {
+    background: var(--gradient-card);
+}
+
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.glow-primary {
+    box-shadow: var(--glow-primary);
+}
+
+.glow-secondary {
+    box-shadow: var(--glow-secondary);
+}
+
+.glow-accent {
+    box-shadow: var(--glow-accent);
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* ============================================
+   SONNER TOAST NOTIFICATIONS - COMPLETE STYLES
+   ============================================ */
+:where(html[dir="ltr"]), :where([data-sonner-toaster][dir="ltr"]) {
+    --toast-icon-margin-start: -3px;
+    --toast-icon-margin-end: 4px;
+    --toast-svg-margin-start: -1px;
+    --toast-svg-margin-end: 0px;
+    --toast-button-margin-start: auto;
+    --toast-button-margin-end: 0;
+    --toast-close-button-start: 0;
+    --toast-close-button-end: unset;
+    --toast-close-button-transform: translate(-35%, -35%);
+}
+
+:where(html[dir="rtl"]), :where([data-sonner-toaster][dir="rtl"]) {
+    --toast-icon-margin-start: 4px;
+    --toast-icon-margin-end: -3px;
+    --toast-svg-margin-start: 0px;
+    --toast-svg-margin-end: -1px;
+    --toast-button-margin-start: 0;
+    --toast-button-margin-end: auto;
+    --toast-close-button-start: unset;
+    --toast-close-button-end: 0;
+    --toast-close-button-transform: translate(35%, -35%);
+}
+
+:where([data-sonner-toaster]) {
+    position: fixed;
+    width: var(--width);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif;
+    --gray1: hsl(0, 0%, 99%);
+    --gray2: hsl(0, 0%, 97.3%);
+    --gray3: hsl(0, 0%, 95.1%);
+    --gray4: hsl(0, 0%, 93%);
+    --gray5: hsl(0, 0%, 90.9%);
+    --gray6: hsl(0, 0%, 88.7%);
+    --gray7: hsl(0, 0%, 85.8%);
+    --gray8: hsl(0, 0%, 78%);
+    --gray9: hsl(0, 0%, 56.1%);
+    --gray10: hsl(0, 0%, 52.3%);
+    --gray11: hsl(0, 0%, 43.5%);
+    --gray12: hsl(0, 0%, 9%);
+    --border-radius: 8px;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    z-index: 999999999;
+    transition: transform .4s ease;
+}
+
+:where([data-sonner-toaster][data-lifted="true"]) {
+    transform: translateY(-10px);
+}
+
+:where([data-sonner-toaster][data-x-position="right"]) {
+    right: var(--offset-right);
+}
+
+:where([data-sonner-toaster][data-x-position="left"]) {
+    left: var(--offset-left);
+}
+
+:where([data-sonner-toaster][data-x-position="center"]) {
+    left: 50%;
+    transform: translate(-50%);
+}
+
+:where([data-sonner-toaster][data-y-position="top"]) {
+    top: var(--offset-top);
+}
+
+:where([data-sonner-toaster][data-y-position="bottom"]) {
+    bottom: var(--offset-bottom);
+}
+
+:where([data-sonner-toast]) {
+    --y: translateY(100%);
+    --lift-amount: calc(var(--lift) * var(--gap));
+    z-index: var(--z-index);
+    position: absolute;
+    opacity: 0;
+    transform: var(--y);
+    filter: blur(0);
+    touch-action: none;
+    transition: transform .4s, opacity .4s, height .4s, box-shadow .2s;
+    box-sizing: border-box;
+    outline: none;
+    overflow-wrap: anywhere;
+}
+
+:where([data-sonner-toast][data-styled="true"]) {
+    padding: 16px;
+    background: var(--normal-bg);
+    border: 1px solid var(--normal-border);
+    color: var(--normal-text);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px #0000001a;
+    width: var(--width);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+:where([data-sonner-toast]:focus-visible) {
+    box-shadow: 0 4px 12px #0000001a, 0 0 0 2px #0003;
+}
+
+:where([data-sonner-toast][data-y-position="top"]) {
+    top: 0;
+    --y: translateY(-100%);
+    --lift: 1;
+    --lift-amount: calc(1 * var(--gap));
+}
+
+:where([data-sonner-toast][data-y-position="bottom"]) {
+    bottom: 0;
+    --y: translateY(100%);
+    --lift: -1;
+    --lift-amount: calc(var(--lift) * var(--gap));
+}
+
+:where([data-sonner-toast][data-mounted="true"]) {
+    --y: translateY(0);
+    opacity: 1;
+}
+
+[data-sonner-toaster][data-theme=light] {
+    --normal-bg: #fff;
+    --normal-border: var(--gray4);
+    --normal-text: var(--gray12);
+    --success-bg: hsl(143, 85%, 96%);
+    --success-border: hsl(145, 92%, 91%);
+    --success-text: hsl(140, 100%, 27%);
+    --info-bg: hsl(208, 100%, 97%);
+    --info-border: hsl(221, 91%, 91%);
+    --info-text: hsl(210, 92%, 45%);
+    --warning-bg: hsl(49, 100%, 97%);
+    --warning-border: hsl(49, 91%, 91%);
+    --warning-text: hsl(31, 92%, 45%);
+    --error-bg: hsl(359, 100%, 97%);
+    --error-border: hsl(359, 100%, 94%);
+    --error-text: hsl(360, 100%, 45%);
+}
+
+[data-sonner-toaster][data-theme=dark] {
+    --normal-bg: #000;
+    --normal-border: hsl(0, 0%, 20%);
+    --normal-text: var(--gray1);
+    --success-bg: hsl(150, 100%, 6%);
+    --success-border: hsl(147, 100%, 12%);
+    --success-text: hsl(150, 86%, 65%);
+    --info-bg: hsl(215, 100%, 6%);
+    --info-border: hsl(223, 100%, 12%);
+    --info-text: hsl(216, 87%, 65%);
+    --warning-bg: hsl(64, 100%, 6%);
+    --warning-border: hsl(60, 100%, 12%);
+    --warning-text: hsl(46, 87%, 65%);
+    --error-bg: hsl(358, 76%, 10%);
+    --error-border: hsl(357, 89%, 16%);
+    --error-text: hsl(358, 100%, 81%);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px hsl(220, 90%, 50%, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px hsl(220, 90%, 50%, 0.6);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes equalizer {
+    0% { transform: scaleY(0.3); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+}
+
+@keyframes sonner-fade-in {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes sonner-fade-out {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
+
+@keyframes sonner-spin {
+    0% { opacity: 1; }
+    100% { opacity: 0.15; }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-equalizer {
+    animation: equalizer 0.5s ease-in-out infinite alternate;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   SCROLLBAR STYLES
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

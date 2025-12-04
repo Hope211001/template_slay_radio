@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ MaxFlow - Slay Radio</title>
+
+  <!-- Tailwind déjà présent dans ton projet -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme:{
+        extend:{
+          fontFamily:{sans:['Sora','system-ui','sans-serif']},
+          colors:{
+            border:'hsl(var(--border))',
+            background:'hsl(var(--background))',
+            foreground:'hsl(var(--foreground))',
+            primary:{DEFAULT:'hsl(var(--primary))',foreground:'hsl(var(--primary-foreground))'},
+            muted:{DEFAULT:'hsl(var(--muted))',foreground:'hsl(var(--muted-foreground))'},
+            accent:{DEFAULT:'hsl(var(--accent))',foreground:'hsl(var(--accent-foreground))'},
+            card:{DEFAULT:'hsl(var(--card))',foreground:'hsl(var(--card-foreground))'}
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-background text-foreground">
+  <!-- NAVBAR (copie exacte de ton artistes.html) -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <a class="flex items-center gap-3" href="./index.html">
+          <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
+          <span class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span>
+        </a>
+        <div class="hidden lg:flex items-center gap-8">
+          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./index.html">Accueil</a>
+          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./live.html">Live Radio</a>
+          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./artistes.html">Artistes</a>
+          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./boutique.html">Boutique</a>
+          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./apropos.html">À propos</a>
+        </div>
+        <div class="hidden lg:flex items-center gap-4">
+          <button class="h-10 w-10 grid place-items-center hover:bg-muted rounded-md text-muted-foreground hover:text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          </button>
+          <a href="./login.html"><button class="px-3 py-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm">Connexion</button></a>
+          <a href="./dashbord.html"><button class="px-3 py-2 rounded-md gradient-primary text-primary-foreground text-sm glow-primary">Espace DJ</button></a>
+        </div>
+        <button class="lg:hidden p-2 text-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="pt-24 pb-20">
+    <div class="container mx-auto px-4 max-w-5xl">
+      <!-- Retour liste -->
+      <a href="./artistes.html" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Retour aux artistes
+      </a>
+
+      <!-- Carte artiste -->
+      <div class="gradient-card rounded-2xl border border-border p-6 md:p-8">
+        <div class="flex flex-col md:flex-row gap-6">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
+               alt="DJ MaxFlow" class="w-40 h-40 md:w-48 md:h-48 rounded-xl object-cover flex-shrink-0">
+          <div class="flex-1">
+            <div class="flex items-start justify-between mb-3">
+              <div>
+                <h1 class="text-3xl font-bold text-foreground">DJ MaxFlow</h1>
+                <p class="text-muted-foreground">Deep House • Techno</p>
+              </div>
+              <button id="followBtn" onclick="toggleFollow()"
+                      class="px-3 py-1.5 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm">
+                Suivre
+              </button>
+            </div>
+
+            <div class="flex items-center gap-6 text-sm text-muted-foreground mb-4">
+              <span><strong class="text-foreground">2.4K</strong> followers</span>
+              <span><strong class="text-foreground">24</strong> tracks</span>
+              <span><strong class="text-foreground">4.8</strong> note moyenne</span>
+            </div>
+
+            <p class="text-sm text-muted-foreground leading-relaxed mb-4">
+              Passionné de Deep House, DJ MaxFlow transporte son public dans un univers mélodique et envoûtant. Ses sets sont des voyages sonores où chaque piste raconte une histoire.
+            </p>
+
+            <div class="flex items-center gap-3">
+              <a href="https://instagram.com/djmaxflow" target="_blank" class="w-8 h-8 grid place-items-center rounded-full bg-muted text-muted-foreground hover:text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M7 12a5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5z"/></svg>
+              </a>
+              <a href="mailto:maxflow@slayradio.com" class="px-3 py-1.5 rounded-md bg-primary hover:bg-transparent border border-primary text-white hover:text-primary text-sm">Voir tout le morceaux</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section morceaux -->
+      <section class="mt-10">
+        <h2 class="text-xl font-semibold text-foreground mb-4">Derniers morceaux</h2>
+        <div class="gradient-card rounded-xl border border-border divide-y divide-border">
+          <!-- piste 1 -->
+          <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+            <button onclick="playTrack(this)" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
+              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+            <div class="flex-1">
+              <p class="font-medium text-foreground">Deep House Vibes</p>
+              <p class="text-sm text-muted-foreground">Il y a 2 jours</p>
+            </div>
+            <span class="text-sm text-muted-foreground">6:12</span>
+            <span class="text-sm text-muted-foreground">4 215 plays</span>
+          </div>
+          <!-- piste 2 -->
+          <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+            <button onclick="playTrack(this)" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
+              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+            <div class="flex-1">
+              <p class="font-medium text-foreground">Summer Mix 2024</p>
+              <p class="text-sm text-muted-foreground">Il y a 5 jours</p>
+            </div>
+            <span class="text-sm text-muted-foreground">5:38</span>
+            <span class="text-sm text-muted-foreground">3 802 plays</span>
+          </div>
+          <!-- piste 3 -->
+          <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+            <button onclick="playTrack(this)" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
+              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            </button>
+            <div class="flex-1">
+              <p class="font-medium text-foreground">Chill Session #12</p>
+              <p class="text-sm text-muted-foreground">Il y a 1 semaine</p>
+            </div>
+            <span class="text-sm text-muted-foreground">7:05</span>
+            <span class="text-sm text-muted-foreground">2 113 plays</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer (idem que tes autres pages) -->
+  <footer class="bg-card border-t border-border">
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="space-y-4">
+          <a class="flex items-center gap-3" href="./index.html">
+            <img src="./image/logo.jpg" alt="Slay Radio" class="h-12 w-auto rounded-lg">
+            <span class="text-xl font-bold text-primary">SLAY RADIO</span>
+          </a>
+          <p class="text-sm text-muted-foreground">La plateforme radiophonique dédiée aux DJs locaux.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
+          <ul class="space-y-3">
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./index.html">Accueil</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./live.html">Live Radio</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./artistes.html">Artistes</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./apropos.html">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
+          <ul class="space-y-3">
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./login.html">Connexion</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./dashbord.html">Dashboard</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-foreground mb-4">Contact</h4>
+          <ul class="space-y-3">
+            <li class="text-sm text-muted-foreground">contact@slay.live</li>
+            <li class="text-sm text-muted-foreground">+33 1 23 45 67 89</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-border mt-8 pt-8 text-center">
+        <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mini-JS : suivre + lecteur fake -->
+  <script>
+    function toggleFollow(){
+      const btn = document.getElementById('followBtn');
+      const suivre = btn.textContent === 'Suivre';
+      btn.textContent = suivre ? 'Suivi' : 'Suivre';
+      btn.classList.toggle('bg-primary', suivre);
+      btn.classList.toggle('text-primary-foreground', suivre);
+      btn.classList.toggle('border-primary', !suivre);
+    }
+    function playTrack(btn){
+      const play = btn.querySelector('.play-icon');
+      const pause = btn.querySelector('.pause-icon');
+      const isPlay = !play.classList.contains('hidden');
+      // reset tous les autres
+      document.querySelectorAll('.play-icon').forEach(i=>i.classList.remove('hidden'));
+      document.querySelectorAll('.pause-icon').forEach(i=>i.classList.add('hidden'));
+      if(isPlay){
+        play.classList.add('hidden');
+        pause.classList.remove('hidden');
+      }else{
+        play.classList.remove('hidden');
+        pause.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

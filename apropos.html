@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slay Radio - La Radio des DJs Locaux</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                        ring: 'hsl(var(--ring))',
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: {
+                            DEFAULT: 'hsl(var(--primary))',
+                            foreground: 'hsl(var(--primary-foreground))',
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(var(--secondary))',
+                            foreground: 'hsl(var(--secondary-foreground))',
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(var(--destructive))',
+                            foreground: 'hsl(var(--destructive-foreground))',
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(var(--muted))',
+                            foreground: 'hsl(var(--muted-foreground))',
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(var(--accent))',
+                            foreground: 'hsl(var(--accent-foreground))',
+                        },
+                        sidebar: {
+                            DEFAULT: 'hsl(var(--sidebar-background))',
+                            foreground: 'hsl(var(--sidebar-foreground))',
+                        },
+                    },
+                    borderRadius: {
+                        lg: 'var(--radius)',
+                        md: 'calc(var(--radius) - 2px)',
+                        sm: 'calc(var(--radius) - 4px)',
+                    },
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- Sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+
+<body class="bg-background">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a class="flex items-center gap-3" href="./index.html">
+                    <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
+                    <span class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span>
+                </a>
+                <div class="hidden lg:flex items-center gap-8">
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                        href="./index.html">
+                        Accueil
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                        href="./live.html">
+                        Live Radio
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                        href="./artistes.html">
+                        Artistes
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                        href="./boutique.html">
+                        Boutique
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                    </a>
+                    <a class="text-sm font-medium text-primary transition-colors relative group" href="./apropos.html">
+                        À propos
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"></span>
+                    </a>
+                </div>
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="./login.html">
+                        <button
+                            class="inline-flex items-center justify-center h-9 rounded-md px-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+                            Connexion
+                        </button>
+                    </a>
+                    <a href="./dashbord.html">
+                        <button
+                            class="inline-flex items-center justify-center h-9 rounded-md px-3 gradient-primary text-primary-foreground">
+                            Espace DJ
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6 animate-fade-in-up">
+                    <span class="text-sm font-medium text-primary">Notre Histoire</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in-up stagger-1">
+                    À propos de <span class="text-gradient">Slay Radio</span>
+                </h1>
+                <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-fade-in-up stagger-2">
+                    Une plateforme radiophonique innovante dédiée à la promotion des talents locaux et à la création
+                    d'une communauté musicale vivante.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-20 bg-card">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <div class="space-y-6">
+                    <p class="text-primary font-medium text-sm uppercase tracking-wider">Notre Mission</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-foreground">
+                        Donner une voix aux DJs locaux
+                    </h2>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Slay Radio est née d'une passion pour la musique et d'une volonté de créer une plateforme où les
+                        DJs locaux peuvent partager leur art avec le monde. Notre projet universitaire en Sociologie
+                        explore les dynamiques communautaires et l'impact social de la musique électronique dans les
+                        espaces urbains contemporains.
+                    </p>
+                    <p class="text-muted-foreground leading-relaxed">
+                        Nous croyons que chaque DJ a une histoire unique à raconter et que la diversité des styles
+                        musicaux enrichit notre culture collective. Notre mission est de faciliter ces connexions et de
+                        créer un écosystème où la créativité peut s'épanouir.
+                    </p>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
+                        alt="DJ mixing" class="rounded-2xl shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Nos Valeurs</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground">Ce qui nous guide</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="gradient-card rounded-2xl p-8 border border-border hover:border-primary/50 transition-all">
+                    <div class="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-primary-foreground">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-3">Communauté</h3>
+                    <p class="text-muted-foreground">
+                        Créer des liens authentiques entre artistes et auditeurs, favoriser les échanges et bâtir une
+                        communauté soudée autour de la passion musicale.
+                    </p>
+                </div>
+
+                <div class="gradient-card rounded-2xl p-8 border border-border hover:border-primary/50 transition-all">
+                    <div class="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-primary-foreground">
+                            <path d="M12 2v20"></path>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-3">Innovation</h3>
+                    <p class="text-muted-foreground">
+                        Utiliser la technologie pour démocratiser l'accès à la diffusion radiophonique et offrir des
+                        outils modernes aux créateurs de contenu musical.
+                    </p>
+                </div>
+
+                <div class="gradient-card rounded-2xl p-8 border border-border hover:border-primary/50 transition-all">
+                    <div class="w-12 h-12 rounded-full gradient-primary flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-primary-foreground">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-foreground mb-3">Diversité</h3>
+                    <p class="text-muted-foreground">
+                        Célébrer tous les genres musicaux et offrir une plateforme inclusive où chaque style trouve sa
+                        place et son public.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-card">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Notre Équipe</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground">Les créateurs de Slay Radio</h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="text-center group">
+                    <div class="relative mb-4 overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
+                            alt="Team member"
+                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg text-foreground">Lucas Martin</h3>
+                    <p class="text-sm text-primary">Chef de Projet</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="relative mb-4 overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop"
+                            alt="Team member"
+                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg text-foreground">Sophie Dubois</h3>
+                    <p class="text-sm text-primary">Développeuse Web</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="relative mb-4 overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop"
+                            alt="Team member"
+                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg text-foreground">Thomas Leroy</h3>
+                    <p class="text-sm text-primary">Sociologue</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="relative mb-4 overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop"
+                            alt="Team member"
+                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-lg text-foreground">Emma Bernard</h3>
+                    <p class="text-sm text-primary">Designer UX/UI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="gradient-card rounded-3xl p-12 border border-border max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">50+</p>
+                        <p class="text-muted-foreground">DJs Actifs</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">1.2K</p>
+                        <p class="text-muted-foreground">Auditeurs</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">200+</p>
+                        <p class="text-muted-foreground">Podcasts</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">24/7</p>
+                        <p class="text-muted-foreground">En Direct</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-card">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                    Rejoignez l'aventure Slay Radio
+                </h2>
+                <p class="text-lg text-muted-foreground mb-8">
+                    Que vous soyez DJ, auditeur passionné ou simplement curieux, il y a une place pour vous dans notre
+                    communauté.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="./dashbord.html">
+                        <button
+                            class="inline-flex items-center justify-center h-11 rounded-md px-8 gradient-primary text-primary-foreground font-semibold">
+                            Devenir DJ
+                        </button>
+                    </a>
+                    <a href="./live.html">
+                        <button
+                            class="inline-flex items-center justify-center h-11 rounded-md px-8 border border-border text-foreground hover:bg-muted">
+                            Écouter maintenant
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-card border-t border-border">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <a class="flex items-center gap-3" href="./index.html">
+                        <img src="./image/logo.jpg" alt="Slay Radio" class="h-12 w-auto rounded-lg">
+                        <span class="text-xl font-bold text-primary">SLAY RADIO</span>
+                    </a>
+                    <p class="text-sm text-muted-foreground">
+                        La plateforme radiophonique dédiée aux DJs locaux.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./index.html">Accueil</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./live.html">Live Radio</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./artistes.html">Artistes</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./apropos.html">À propos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
+                    <ul class="space-y-3">
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./login.html">Connexion</a></li>
+                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                href="./dashbord.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-foreground mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-muted-foreground">contact@slay.live</li>
+                        <li class="text-sm text-muted-foreground">+33 1 23 45 67 89</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-border mt-8 pt-8 text-center">
+                <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie.
+                    Tous
+                    droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- end Footer -->
+</body>
+
+</html>
