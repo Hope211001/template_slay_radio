@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mot de passe oublié – Slay Radio</title>
+
+  <!-- Tailwind CDN (même version que vos autres pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Même config Tailwind que login / register -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Sora', 'system-ui', 'sans-serif'] },
+          colors: {
+            border: 'hsl(var(--border))',
+            input: 'hsl(var(--input))',
+            ring: 'hsl(var(--ring))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            popover: {
+              DEFAULT: 'hsl(var(--popover))',
+              foreground: 'hsl(var(--popover-foreground))',
+            },
+            card: {
+              DEFAULT: 'hsl(var(--card))',
+              foreground: 'hsl(var(--card-foreground))',
+            },
+            sidebar: {
+              DEFAULT: 'hsl(var(--sidebar-background))',
+              foreground: 'hsl(var(--sidebar-foreground))',
+              primary: 'hsl(var(--sidebar-primary))',
+              'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+              accent: 'hsl(var(--sidebar-accent))',
+              'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+              border: 'hsl(var(--sidebar-border))',
+              ring: 'hsl(var(--sidebar-ring))',
+            },
+          },
+          borderRadius: {
+            lg: 'var(--radius)',
+            md: 'calc(var(--radius) - 2px)',
+            sm: 'calc(var(--radius) - 4px)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Vos styles perso -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-background text-foreground">
+  <div class="min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+      <!-- Logo / Retour -->
+      <a href="./index.html" class="flex items-center justify-center gap-2 mb-8">
+        <div class="w-12 h-12 rounded-full gradient-primary flex items-center justify-center glow-primary">
+          <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 w-auto rounded-lg">
+        </div>
+        <span class="text-2xl font-bold text-gradient">SLAY RADIO</span>
+      </a>
+
+      <!-- Card -->
+      <div class="gradient-card rounded-2xl p-8 border border-border">
+        <div class="text-center mb-6">
+          <h1 class="text-2xl font-bold">Mot de passe oublié</h1>
+          <p class="text-muted-foreground mt-2">
+            Entrez l’adresse e-mail de votre compte et nous vous enverrons un lien de réinitialisation.
+          </p>
+        </div>
+
+        <form class="space-y-4" onsubmit="handleSubmit(event)">
+          <!-- Email -->
+          <div class="space-y-2">
+            <label class="text-sm font-medium">Email</label>
+            <div class="relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                   class="lucide lucide-mail absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <input type="email" id="email" required
+                     class="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background
+                            placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2
+                            focus-visible:ring-ring focus-visible:ring-offset-2 bg-muted border-border
+                            focus:border-primary pl-10"
+                     placeholder="dj@slayradio.com">
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit"
+                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm
+                         font-medium ring-offset-background transition-colors focus-visible:outline-none
+                         focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+                         disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full
+                         gradient-primary glow-primary text-primary-foreground">
+            Envoyer le lien
+          </button>
+        </form>
+
+        <!-- Lien retour -->
+        <div class="mt-6 text-center">
+          <p class="text-muted-foreground">
+            Vous vous souvenez de votre mot de passe ?
+            <a href="./login.html" class="text-primary hover:underline ml-1">Se connecter</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Lien accueil -->
+      <div class="text-center mt-6">
+        <a href="./index.html" class="text-muted-foreground hover:text-foreground text-sm">← Retour à l'accueil</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if (!email) return;
+      // Ici : appel API ou redirection vers votre backend
+      alert(`Un lien de réinitialisation a été envoyé à ${email}`);
+      document.getElementById('email').value = '';
+    }
+  </script>
+</body>
+</html>
