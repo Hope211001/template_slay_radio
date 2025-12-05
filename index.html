@@ -405,147 +405,183 @@
                                     class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-border hover:bg-muted">Voir
                                     tous les artistes</button></a>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"><a
-                                class="group relative gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
-                                href="./detail_artiste.html" style="animation-delay: 0s;">
-                                <div class="aspect-square overflow-hidden"><img
-                                        src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=400&amp;h=400&amp;fit=crop"
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- 1. DJ MaxFlow -->
+                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                                href="./detail_artiste.html">
+                                <div class="aspect-square overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=400&h=400&fit=crop"
                                         alt="DJ MaxFlow"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
-                                            class="w-14 h-14 rounded-full gradient-primary flex items-center justify-center glow-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                            class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-6 h-6 text-primary-foreground ml-1">
-                                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-4">
-                                    <h3
-                                        class="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                                        DJ MaxFlow</h3>
-                                    <p class="text-sm text-muted-foreground">Deep House</p>
-                                    <div class="flex items-center gap-1 mt-2 text-xs text-muted-foreground"><svg
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="lucide lucide-headphones w-3 h-3">
-                                            <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>2.4K followers</span></div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3
+                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                                            DJ MaxFlow</h3>
+                                        <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Deep
+                                            House</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-headphones w-4 h-4">
+                                                <path
+                                                    d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                            </svg>
+                                            <span>2.4K followers</span>
+                                        </div>
+                                        <span>24 tracks</span>
+                                    </div>
                                 </div>
-                            </a><a
-                                class="group relative gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
-                                href="./detail_artiste.html" style="animation-delay: 0.1s;">
-                                <div class="aspect-square overflow-hidden"><img
-                                        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&amp;h=400&amp;fit=crop"
+                            </a>
+
+                            <!-- 2. Luna Beats -->
+                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                                href="./detail_artiste.html">
+                                <div class="aspect-square overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
                                         alt="Luna Beats"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
-                                            class="w-14 h-14 rounded-full gradient-primary flex items-center justify-center glow-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                            class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-6 h-6 text-primary-foreground ml-1">
-                                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-4">
-                                    <h3
-                                        class="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                                        Luna Beats</h3>
-                                    <p class="text-sm text-muted-foreground">Techno</p>
-                                    <div class="flex items-center gap-1 mt-2 text-xs text-muted-foreground"><svg
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="lucide lucide-headphones w-3 h-3">
-                                            <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>1.8K followers</span></div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3
+                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                                            Luna Beats</h3>
+                                        <span
+                                            class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Techno</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-headphones w-4 h-4">
+                                                <path
+                                                    d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                            </svg>
+                                            <span>1.8K followers</span>
+                                        </div>
+                                        <span>18 tracks</span>
+                                    </div>
                                 </div>
-                            </a><a
-                                class="group relative gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
-                                href="./detail_artiste.html" style="animation-delay: 0.2s;">
-                                <div class="aspect-square overflow-hidden"><img
-                                        src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&amp;h=400&amp;fit=crop"
+                            </a>
+
+                            <!-- 3. Kenzo -->
+                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                                href="./detail_artiste.html">
+                                <div class="aspect-square overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop"
                                         alt="Kenzo"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
-                                            class="w-14 h-14 rounded-full gradient-primary flex items-center justify-center glow-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                            class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-6 h-6 text-primary-foreground ml-1">
-                                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-4">
-                                    <h3
-                                        class="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                                        Kenzo</h3>
-                                    <p class="text-sm text-muted-foreground">Afro House</p>
-                                    <div class="flex items-center gap-1 mt-2 text-xs text-muted-foreground"><svg
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="lucide lucide-headphones w-3 h-3">
-                                            <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>3.1K followers</span></div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3
+                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                                            Kenzo</h3>
+                                        <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Afro
+                                            House</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-headphones w-4 h-4">
+                                                <path
+                                                    d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                            </svg>
+                                            <span>3.1K followers</span>
+                                        </div>
+                                        <span>32 tracks</span>
+                                    </div>
                                 </div>
-                            </a><a
-                                class="group relative gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
-                                href="./detail_artiste.html" style="animation-delay: 0.3s;">
-                                <div class="aspect-square overflow-hidden"><img
-                                        src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&amp;h=400&amp;fit=crop"
+                            </a>
+
+                            <!-- 4. NightWave -->
+                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                                href="./detail_artiste.html">
+                                <div class="aspect-square overflow-hidden relative">
+                                    <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop"
                                         alt="NightWave"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
-                                            class="w-14 h-14 rounded-full gradient-primary flex items-center justify-center glow-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                            class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-6 h-6 text-primary-foreground ml-1">
-                                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="p-4">
-                                    <h3
-                                        class="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                                        NightWave</h3>
-                                    <p class="text-sm text-muted-foreground">Progressive</p>
-                                    <div class="flex items-center gap-1 mt-2 text-xs text-muted-foreground"><svg
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="lucide lucide-headphones w-3 h-3">
-                                            <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>1.5K followers</span></div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3
+                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                                            NightWave</h3>
+                                        <span
+                                            class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Progressive</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                        <div class="flex items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-headphones w-4 h-4">
+                                                <path
+                                                    d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                            </svg>
+                                            <span>1.5K followers</span>
+                                        </div>
+                                        <span>15 tracks</span>
+                                    </div>
                                 </div>
-                            </a></div>
+                            </a>
+                        </div>
                     </div>
                 </section>
                 <!-- end artiste-->
@@ -723,115 +759,123 @@
                                     class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-border hover:bg-muted">
                                     Voir la boutique</button></a>
                         </div>
-                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"><a
-                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
-                                href="/shop/1" style="animation-delay: 0s;">
-                                <div class="aspect-square overflow-hidden bg-muted"><img
-                                        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&amp;h=400&amp;fit=crop"
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                            <!-- 1. T-Shirt Slay Radio -->
+                            <div
+                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                <div class="aspect-square overflow-hidden bg-muted">
+                                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
                                         alt="T-Shirt Slay Radio"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                                 <div class="p-4">
-                                    <h3
-                                        class="font-medium text-sm md:text-base text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                        T-Shirt Slay Radio</h3>
-                                    <div class="flex items-center justify-between mt-2">
-                                        <p class="text-lg font-bold text-gradient">29.99€</p><button
-                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-8 w-8 text-muted-foreground hover:text-primary"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <span class="text-xs text-muted-foreground">Vêtements</span>
+                                    <h3 class="font-semibold text-foreground mt-1">T-Shirt Slay Radio</h3>
+                                    <div class="flex items-center justify-between mt-3">
+                                        <p class="text-xl font-bold text-gradient">29.99€</p>
+                                        <button onclick="addToCart('T-Shirt Slay Radio','29.99')"
+                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-shopping-cart w-4 h-4">
-                                                <circle cx="8" cy="21" r="1"></circle>
-                                                <circle cx="19" cy="21" r="1"></circle>
+                                                class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                <circle cx="8" cy="21" r="1" />
+                                                <circle cx="19" cy="21" r="1" />
                                                 <path
-                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
-                                                </path>
-                                            </svg></button>
+                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                        </button>
                                     </div>
                                 </div>
-                            </a><a
-                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
-                                href="/shop/2" style="animation-delay: 0.1s;">
-                                <div class="aspect-square overflow-hidden bg-muted"><img
-                                        src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&amp;h=400&amp;fit=crop"
+                            </div>
+
+                            <!-- 2. Casquette Logo -->
+                            <div
+                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                <div class="aspect-square overflow-hidden bg-muted">
+                                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop"
                                         alt="Casquette Logo"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                                 <div class="p-4">
-                                    <h3
-                                        class="font-medium text-sm md:text-base text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                        Casquette Logo</h3>
-                                    <div class="flex items-center justify-between mt-2">
-                                        <p class="text-lg font-bold text-gradient">24.99€</p><button
-                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-8 w-8 text-muted-foreground hover:text-primary"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <span class="text-xs text-muted-foreground">Accessoires</span>
+                                    <h3 class="font-semibold text-foreground mt-1">Casquette Logo</h3>
+                                    <div class="flex items-center justify-between mt-3">
+                                        <p class="text-xl font-bold text-gradient">24.99€</p>
+                                        <button onclick="addToCart('Casquette Logo','24.99')"
+                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-shopping-cart w-4 h-4">
-                                                <circle cx="8" cy="21" r="1"></circle>
-                                                <circle cx="19" cy="21" r="1"></circle>
+                                                class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                <circle cx="8" cy="21" r="1" />
+                                                <circle cx="19" cy="21" r="1" />
                                                 <path
-                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
-                                                </path>
-                                            </svg></button>
+                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                        </button>
                                     </div>
                                 </div>
-                            </a><a
-                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
-                                href="/shop/3" style="animation-delay: 0.2s;">
-                                <div class="aspect-square overflow-hidden bg-muted"><img
-                                        src="https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=400&amp;h=400&amp;fit=crop"
+                            </div>
+
+                            <!-- 3. Vinyle Collector -->
+                            <div
+                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                <div class="aspect-square overflow-hidden bg-muted">
+                                    <img src="https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=400&h=400&fit=crop"
                                         alt="Vinyle Collector"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                                 <div class="p-4">
-                                    <h3
-                                        class="font-medium text-sm md:text-base text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                        Vinyle Collector</h3>
-                                    <div class="flex items-center justify-between mt-2">
-                                        <p class="text-lg font-bold text-gradient">39.99€</p><button
-                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-8 w-8 text-muted-foreground hover:text-primary"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <span class="text-xs text-muted-foreground">Musique</span>
+                                    <h3 class="font-semibold text-foreground mt-1">Vinyle Collector</h3>
+                                    <div class="flex items-center justify-between mt-3">
+                                        <p class="text-xl font-bold text-gradient">39.99€</p>
+                                        <button onclick="addToCart('Vinyle Collector','39.99')"
+                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-shopping-cart w-4 h-4">
-                                                <circle cx="8" cy="21" r="1"></circle>
-                                                <circle cx="19" cy="21" r="1"></circle>
+                                                class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                <circle cx="8" cy="21" r="1" />
+                                                <circle cx="19" cy="21" r="1" />
                                                 <path
-                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
-                                                </path>
-                                            </svg></button>
+                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                        </button>
                                     </div>
                                 </div>
-                            </a><a
-                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300"
-                                href="/shop/4" style="animation-delay: 0.3s;">
-                                <div class="aspect-square overflow-hidden bg-muted"><img
-                                        src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&amp;h=400&amp;fit=crop"
+                            </div>
+
+                            <!-- 4. Hoodie Premium -->
+                            <div
+                                class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
+                                <div class="aspect-square overflow-hidden bg-muted">
+                                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop"
                                         alt="Hoodie Premium"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 </div>
                                 <div class="p-4">
-                                    <h3
-                                        class="font-medium text-sm md:text-base text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                                        Hoodie Premium</h3>
-                                    <div class="flex items-center justify-between mt-2">
-                                        <p class="text-lg font-bold text-gradient">59.99€</p><button
-                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-8 w-8 text-muted-foreground hover:text-primary"><svg
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    <span class="text-xs text-muted-foreground">Vêtements</span>
+                                    <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
+                                    <div class="flex items-center justify-between mt-3">
+                                        <p class="text-xl font-bold text-gradient">59.99€</p>
+                                        <button onclick="addToCart('Hoodie Premium','59.99')"
+                                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-shopping-cart w-4 h-4">
-                                                <circle cx="8" cy="21" r="1"></circle>
-                                                <circle cx="19" cy="21" r="1"></circle>
+                                                class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                <circle cx="8" cy="21" r="1" />
+                                                <circle cx="19" cy="21" r="1" />
                                                 <path
-                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
-                                                </path>
-                                            </svg></button>
+                                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                        </button>
                                     </div>
                                 </div>
-                            </a></div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <!-- endboutique -->

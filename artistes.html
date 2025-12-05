@@ -141,40 +141,61 @@
 
             <!--  main -->
             <main class="pt-24 pb-20">
+                <!-- ========== NOS ARTISTES – 4 COLONNES ========== -->
                 <div class="container mx-auto px-4">
+                    <!-- en-tête -->
                     <div class="mb-12 text-center">
-                        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">Nos <span
-                                class="text-gradient">Artistes</span></h1>
-                        <p class="text-muted-foreground max-w-2xl mx-auto">Découvrez les talents de la scène locale.
-                            Explorez leurs univers musicaux et suivez leurs dernières créations.</p>
+                        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+                            Nos <span class="text-gradient">Artistes</span>
+                        </h1>
+                        <p class="text-muted-foreground max-w-2xl mx-auto">
+                            Découvrez les talents de la scène locale. Explorez leurs univers musicaux et suivez leurs
+                            dernières créations.
+                        </p>
                     </div>
+
+                    <!-- recherche + filtres -->
                     <div class="flex flex-col md:flex-row gap-4 mb-8">
-                        <div class="relative flex-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round"
+                        <div class="relative flex-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
                                 class="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.3-4.3"></path>
-                            </svg><input
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.3-4.3" />
+                            </svg>
+                            <input
                                 class="flex h-10 w-full rounded-md border px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-10 bg-muted border-border"
-                                placeholder="Rechercher un artiste..." value=""></div>
-                        <div class="flex gap-2 overflow-x-auto pb-2"><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">Tous</button><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Deep
-                                House</button><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Techno</button><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Afro
-                                House</button><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Progressive</button><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">EDM</button><button
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Minimal</button>
+                                placeholder="Rechercher un artiste..." value="">
+                        </div>
+
+                        <div class="flex gap-2 overflow-x-auto pb-2">
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">Tous</button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Deep
+                                House</button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Techno</button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Afro
+                                House</button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Progressive</button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">EDM</button>
+                            <button
+                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 border-border">Minimal</button>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"><a
-                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+
+                    <!-- grille 4 colonnes -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- 1. DJ MaxFlow -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
                             href="./detail_artiste.html">
-                            <div class="aspect-square overflow-hidden relative"><img
-                                    src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=400&amp;h=400&amp;fit=crop"
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=400&h=400&fit=crop"
                                     alt="DJ MaxFlow"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div
@@ -185,7 +206,7 @@
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                            <polygon points="6 3 20 12 6 21 6 3" />
                                         </svg>
                                     </div>
                                 </div>
@@ -194,26 +215,31 @@
                                 <div class="flex items-center justify-between mb-2">
                                     <h3
                                         class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                        DJ MaxFlow</h3><span
-                                        class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Deep
+                                        DJ MaxFlow</h3>
+                                    <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Deep
                                         House</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-headphones w-4 h-4">
                                             <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>2.4K followers</span></div><span>24 tracks</span>
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>2.4K followers</span>
+                                    </div>
+                                    <span>24 tracks</span>
                                 </div>
                             </div>
-                        </a><a
-                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                        </a>
+
+                        <!-- 2. Luna Beats -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
                             href="./detail_artiste.html">
-                            <div class="aspect-square overflow-hidden relative"><img
-                                    src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&amp;h=400&amp;fit=crop"
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
                                     alt="Luna Beats"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div
@@ -224,7 +250,7 @@
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                            <polygon points="6 3 20 12 6 21 6 3" />
                                         </svg>
                                     </div>
                                 </div>
@@ -233,25 +259,31 @@
                                 <div class="flex items-center justify-between mb-2">
                                     <h3
                                         class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                        Luna Beats</h3><span
+                                        Luna Beats</h3>
+                                    <span
                                         class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Techno</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-headphones w-4 h-4">
                                             <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>1.8K followers</span></div><span>18 tracks</span>
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>1.8K followers</span>
+                                    </div>
+                                    <span>18 tracks</span>
                                 </div>
                             </div>
-                        </a><a
-                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                        </a>
+
+                        <!-- 3. Kenzo -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
                             href="./detail_artiste.html">
-                            <div class="aspect-square overflow-hidden relative"><img
-                                    src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&amp;h=400&amp;fit=crop"
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop"
                                     alt="Kenzo"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div
@@ -262,7 +294,7 @@
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                            <polygon points="6 3 20 12 6 21 6 3" />
                                         </svg>
                                     </div>
                                 </div>
@@ -271,26 +303,31 @@
                                 <div class="flex items-center justify-between mb-2">
                                     <h3
                                         class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                        Kenzo</h3><span
-                                        class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Afro
+                                        Kenzo</h3>
+                                    <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Afro
                                         House</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-headphones w-4 h-4">
                                             <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>3.1K followers</span></div><span>32 tracks</span>
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>3.1K followers</span>
+                                    </div>
+                                    <span>32 tracks</span>
                                 </div>
                             </div>
-                        </a><a
-                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                        </a>
+
+                        <!-- 4. NightWave -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
                             href="./detail_artiste.html">
-                            <div class="aspect-square overflow-hidden relative"><img
-                                    src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&amp;h=400&amp;fit=crop"
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop"
                                     alt="NightWave"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div
@@ -301,7 +338,7 @@
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                            <polygon points="6 3 20 12 6 21 6 3" />
                                         </svg>
                                     </div>
                                 </div>
@@ -310,25 +347,31 @@
                                 <div class="flex items-center justify-between mb-2">
                                     <h3
                                         class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                        NightWave</h3><span
+                                        NightWave</h3>
+                                    <span
                                         class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Progressive</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-headphones w-4 h-4">
                                             <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>1.5K followers</span></div><span>15 tracks</span>
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>1.5K followers</span>
+                                    </div>
+                                    <span>15 tracks</span>
                                 </div>
                             </div>
-                        </a><a
-                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                        </a>
+
+                        <!-- 5. Electro Mike -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
                             href="./detail_artiste.html">
-                            <div class="aspect-square overflow-hidden relative"><img
-                                    src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&amp;h=400&amp;fit=crop"
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop"
                                     alt="Electro Mike"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div
@@ -339,7 +382,7 @@
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                            <polygon points="6 3 20 12 6 21 6 3" />
                                         </svg>
                                     </div>
                                 </div>
@@ -348,27 +391,31 @@
                                 <div class="flex items-center justify-between mb-2">
                                     <h3
                                         class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                        Electro Mike</h3><span
+                                        Electro Mike</h3>
+                                    <span
                                         class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">EDM</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-headphones w-4 h-4">
                                             <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>2.1K followers</span></div><span>21 tracks</span>
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>2.1K followers</span>
+                                    </div>
+                                    <span>21 tracks</span>
                                 </div>
                             </div>
                         </a>
-                        <a
-                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+
+                        <!-- 6. DJ Nova -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
                             href="./detail_artiste.html">
                             <div class="aspect-square overflow-hidden relative">
-                                <img
-                                    src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&amp;h=400&amp;fit=crop"
+                                <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=400&h=400&fit=crop"
                                     alt="DJ Nova"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                 <div
@@ -379,7 +426,7 @@
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                            <polygon points="6 3 20 12 6 21 6 3" />
                                         </svg>
                                     </div>
                                 </div>
@@ -388,22 +435,116 @@
                                 <div class="flex items-center justify-between mb-2">
                                     <h3
                                         class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                        DJ Nova</h3><span
+                                        DJ Nova</h3>
+                                    <span
                                         class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Minimal</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
                                             class="lucide lucide-headphones w-4 h-4">
                                             <path
-                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                            </path>
-                                        </svg><span>1.2K followers</span></div><span>12 tracks</span>
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>1.2K followers</span>
+                                    </div>
+                                    <span>12 tracks</span>
                                 </div>
                             </div>
-                        </a></div>
+                        </a>
+
+                        <!-- 2. Luna Beats -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                            href="./detail_artiste.html">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
+                                    alt="Luna Beats"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div
+                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                            <polygon points="6 3 20 12 6 21 6 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                                        Luna Beats</h3>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Techno</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-headphones w-4 h-4">
+                                            <path
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>1.8K followers</span>
+                                    </div>
+                                    <span>18 tracks</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- 3. Kenzo -->
+                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                            href="./detail_artiste.html">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop"
+                                    alt="Kenzo"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div
+                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                            <polygon points="6 3 20 12 6 21 6 3" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3
+                                        class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
+                                        Kenzo</h3>
+                                    <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Afro
+                                        House</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-headphones w-4 h-4">
+                                            <path
+                                                d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span>3.1K followers</span>
+                                    </div>
+                                    <span>32 tracks</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div><!-- /grille -->
                 </div>
+                <!-- ========== /NOS ARTISTES ========== -->
             </main>
             <!--  end main -->
 
