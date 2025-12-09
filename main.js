@@ -42,45 +42,42 @@ menuLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classL
 
 
 
- // carrousel
+// carrousel
 
-const carousel = document.getElementById('carouselMobile') || document.getElementById('carousel');
-const dots = document.querySelectorAll('.carousel-dot');
-
-let currentSlide = 0;
-
-function scrollCarousel(direction) {
-    const items = carousel.querySelectorAll('.carousel-item');
-    currentSlide += direction;
-
-    // Limiter les bornes
-    if (currentSlide < 0) currentSlide = 0;
-    if (currentSlide >= items.length) currentSlide = items.length - 1;
-
-    scrollToSlide(currentSlide);
+/* ----------  petite lib « multi-carousel »  ---------- */
+function initCarousels() {
+    document.querySelectorAll('.carousel-container').forEach(carousel => {
+        carousel.addEventListener('scroll', () => updateDots(carousel));
+    });
 }
 
-function scrollToSlide(index) {
+function scrollCarousel(btn, direction) {
+    const id = btn.dataset.target;
+    const carousel = document.getElementById(id);
+    const items = carousel.querySelectorAll('.carousel-item');
+    const itemWidth = items[0].offsetWidth + 16;   // + gap
+    carousel.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
+}
+
+function scrollToSlide(id, index) {
+    const carousel = document.getElementById(id);
     const items = carousel.querySelectorAll('.carousel-item');
     if (items[index]) {
         items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        currentSlide = index;
+        updateDots(carousel, index);
     }
 }
 
-// Mettre à jour les indicateurs lors du scroll
-carousel.addEventListener('scroll', () => {
+function updateDots(carousel, forcedIndex) {
+    const id = carousel.id;
     const items = carousel.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll(`.${id.replace('Carousel', '')}-dot`); // artist-dot / shop-dot
     const scrollLeft = carousel.scrollLeft;
-    const itemWidth = items[0].offsetWidth + 16; // largeur + gap
-    const newIndex = Math.round(scrollLeft / itemWidth);
-    currentSlide = newIndex;
+    const itemWidth = items[0].offsetWidth + 16;
+    const index = forcedIndex !== undefined ? forcedIndex : Math.round(scrollLeft / itemWidth);
 
-    dots.forEach((dot, index) => {
-        if (index === newIndex) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
-    });
-});
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+}
+
+/* lancer au chargement */
+document.addEventListener('DOMContentLoaded', initCarousels);

@@ -651,10 +651,12 @@
                             </a>
                         </div>
 
+                        
+
                         <!-- Carousel pour mobile/tablette (moins de lg) -->
                         <div class="lg:hidden relative">
                             <!-- Flèche gauche -->
-                            <button onclick="scrollCarousel(-1)"
+                            <button data-target="artistCarousel" onclick="scrollCarousel(this,-1)"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
                                 id="prevBtnMobile">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -665,7 +667,7 @@
                             </button>
 
                             <!-- Flèche droite -->
-                            <button onclick="scrollCarousel(1)"
+                            <button data-target="artistCarousel" onclick="scrollCarousel(this, 1)"
                                 class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
                                 id="nextBtnMobile">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -676,8 +678,8 @@
                             </button>
 
                             <!-- Carousel -->
-                            <div class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
-                                id="carouselMobile">
+                            <div id="artistCarousel" class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
+                               >
                                 <!-- DJ MaxFlow -->
                                 <div
                                     class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
@@ -841,22 +843,19 @@
 
                             <!-- Indicateurs -->
                             <div class="flex justify-center gap-2 mt-4">
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600 active"
-                                    onclick="scrollToSlide(0)"></button>
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
-                                    onclick="scrollToSlide(1)"></button>
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
-                                    onclick="scrollToSlide(2)"></button>
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
-                                    onclick="scrollToSlide(3)"></button>
+                                <button class="carousel-dot artist-dot w-2 h-2 rounded-full bg-gray-600 active"
+                                    data-target="artistCarousel" onclick="scrollToSlide('artistCarousel',0)"></button>
+                                <button class="carousel-dot artist-dot w-2 h-2 rounded-full bg-gray-600"
+                                    data-target="artistCarousel" onclick="scrollToSlide('artistCarousel',1)"></button>
+                                <button class="carousel-dot artist-dot w-2 h-2 rounded-full bg-gray-600"
+                                    data-target="artistCarousel" onclick="scrollToSlide('artistCarousel',2)"></button>
+                                <button class="carousel-dot artist-dot w-2 h-2 rounded-full bg-gray-600"
+                                   data-target="artistCarousel" onclick="scrollToSlide('artistCarousel',3)"></button>
                             </div>
                         </div>
                     </div>
                 </section>
-
-
                 <!-- end artiste-->
-
 
                 <!-- boutique -->
                 <section class="py-20 bg-background">
@@ -1001,7 +1000,7 @@
                         <!-- Carousel pour mobile/tablette (moins de lg) -->
                         <div class="lg:hidden relative">
                             <!-- Flèche gauche -->
-                            <button onclick="scrollCarousel(-1)"
+                            <button data-target="shopCarousel" onclick="scrollCarousel(this,-1)"
                                 class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
                                 id="prevBtnMobile">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -1012,7 +1011,7 @@
                             </button>
 
                             <!-- Flèche droite -->
-                            <button onclick="scrollCarousel(1)"
+                            <button data-target="shopCarousel" onclick="scrollCarousel(this, 1)"
                                 class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
                                 id="nextBtnMobile">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -1023,8 +1022,8 @@
                             </button>
 
                             <!-- Carousel -->
-                            <div class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
-                                id="carouselMobile">
+                            <div id="shopCarousel" class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
+                                >
                                 <!-- DJ MaxFlow -->
                                 <div
                                     class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
@@ -1040,7 +1039,7 @@
                                             <span class="text-xs text-muted-foreground">Vêtements</span>
                                             <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
                                             <div class="flex flex-col sm:flex-row  items-center justify-between mt-3 ">
-                                                <p class="text-xl font-bold text-gradient">59.99€</p>
+                                                <p class="text-lg font-bold text-gradient">59.99€</p>
                                                 <button onclick="addToCart('Hoodie Premium','59.99')"
                                                     class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -1168,14 +1167,14 @@
 
                             <!-- Indicateurs -->
                             <div class="flex justify-center gap-2 mt-4">
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600 active"
-                                    onclick="scrollToSlide(0)"></button>
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
-                                    onclick="scrollToSlide(1)"></button>
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
-                                    onclick="scrollToSlide(2)"></button>
-                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
-                                    onclick="scrollToSlide(3)"></button>
+                                <button class="carousel-dot shop-dot w-2 h-2 rounded-full bg-gray-600 active"
+                                   data-target="shopCarousel" onclick="scrollToSlide('shopCarousel',0)"></button>
+                                <button class="carousel-dot shop-dot w-2 h-2 rounded-full bg-gray-600"
+                                    data-target="shopCarousel" onclick="scrollToSlide('shopCarousel',1)"></button>
+                                <button class="carousel-dot shop-dot w-2 h-2 rounded-full bg-gray-600"
+                                    data-target="shopCarousel" onclick="scrollToSlide('shopCarousel',2)"></button>
+                                <button class="carousel-dot shop-dot w-2 h-2 rounded-full bg-gray-600"
+                                    data-target="shopCarousel" onclick="scrollToSlide('shopCarousel',3)"></button>
                             </div>
                         </div>
 
