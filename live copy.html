@@ -312,7 +312,7 @@
         </div>
     </div>
 
-    <!-- end AUDIO PLAYER HEADER -->
+     <!-- end AUDIO PLAYER HEADER -->
 
     <!-- MENU MOBILE (slide depuis le bas) -->
     <div id="mobileMenu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl
@@ -351,156 +351,288 @@
     <!--  end navbar -->
 
 
-    <!-- Schedule Section -->
-    <section class="py-20 bg-card">
-        <div class="container mx-auto px-4 ">
+
+    <style>
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes equalizer {
+
+            0%,
+            100% {
+                height: 8px;
+            }
+
+            50% {
+                height: 40px;
+            }
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 3s ease-in-out infinite;
+        }
+
+        .animate-equalizer {
+            animation: equalizer 0.8s ease-in-out infinite;
+        }
+
+        .animate-wave {
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        .gradient-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+        }
+
+        .gradient-primary {
+            background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+        }
+
+        .glow-live {
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.4);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
 
 
-            <!-- Section: DJ Mix Disponibles -->
-            <div class="mt-16 py-20">
-                <div class="flex-col text-center mb-16">
-                    <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Mix DJ</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-foreground">Mix DJ Disponibles</h2>
+    <!-- Hero Live Stream Section -->
+    <section class="relative pt-32 pb-12 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-100 via-white to-blue-50"></div>
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow">
+        </div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow"
+            style="animation-delay: 1s;"></div>
+
+        <div class="container mx-auto px-4 relative z-10 pt-20">
+            <div class="max-w-5xl mx-auto">
+                <!-- Live Badge -->
+                <!-- <div class="flex justify-center mb-8">
+                    <div class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-red-500/10 border-2 border-red-500/30 glow-live">
+                        <span class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></span>
+                        <span class="text-sm font-bold text-red-500 uppercase tracking-wider">EN DIRECT</span>
+                    </div>
+                </div>  -->
+
+                <!-- Main Live Card -->
+                <div
+                    class="gradient-card rounded-3xl p-8 lg:p-12 border border-gray-200 shadow-2xl bg-white/80 backdrop-blur-sm">
+                    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                        <!-- Image DJ + Equalizer (2 colonnes) -->
+                        <div class="lg:col-span-2">
+                            <div class="relative w-full h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=800&h=800&fit=crop"
+                                    alt="DJ MaxFlow" class="w-full h-full object-cover">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+                                </div>
+
+                                <!-- Live Badge on Image -->
+                                <div class="absolute top-4 left-4">
+                                    <div
+                                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-red-500 shadow-lg">
+                                        <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                                        <span class="text-xs font-bold text-white">LIVE</span>
+                                    </div>
+                                </div>
+
+                                <!-- Equalizer -->
+                                <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-1.5">
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.1s;"></div>
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.2s;"></div>
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.3s;"></div>
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.4s;"></div>
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.5s;"></div>
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.4s;"></div>
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.3s;"></div>
+                                    <div class="w-2 bg-gradient-to-t from-red-500 to-purple-500 rounded-full animate-equalizer"
+                                        style="animation-delay:0.2s;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info + Volume (3 colonnes) -->
+                        <div class="lg:col-span-3 flex flex-col">
+                            <div class="text-center lg:text-left">
+                                <p class="text-sm text-purple-600 font-medium uppercase tracking-wider mb-3">Émission en
+                                    cours</p>
+                                <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-3">DJ MaxFlow</h1>
+                                <p class="text-xl text-gray-600 mb-8">Deep House Session</p>
+
+                                <!-- Volume Control for Live -->
+                                <div class="max-w-md mx-auto lg:mx-0 mb-8">
+                                    <label class="text-sm text-gray-600 mb-3 block">Volume du direct</label>
+                                    <div class="flex items-center gap-4">
+                                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path
+                                                d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" />
+                                            <path d="M16 9a5 5 0 0 1 0 6" />
+                                            <path d="M19.364 18.364a9 9 0 0 0 0-12.728" />
+                                        </svg>
+                                        <input type="range" id="volumeSlider" min="0" max="100" value="75"
+                                            class="flex-1 h-3 bg-gray-200 rounded-full appearance-none cursor-pointer accent-purple-500">
+                                        <span id="volumeValue"
+                                            class="text-sm text-gray-600 w-12 text-right font-mono">75%</span>
+                                    </div>
+                                </div>
+
+                                <!-- Stats Live -->
+                                <div class="grid grid-cols-2 gap-6 pt-6 border-t border-gray-200">
+                                    <div class="text-center">
+                                        <p class="text-3xl font-bold text-gradient mb-1">1,234</p>
+                                        <p class="text-xs text-gray-500 uppercase tracking-wide">Auditeurs</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-3xl font-bold text-gradient mb-1">2:34:12</p>
+                                        <p class="text-xs text-gray-500 uppercase tracking-wide">En direct</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Mix Card 1 -->
-                    <div
-                        class="gradient-card rounded-2xl p-6 border border-gray-200 hover:border-purple-500/50 transition-all bg-white/80 backdrop-blur-sm">
-                        <div class="flex items-center gap-6">
-                            <div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=200&h=200&fit=crop"
-                                    alt="Mix" class="w-full h-full object-cover">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-bold text-gray-900 mb-1 truncate">Sunset Vibes Mix</h3>
-                                <p class="text-sm text-gray-600 mb-3">DJ Sarah • 45:30</p>
-                                <div class="flex items-center gap-3">
-                                    <button
-                                        class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center hover:scale-105 transition-transform">
-                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor"
-                                            stroke-width="2" viewBox="0 0 24 24">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </button>
-                                    <div class="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                                        <div
-                                            class="h-full w-1/3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full">
+                <!-- Section: DJ Mix Disponibles -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Mix DJ Disponibles</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Mix Card 1 -->
+                        <div
+                            class="gradient-card rounded-2xl p-6 border border-gray-200 hover:border-purple-500/50 transition-all bg-white/80 backdrop-blur-sm">
+                            <div class="flex items-center gap-6">
+                                <div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=200&h=200&fit=crop"
+                                        alt="Mix" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-lg font-bold text-gray-900 mb-1 truncate">Sunset Vibes Mix</h3>
+                                    <p class="text-sm text-gray-600 mb-3">DJ Sarah • 45:30</p>
+                                    <div class="flex items-center gap-3">
+                                        <button
+                                            class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center hover:scale-105 transition-transform">
+                                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor"
+                                                stroke-width="2" viewBox="0 0 24 24">
+                                                <polygon points="6 3 20 12 6 21 6 3" />
+                                            </svg>
+                                        </button>
+                                        <div class="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                            <div
+                                                class="h-full w-1/3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full">
+                                            </div>
                                         </div>
+                                        <span class="text-xs text-gray-500">15:20</span>
                                     </div>
-                                    <span class="text-xs text-gray-500">15:20</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mix Card 2 -->
+                        <div
+                            class="gradient-card rounded-2xl p-6 border border-gray-200 hover:border-purple-500/50 transition-all bg-white/80 backdrop-blur-sm">
+                            <div class="flex items-center gap-6">
+                                <div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+                                    <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=200&h=200&fit=crop"
+                                        alt="Mix" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 min-w-0">
+                                    <h3 class="text-lg font-bold text-gray-900 mb-1 truncate">Night Sessions Vol.3</h3>
+                                    <p class="text-sm text-gray-600 mb-3">DJ Marco • 52:15</p>
+                                    <div class="flex items-center gap-3">
+                                        <button
+                                            class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center hover:scale-105 transition-transform">
+                                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor"
+                                                stroke-width="2" viewBox="0 0 24 24">
+                                                <polygon points="6 3 20 12 6 21 6 3" />
+                                            </svg>
+                                        </button>
+                                        <div class="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                                            <div
+                                                class="h-full w-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full">
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-gray-500">00:00</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Mix Card 2 -->
-                    <div
-                        class="gradient-card rounded-2xl p-6 border border-gray-200 hover:border-purple-500/50 transition-all bg-white/80 backdrop-blur-sm">
-                        <div class="flex items-center gap-6">
-                            <div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=200&h=200&fit=crop"
-                                    alt="Mix" class="w-full h-full object-cover">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-bold text-gray-900 mb-1 truncate">Night Sessions Vol.3</h3>
-                                <p class="text-sm text-gray-600 mb-3">DJ Marco • 52:15</p>
-                                <div class="flex items-center gap-3">
-                                    <button
-                                        class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center hover:scale-105 transition-transform">
-                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor"
-                                            stroke-width="2" viewBox="0 0 24 24">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </button>
-                                    <div class="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                                        <div
-                                            class="h-full w-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full">
-                                        </div>
-                                    </div>
-                                    <span class="text-xs text-gray-500">00:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mix Card 1 -->
-                    <div
-                        class="gradient-card rounded-2xl p-6 border border-gray-200 hover:border-purple-500/50 transition-all bg-white/80 backdrop-blur-sm">
-                        <div class="flex items-center gap-6">
-                            <div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=200&h=200&fit=crop"
-                                    alt="Mix" class="w-full h-full object-cover">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-bold text-gray-900 mb-1 truncate">Sunset Vibes Mix</h3>
-                                <p class="text-sm text-gray-600 mb-3">DJ Sarah • 45:30</p>
-                                <div class="flex items-center gap-3">
-                                    <button
-                                        class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center hover:scale-105 transition-transform">
-                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor"
-                                            stroke-width="2" viewBox="0 0 24 24">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </button>
-                                    <div class="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                                        <div
-                                            class="h-full w-1/3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full">
-                                        </div>
-                                    </div>
-                                    <span class="text-xs text-gray-500">15:20</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mix Card 2 -->
-                    <div
-                        class="gradient-card rounded-2xl p-6 border border-gray-200 hover:border-purple-500/50 transition-all bg-white/80 backdrop-blur-sm">
-                        <div class="flex items-center gap-6">
-                            <div class="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
-                                <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?w=200&h=200&fit=crop"
-                                    alt="Mix" class="w-full h-full object-cover">
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <h3 class="text-lg font-bold text-gray-900 mb-1 truncate">Night Sessions Vol.3</h3>
-                                <p class="text-sm text-gray-600 mb-3">DJ Marco • 52:15</p>
-                                <div class="flex items-center gap-3">
-                                    <button
-                                        class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center hover:scale-105 transition-transform">
-                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor"
-                                            stroke-width="2" viewBox="0 0 24 24">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </button>
-                                    <div class="flex-1 h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                                        <div
-                                            class="h-full w-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full">
-                                        </div>
-                                    </div>
-                                    <span class="text-xs text-gray-500">00:00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="text-center mt-8 mb-8">
-                    <a href="./programme.html"
-                        class="inline-flex items-center justify-center h-10 px-6 rounded-md border border-border hover:bg-muted transition-colors">
-                        Voir plus
-                    </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <script>
+        // Volume control for live stream
+        const volumeSlider = document.getElementById('volumeSlider');
+        const volumeValue = document.getElementById('volumeValue');
+
+        volumeSlider.addEventListener('input', (e) => {
+            volumeValue.textContent = e.target.value + '%';
+        });
+
+        // Mix player controls (exemple)
+        document.querySelectorAll('.gradient-card button').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const svg = this.querySelector('svg polygon');
+                if (svg.getAttribute('points') === '6 3 20 12 6 21 6 3') {
+                    // Change to pause icon
+                    this.innerHTML = '<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>';
+                } else {
+                    // Change to play icon
+                    this.innerHTML = '<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>';
+                }
+            });
+        });
+    </script>
 
 
 
+
+    <!-- Schedule Section -->
+    <section class="py-20 bg-card">
+        <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Programme</p>
                 <h2 class="text-3xl md:text-4xl font-bold text-foreground">À venir aujourd'hui</h2>
             </div>
 
-            <div class=" mx-auto space-y-4">
+            <div class="max-w-4xl mx-auto space-y-4">
                 <!-- Schedule Item 1 -->
                 <div
                     class="gradient-card rounded-xl p-6 border border-border flex items-center gap-6 hover:border-primary/50 transition-all">
@@ -571,12 +703,12 @@
                 </div>
             </div>
 
-            <!-- <div class="text-center mt-8">
+            <div class="text-center mt-8">
                 <a href="./live_a_venir.html"
                     class="inline-flex items-center justify-center h-10 px-6 rounded-md border border-border hover:bg-muted transition-colors">
                     Voir le programme complet
                 </a>
-            </div> -->
+            </div>
         </div>
     </section>
 
@@ -641,8 +773,40 @@
 
         </div>
     </footer>
-    <!-- end Footer -->
-    
+    <!-- End Footer -->
+    <script>
+        // Main Play Button
+        const mainPlayBtn = document.getElementById('mainPlayBtn');
+        const mainPlayIcon = document.getElementById('mainPlayIcon');
+        const mainPauseIcon = document.getElementById('mainPauseIcon');
+        let isPlaying = false;
+
+        mainPlayBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+
+            if (isPlaying) {
+                mainPlayIcon.classList.add('hidden');
+                mainPauseIcon.classList.remove('hidden');
+            } else {
+                mainPlayIcon.classList.remove('hidden');
+                mainPauseIcon.classList.add('hidden');
+            }
+        });
+
+        // Volume Control
+        const volumeSlider = document.getElementById('volumeSlider');
+        const volumeValue = document.getElementById('volumeValue');
+
+        volumeSlider.addEventListener('input', (e) => {
+            volumeValue.textContent = e.target.value + '%';
+        });
+
+        // Auto-scroll chat to bottom
+        const chatContainer = document.querySelector('.overflow-y-auto');
+        if (chatContainer) {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
     <!-- ========= SCRIPTS ========= -->
     <script src="./main.js"></script>
 </body>

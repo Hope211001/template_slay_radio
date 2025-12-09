@@ -204,6 +204,9 @@
 
     <!-- Sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- fontwasome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 </head>
 
@@ -651,7 +654,7 @@
                             </a>
                         </div>
 
-                        
+
 
                         <!-- Carousel pour mobile/tablette (moins de lg) -->
                         <div class="lg:hidden relative">
@@ -678,8 +681,8 @@
                             </button>
 
                             <!-- Carousel -->
-                            <div id="artistCarousel" class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
-                               >
+                            <div id="artistCarousel"
+                                class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4">
                                 <!-- DJ MaxFlow -->
                                 <div
                                     class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
@@ -850,7 +853,7 @@
                                 <button class="carousel-dot artist-dot w-2 h-2 rounded-full bg-gray-600"
                                     data-target="artistCarousel" onclick="scrollToSlide('artistCarousel',2)"></button>
                                 <button class="carousel-dot artist-dot w-2 h-2 rounded-full bg-gray-600"
-                                   data-target="artistCarousel" onclick="scrollToSlide('artistCarousel',3)"></button>
+                                    data-target="artistCarousel" onclick="scrollToSlide('artistCarousel',3)"></button>
                             </div>
                         </div>
                     </div>
@@ -1022,8 +1025,8 @@
                             </button>
 
                             <!-- Carousel -->
-                            <div id="shopCarousel" class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
-                                >
+                            <div id="shopCarousel"
+                                class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4">
                                 <!-- DJ MaxFlow -->
                                 <div
                                     class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
@@ -1168,7 +1171,7 @@
                             <!-- Indicateurs -->
                             <div class="flex justify-center gap-2 mt-4">
                                 <button class="carousel-dot shop-dot w-2 h-2 rounded-full bg-gray-600 active"
-                                   data-target="shopCarousel" onclick="scrollToSlide('shopCarousel',0)"></button>
+                                    data-target="shopCarousel" onclick="scrollToSlide('shopCarousel',0)"></button>
                                 <button class="carousel-dot shop-dot w-2 h-2 rounded-full bg-gray-600"
                                     data-target="shopCarousel" onclick="scrollToSlide('shopCarousel',1)"></button>
                                 <button class="carousel-dot shop-dot w-2 h-2 rounded-full bg-gray-600"
@@ -1183,6 +1186,40 @@
                 <!-- endboutique -->
 
             </main>
+
+
+            <!-- PANIER MINI -->
+            <div id="cart" class="fixed bg-white bottom-0 left-1/2 -translate-x-1/2 z-50
+		            w-[320px] max-w-[90vw]
+		            bg-card border border-border rounded-t-xl shadow-lg
+		            px-3 py-3 text-xs
+		            transition-transform duration-300 translate-y-full">
+
+                <!-- entête -->
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold text-foreground text-sm">Mon panier</h3>
+                    <button onclick="toggleCart()" class="text-muted-foreground hover:text-foreground">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                            <line x1="18" y1="6" x2="6" y2="18" />
+                            <line x1="6" y1="6" x2="18" y2="18" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- corps -->
+                <div id="cartBody" class="space-y-2 max-h-32 overflow-y-auto"></div>
+
+                <!-- total + CTA -->
+                <div class="mt-2 pt-2 border-t border-border">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-muted-foreground">Total</span>
+                        <span id="cartTotal" class="font-semibold text-foreground">0 Ar</span>
+                    </div>
+                    <button
+                        class="w-full gradient-primary text-primary-foreground rounded-md py-1.5 text-sm hover:scale-105 transition-transform">Commander</button>
+                </div>
+            </div>
+
 
 
             <!-- Footer -->
@@ -1254,6 +1291,7 @@
 
     <!-- ========= SCRIPTS ========= -->
     <script src="./main.js"></script>
+    <script src="./panier.js"></script>
 
 </body>
 
