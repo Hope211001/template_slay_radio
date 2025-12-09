@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJs en Vedette - Carousel Responsive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+        }
+        
+        .gradient-primary {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+        }
+        
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-container {
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+        }
+
+        .carousel-item {
+            scroll-snap-align: start;
+        }
+
+        .carousel-dot {
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: var(--primary, #8b5cf6);
+            width: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <section class="py-20 bg-background">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+                <div>
+                    <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Nos Artistes</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-foreground">DJs en Vedette</h2>
+                </div>
+                <a href="./artistes.html">
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors border border-border bg-background hover:bg-muted h-10 px-4 py-2">
+                        Voir tous les artistes
+                    </button>
+                </a>
+            </div>
+
+            <!-- Grille pour desktop (lg et plus) -->
+            <div class="hidden lg:grid grid-cols-4 gap-6">
+                <!-- DJ MaxFlow -->
+                <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2" href="./detail_artiste.html">
+                    <div class="aspect-square overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop" alt="DJ MaxFlow" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-primary-foreground ml-1">
+                                    <polygon points="6 3 20 12 6 21 6 3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-2">DJ MaxFlow</h3>
+                        <div class="mb-3">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Deep House</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-muted-foreground">
+                            <div class="flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                </svg>
+                                <span class="text-xs">2.4K followers</span>
+                            </div>
+                            <button class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                Réserver
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Luna Beats -->
+                <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2" href="./detail_artiste.html">
+                    <div class="aspect-square overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop" alt="Luna Beats" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-primary-foreground ml-1">
+                                    <polygon points="6 3 20 12 6 21 6 3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-2">Luna Beats</h3>
+                        <div class="mb-3">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Techno</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-muted-foreground">
+                            <div class="flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                </svg>
+                                <span class="text-xs">1.8K followers</span>
+                            </div>
+                            <button class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                Réserver
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Kenzo -->
+                <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2" href="./detail_artiste.html">
+                    <div class="aspect-square overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop" alt="Kenzo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-primary-foreground ml-1">
+                                    <polygon points="6 3 20 12 6 21 6 3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-2">Kenzo</h3>
+                        <div class="mb-3">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Afro House</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-muted-foreground">
+                            <div class="flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                </svg>
+                                <span class="text-xs">1K followers</span>
+                            </div>
+                            <button class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                Réserver
+                            </button>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- NightWave -->
+                <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2" href="./detail_artiste.html">
+                    <div class="aspect-square overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop" alt="NightWave" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7 text-primary-foreground ml-1">
+                                    <polygon points="6 3 20 12 6 21 6 3" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-foreground group-hover:text-primary transition-colors mb-2">NightWave</h3>
+                        <div class="mb-3">
+                            <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Progressive</span>
+                        </div>
+                        <div class="flex items-center justify-between text-sm text-muted-foreground">
+                            <div class="flex items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+                                    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                </svg>
+                                <span class="text-xs">1K followers</span>
+                            </div>
+                            <button class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                Réserver
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Carousel pour mobile/tablette (moins de lg) -->
+            <div class="lg:hidden relative">
+                <!-- Flèche gauche -->
+                <button onclick="scrollCarousel(-1)" class="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all hover:scale-110 active:scale-95" id="prevBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary-foreground">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+
+                <!-- Flèche droite -->
+                <button onclick="scrollCarousel(1)" class="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/90 transition-all hover:scale-110 active:scale-95" id="nextBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary-foreground">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+
+                <div class="carousel-container flex overflow-x-auto gap-3 pb-4 hide-scrollbar px-12" id="carousel">
+                    <!-- DJ MaxFlow -->
+                    <div class="carousel-item min-w-[240px] sm:min-w-[260px] flex-shrink-0">
+                        <a class="block gradient-card rounded-2xl overflow-hidden border border-border" href="./detail_artiste.html">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop" alt="DJ MaxFlow" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-foreground mb-2">DJ MaxFlow</h3>
+                                <div class="mb-2">
+                                    <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Deep House</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <button class="bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-xs font-medium">
+                                        Réserver
+                                    </button>
+
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span class="text-xs">2.4K</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Luna Beats -->
+                    <div class="carousel-item min-w-[240px] sm:min-w-[260px] flex-shrink-0">
+                        <a class="block gradient-card rounded-2xl overflow-hidden border border-border" href="./detail_artiste.html">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop" alt="Luna Beats" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-foreground mb-2">Luna Beats</h3>
+                                <div class="mb-2">
+                                    <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Techno</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span class="text-xs">1.8K</span>
+                                    </div>
+                                    <button class="bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-xs font-medium">
+                                        Réserver
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Kenzo -->
+                    <div class="carousel-item min-w-[240px] sm:min-w-[260px] flex-shrink-0">
+                        <a class="block gradient-card rounded-2xl overflow-hidden border border-border" href="./detail_artiste.html">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop" alt="Kenzo" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-foreground mb-2">Kenzo</h3>
+                                <div class="mb-2">
+                                    <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Afro House</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span class="text-xs">1K</span>
+                                    </div>
+                                    <button class="bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-xs font-medium">
+                                        Réserver
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- NightWave -->
+                    <div class="carousel-item min-w-[240px] sm:min-w-[260px] flex-shrink-0">
+                        <a class="block gradient-card rounded-2xl overflow-hidden border border-border" href="./detail_artiste.html">
+                            <div class="aspect-square overflow-hidden relative">
+                                <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop" alt="NightWave" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-lg text-foreground mb-2">NightWave</h3>
+                                <div class="mb-2">
+                                    <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Progressive</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                        </svg>
+                                        <span class="text-xs">1K</span>
+                                    </div>
+                                    <button class="bg-primary text-primary-foreground px-3 py-1.5 rounded-lg hover:bg-primary/90 active:scale-95 transition-all duration-200 text-xs font-medium">
+                                        Réserver
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Indicateurs de carousel -->
+                <div class="flex justify-center gap-2 mt-6">
+                    <button class="carousel-dot w-2 h-2 rounded-full bg-muted active" onclick="scrollToSlide(0)"></button>
+                    <button class="carousel-dot w-2 h-2 rounded-full bg-muted" onclick="scrollToSlide(1)"></button>
+                    <button class="carousel-dot w-2 h-2 rounded-full bg-muted" onclick="scrollToSlide(2)"></button>
+                    <button class="carousel-dot w-2 h-2 rounded-full bg-muted" onclick="scrollToSlide(3)"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const carousel = document.getElementById('carousel');
+        const dots = document.querySelectorAll('.carousel-dot');
+        let currentSlide = 0;
+
+        function scrollCarousel(direction) {
+            const items = carousel.querySelectorAll('.carousel-item');
+            currentSlide += direction;
+            
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= items.length) currentSlide = items.length - 1;
+            
+            scrollToSlide(currentSlide);
+        }
+
+        function scrollToSlide(index) {
+            const items = carousel.querySelectorAll('.carousel-item');
+            if (items[index]) {
+                items[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+                currentSlide = index;
+            }
+        }
+
+        carousel.addEventListener('scroll', () => {
+            const items = carousel.querySelectorAll('.carousel-item');
+            const scrollLeft = carousel.scrollLeft;
+            const itemWidth = items[0].offsetWidth + 12;
+            const newIndex = Math.round(scrollLeft / itemWidth);
+            currentSlide = newIndex;
+
+            dots.forEach((dot, index) => {
+                if (index === newIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

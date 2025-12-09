@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/_next/static/css/eff2c13fcdcd54e2.css" data-precedence="next">
+    <script src="/_next/static/chunks/02013d83-9a334eaa04378443.js" async=""></script>
+    <script src="/_next/static/chunks/7200-e0ef7b342849ed84.js" async=""></script>
+    <script src="/_next/static/chunks/main-app-791d828c7b71a21b.js" async=""></script>
+    <script src="/_next/static/chunks/8168-4914211d1c1e4ff3.js" async=""></script>
+    <script src="/_next/static/chunks/3727-10089c22a3a69d08.js" async=""></script>
+    <script src="/_next/static/chunks/8243-779374a66c45ae86.js" async=""></script>
+    <script src="/_next/static/chunks/1049-a16d7e5950a6140d.js" async=""></script>
+    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" nomodule=""></script>
+    <style type="text/css">
+        .rfm-marquee-container {
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: var(--width);
+            transform: var(--transform);
+        }
+
+        .rfm-marquee-container:hover div {
+            animation-play-state: var(--pause-on-hover);
+        }
+
+        .rfm-marquee-container:active div {
+            animation-play-state: var(--pause-on-click);
+        }
+
+        .rfm-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rfm-overlay::before,
+        .rfm-overlay::after {
+            background: linear-gradient(to right, var(--gradient-color), rgba(255, 255, 255, 0));
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: var(--gradient-width);
+            z-index: 2;
+            pointer-events: none;
+            touch-action: none;
+        }
+
+        .rfm-overlay::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        .rfm-overlay::before {
+            left: 0;
+            top: 0;
+        }
+
+        .rfm-marquee {
+            flex: 0 0 auto;
+            min-width: var(--min-width);
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+            animation-play-state: var(--play);
+            animation-delay: var(--delay);
+            animation-direction: var(--direction);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .rfm-initial-child-container {
+            flex: 0 0 auto;
+            display: flex;
+            min-width: auto;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .rfm-child {
+            transform: var(--transform);
+        }
+    </style>
+    <style></style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oroko | Chemical Resonance invites Moone</title>
+    <meta name="description"
+        content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+    <meta property="og:title" content="Oroko Radio">
+    <meta property="og:description"
+        content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+    <meta property="og:url" content="https://oroko.live/">
+    <meta property="og:site_name" content="Oroko Radio">
+    <meta property="og:image" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta property="og:image:secure_url" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Oroko Radio Logo">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oroko Radio">
+    <meta name="twitter:description"
+        content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+    <meta name="twitter:image" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta name="twitter:image:secure_url" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="627">
+    <meta name="twitter:image:type" content="image/png">
+    <meta name="twitter:image:alt" content="Oroko Radio Logo">
+    <link rel="icon" href="/favicon.ico">
+    <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.5.0"></script>
+</head>
+
+<head>
+    <link rel="stylesheet" href="/_next/static/css/eff2c13fcdcd54e2.css" data-precedence="next">
+    <script src="/_next/static/chunks/02013d83-9a334eaa04378443.js" async=""></script>
+    <script src="/_next/static/chunks/7200-e0ef7b342849ed84.js" async=""></script>
+    <script src="/_next/static/chunks/main-app-791d828c7b71a21b.js" async=""></script>
+    <script src="/_next/static/chunks/8168-4914211d1c1e4ff3.js" async=""></script>
+    <script src="/_next/static/chunks/3727-10089c22a3a69d08.js" async=""></script>
+    <script src="/_next/static/chunks/8243-779374a66c45ae86.js" async=""></script>
+    <script src="/_next/static/chunks/1049-a16d7e5950a6140d.js" async=""></script>
+    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" nomodule=""></script>
+    <style type="text/css">
+        .rfm-marquee-container {
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: var(--width);
+            transform: var(--transform);
+        }
+
+        .rfm-marquee-container:hover div {
+            animation-play-state: var(--pause-on-hover);
+        }
+
+        .rfm-marquee-container:active div {
+            animation-play-state: var(--pause-on-click);
+        }
+
+        .rfm-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .rfm-overlay::before,
+        .rfm-overlay::after {
+            background: linear-gradient(to right, var(--gradient-color), rgba(255, 255, 255, 0));
+            content: "";
+            height: 100%;
+            position: absolute;
+            width: var(--gradient-width);
+            z-index: 2;
+            pointer-events: none;
+            touch-action: none;
+        }
+
+        .rfm-overlay::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        .rfm-overlay::before {
+            left: 0;
+            top: 0;
+        }
+
+        .rfm-marquee {
+            flex: 0 0 auto;
+            min-width: var(--min-width);
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+            animation-play-state: var(--play);
+            animation-delay: var(--delay);
+            animation-direction: var(--direction);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .rfm-initial-child-container {
+            flex: 0 0 auto;
+            display: flex;
+            min-width: auto;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .rfm-child {
+            transform: var(--transform);
+        }
+    </style>
+    <style></style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oroko | Chemical Resonance invites Moone</title>
+    <meta name="description"
+        content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+    <meta property="og:title" content="Oroko Radio">
+    <meta property="og:description"
+        content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+    <meta property="og:url" content="https://oroko.live/">
+    <meta property="og:site_name" content="Oroko Radio">
+    <meta property="og:image" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta property="og:image:secure_url" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Oroko Radio Logo">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Oroko Radio">
+    <meta name="twitter:description"
+        content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+    <meta name="twitter:image" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta name="twitter:image:secure_url" content="https://oroko.live/OROKO_OG_1200px.png">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="627">
+    <meta name="twitter:image:type" content="image/png">
+    <meta name="twitter:image:alt" content="Oroko Radio Logo">
+    <link rel="icon" href="/favicon.ico">
+    <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react" data-sdkv="1.5.0"></script>
+</head>
+
+
+<body class="antialiased">
+    <script src="/_next/static/chunks/webpack-9466641751f1cfeb.js" id="_R_" async=""></script>
+    <script>(self.__next_f = self.__next_f || []).push([0])</script>
+    <script>self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:I[33045,[],\"\"]\n3:I[36785,[],\"\"]\n4:I[87414,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"1049\",\"static/chunks/1049-a16d7e5950a6140d.js\",\"3286\",\"static/chunks/3286-45e47f8e861bd4ac.js\",\"7843\",\"static/chunks/app/(web)/layout-22abe76de9b86898.js\"],\"default\"]\n6:I[47786,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"1049\",\"static/chunks/1049-a16d7e5950a6140d.js\",\"3286\",\"static/chunks/3286-45e47f8e861bd4ac.js\",\"7843\",\"static/chunks/app/(web)/layout-22abe76de9b86898.js\"],\"MixcloudPlayer\"]\n7:I[48168,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"6904\",\"static/chunks/6904-8dd7fb1fb9743bdf.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"8924\",\"static/chunks/8924-65f4968e6a492577.js\",\"2124\",\"static/chunks/app/(web)/radio/%5Bslug%5D/page-30a53a94291fa8cf.js\"],\"\"]\n8:I[58603,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"6904\",\"static/chunks/6904-8dd7fb1fb9743bdf.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"8924\",\"static/chunks/8924-65f4968e6a492577.js\",\"2124\",\"static/chunks/app/(web)/radio/%5Bslug%5D/page-30a53a94291fa8cf.js\"],\"\"]\n10:I[81975,[],\"\"]\n:HL[\"/_next/static/css/eff2c13fcdcd54e2.css\",\"style\"]\n"])</script>
+    <script>self.__next_f.push([1, "0:{\"P\":null,\"b\":\"LOhdNbTZBamxQtSqXd7sE\",\"p\":\"\",\"c\":[\"\",\"radio\",\"chemicalresonance-moone\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"(web)\",{\"children\":[\"radio\",{\"children\":[[\"slug\",\"chemicalresonance-moone\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true]}],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"(web)\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/eff2c13fcdcd54e2.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"children\":[\"$\",\"body\",null,{\"className\":\"antialiased\",\"children\":[[\"$\",\"$L4\",null,{}],\"$L5\",[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:style\",\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:1:props:style\",\"children\":404}],[\"$\",\"div\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:style\",\"children\":[\"$\",\"h2\",null,{\"style\":\"$0:f:0:1:1:props:children:1:props:notFound:0:1:props:children:props:children:2:props:children:props:style\",\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[\"$\",\"$L6\",null,{}],[\"$\",\"div\",null,{\"className\":\"hidden lg:flex fixed bottom-4 right-8 flex gap-2 z-20\",\"children\":[[\"$\",\"$L7\",null,{\"href\":\"https://www.instagram.com/orokoradio/\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":{\"src\":\"/_next/static/media/Instagram.408c8a50.svg\",\"height\":51,\"width\":51,\"blurWidth\":0,\"blurHeight\":0},\"alt\":\"Instagram\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://www.tiktok.com/@orokoradio\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":{\"src\":\"/_next/static/media/TikTok.4bdb92df.svg\",\"height\":51,\"width\":51,\"blurWidth\":0,\"blurHeight\":0},\"alt\":\"TikTok\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://twitter.com/orokoradio\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":{\"src\":\"/_next/static/media/Twitter.dab09420.svg\",\"height\":51,\"width\":51,\"blurWidth\":0,\"blurHeight\":0},\"alt\":\"Twitter\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://www.facebook.com/OrokoRadio\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":{\"src\":\"/_next/static/media/Facebook.36439eff.svg\",\"height\":51,\"width\":51,\"blurWidth\":0,\"blurHeight\":0},\"alt\":\"Facebook\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://discord.gg/BDSBE6Ey4w\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":\"$L9\"}]}]]}],\"$La\",\"$Lb\"]}]}]]}],{\"children\":[\"radio\",\"$Lc\",{\"children\":[[\"slug\",\"chemicalresonance-moone\",\"d\"],\"$Ld\",{\"children\":[\"__PAGE__\",\"$Le\",{},null,false]},null,false]},null,false]},null,false]},null,false],\"$Lf\",false]],\"m\":\"$undefined\",\"G\":[\"$10\",[]],\"s\":false,\"S\":true}\n"])</script>
+    <script>self.__next_f.push([1, "1b:I[76131,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"1049\",\"static/chunks/1049-a16d7e5950a6140d.js\",\"3286\",\"static/chunks/3286-45e47f8e861bd4ac.js\",\"7843\",\"static/chunks/app/(web)/layout-22abe76de9b86898.js\"],\"Analytics\"]\n1d:I[55947,[],\"OutletBoundary\"]\n1f:I[60769,[],\"AsyncMetadataOutlet\"]\n21:I[55947,[],\"ViewportBoundary\"]\n23:I[55947,[],\"MetadataBoundary\"]\n24:\"$Sreact.suspense\"\n9:[\"$\",\"$L8\",null,{\"src\":{\"src\":\"/_next/static/media/Discord.6a0d6aa5.svg\",\"height\":51,\"width\":51,\"blurWidth\":0,\"blurHeight\":0},\"alt\":\"Discord\",\"layout\":\"responsive\"}]\n"])</script>
+    <script>self.__next_f.push([1, "a:[\"$\",\"div\",null,{\"className\":\"bg-black p-8\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto text-center text-white\",\"children\":[[\"$\",\"ul\",null,{\"className\":\"flex flex-wrap text-lg md:text-xl xl:text-2xl justify-center gap-6 md:gap-10 mb-8\",\"children\":[[[\"$\",\"$L7\",\"0\",{\"href\":\"/radio\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"Radio\"}]}],[\"$\",\"$L7\",\"1\",{\"href\":\"/artists\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"Artists\"}]}],[\"$\",\"$L7\",\"2\",{\"href\":\"/news\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"News\"}]}],[\"$\",\"$L7\",\"3\",{\"href\":\"https://shop.oroko.live\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"Shop\"}]}],[\"$\",\"$L7\",\"4\",{\"href\":\"/support\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"Support\"}]}],[\"$\",\"$L7\",\"5\",{\"href\":\"/about\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"About\"}]}],[\"$\",\"$L7\",\"6\",{\"href\":\"/newsletter\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"Newsletter\"}]}],[\"$\",\"$L7\",\"7\",{\"href\":\"/apply\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"Apply\"}]}],[\"$\",\"$L7\",\"8\",{\"href\":\"/partners\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold cursor-pointer hover:opacity-70 transition-opacity\",\"children\":\"Partners\"}]}]],[\"$\",\"$L7\",null,{\"href\":\"https://www.patreon.com/orokoradio\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold hover:opacity-70 transition-opacity\",\"children\":\"Patreon\"}]}],[\"$\",\"$L7\",null,{\"href\":\"mailto:info@oroko.live\",\"passHref\":true,\"children\":[\"$\",\"li\",null,{\"className\":\"font-bold hover:opacity-70 transition-opacity\",\"children\":\"Contact\"}]}]]}],[\"$\",\"div\",null,{\"className\":\"flex justify-center mb-8\",\"children\":[\"$\",\"div\",null,{\"className\":\"undefined flex gap-2 z-20\",\"children\":[[\"$\",\"$L7\",null,{\"href\":\"https://www.instagram.com/orokoradio/\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":\"$0:f:0:1:2:children:1:props:children:1:props:children:props:children:4:props:children:0:props:children:props:children:props:src\",\"alt\":\"Instagram\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://www.tiktok.com/@orokoradio\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":\"$0:f:0:1:2:children:1:props:children:1:props:children:props:children:4:props:children:1:props:children:props:children:props:src\",\"alt\":\"TikTok\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://twitter.com/orokoradio\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":\"$0:f:0:1:2:children:1:props:children:1:props:children:props:children:4:props:children:2:props:children:props:children:props:src\",\"alt\":\"Twitter\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://www.facebook.com/OrokoRadio\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":\"$0:f:0:1:2:children:1:props:children:1:props:children:props:children:4:props:children:3:props:children:props:children:props:src\",\"alt\":\"Facebook\",\"layout\":\"responsive\"}]}]}],[\"$\",\"$L7\",null,{\"href\":\"https://discord.gg/BDSBE6Ey4w\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"w-8 h-8 hover:scale-110 transition-transform\",\"children\":[\"$\",\"$L8\",null,{\"src\":\"$9:props:src\",\"alt\":\"Discord\",\"layout\":\"responsive\"}]}]}]]}]}],[\"$\",\"svg\",null,{\"className\":\"stroke-current stroke-2 text-white w-10 h-10 lg:w-14 lg:h-14 inline-block mb-4\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"viewBox\":\"0 0 48.417 66\",\"children\":[\"$\",\"g\",null,{\"id\":\"Oroko_Small_Logo_White_Lines\",\"data-name\":\"Oroko Small Logo White Lines\",\"transform\":\"translate(1.025 1)\",\"children\":[[\"$\",\"path\",null,{\"id\":\"Pfad_23\",\"data-name\":\"Pfad 23\",\"d\":\"M4481.979,744.177c2.333-1.471,8.027-4.523,8.138.654-.14,4.178,5.018,4.753,8.718-1.019l5.222,13.308h-45l4.946-13.051s7.107-5.476,8.43.871c1.089,4.436,6.75,1.081,8.215.126\",\"transform\":\"translate(-4458.219 -693.119)\",\"fill\":\"none\"}],\"$L11\",\"$L12\",\"$L13\",\"$L14\",\"$L15\",\"$L16\",\"$L17\",\"$L18\"]}]}],\"$L19\",\"$L1a\"]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "b:[\"$\",\"$L1b\",null,{}]\nc:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\nd:[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L2\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L3\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}]\ne:[\"$\",\"$1\",\"c\",{\"children\":[\"$L1c\",null,[\"$\",\"$L1d\",null,{\"children\":[\"$L1e\",[\"$\",\"$L1f\",null,{\"promise\":\"$@20\"}]]}]]}]\nf:[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$L21\",null,{\"children\":\"$L22\"}],null],[\"$\",\"$L23\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$24\",null,{\"fallback\":null,\"children\":\"$L25\"}]}]}]]}]\n"])</script>
+    <script>self.__next_f.push([1, "11:[\"$\",\"path\",null,{\"id\":\"Pfad_24\",\"data-name\":\"Pfad 24\",\"d\":\"M4853.778,395.106s7.78,6.555,2.986,14.231c-5.394,8.637-5.982,12.319-5.982,12.319l-4.5-11.675a18.821,18.821,0,0,0,7.491-14.815\",\"transform\":\"translate(-4811.96 -375.755)\",\"fill\":\"none\"}]\n12:[\"$\",\"rect\",null,{\"id\":\"Rechteck_2\",\"data-name\":\"Rechteck 2\",\"width\":\"1.219\",\"height\":\"26.282\",\"transform\":\"translate(22.439 37.718)\",\"fill\":\"none\"}]\n13:[\"$\",\"path\",null,{\"id\":\"Pfad_25\",\"data-name\":\"Pfad 25\",\"d\":\"M4536.892,196.371a18.809,18.809,0,0,1-32.276,12.888,18.4,18.4,0,0,1-5.257-12.888,18.768,18.768,0,0,1,37.533,0Z\",\"transform\":\"translate(-4495.074 -177.804)\",\"fill\":\"none\"}]\n14:[\"$\",\"path\",null,{\"id\":\"Pfad_26\",\"data-name\":\"Pfad 26\",\"d\":\"M4492.451,569.452a18.874,18.874,0,0,1-22.049.229l-.131,0-11.21,29.748h45Z\",\"transform\":\"translate(-4458.218 -535.43)\",\"fill\":\"none\"}]\n15:[\"$\",\"path\",null,{\"id\":\"Pfad_27\",\"data-name\":\"Pfad 27\",\"d\":\"M4499.359,392.421v.229c0-.038,0-.076,0-.114S4499.359,392.46,4499.359,392.421Z\",\"transform\":\"translate(-4495.074 -373.303)\",\"fill\":\"none\"}]\n16:[\"$\",\"path\",null,{\"id\":\"Pfad_28\",\"data-name\":\"Pfad 28\",\"d\":\"M4460.985,410.009a18.717,18.717,0,0,1-2.29-2.016,18.506,18.506,0,0,1-5.2-12.888s-7.474,6.577-2.68,14.253c5.555,8.895,6.046,12.174,6.079,12.368l4.331-11.543Z\",\"transform\":\"translate(-4449.209 -375.758)\",\"fill\":\"none\"}]\n17:[\"$\",\"circle\",null,{\"id\":\"Ellipse_5\",\"data-name\":\"Ellipse 5\",\"cx\":\"11.076\",\"cy\":\"11.076\",\"r\":\"11.076\",\"transform\":\"translate(11.974 7.402)\",\"fill\":\"none\"}]\n18:[\"$\",\"circle\",null,{\"id\":\"Ellipse_6\",\"data-name\":\"Ellipse 6\",\"cx\":\"4.023\",\"cy\":\"4.023\",\"r\":\"4.023\",\"transform\":\"translate(19.027 14.953)\",\"fill\":\"none\"}]\n19:[\"$\",\"p\",null,{\"className\":\"mt-2 mb-8 font-sans xl:text-base\",\"children\":\"©OROKO 2021\"}]\n"])</script>
+    <script>self.__next_f.push([1, "1a:[\"$\",\"div\",null,{\"className\":\"flex flex-col md:flex-row justify-center gap-2 font-sans text-sm xl:text-base\",\"children\":[[\"$\",\"div\",null,{\"children\":[\"Designed by\",\" \",[\"$\",\"$L7\",null,{\"href\":\"https://www.studiopanorama.de/\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"span\",null,{\"className\":\"underline tracking-widest cursor-pointer\",\"children\":\"panorama\"}]}],\" \"]}],[\"$\",\"div\",null,{\"children\":[\"Developed by\",\" \",[\"$\",\"$L7\",null,{\"href\":\"https://github.com/je-boska\",\"target\":\"_blank\",\"rel\":\"noopener nofollow noreferrer\",\"passHref\":true,\"children\":[\"$\",\"span\",null,{\"className\":\"underline tracking-widest cursor-pointer\",\"children\":\"je boska\"}]}],\" \"]}]]}]\n"])</script>
+    <script>self.__next_f.push([1, "22:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n1e:null\n"])</script>
+    <script>self.__next_f.push([1, "26:I[47786,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"1049\",\"static/chunks/1049-a16d7e5950a6140d.js\",\"3286\",\"static/chunks/3286-45e47f8e861bd4ac.js\",\"7843\",\"static/chunks/app/(web)/layout-22abe76de9b86898.js\"],\"LivePlayer\"]\n5:[\"$\",\"$L26\",null,{\"nextUpShow\":null}]\n"])</script>
+    <script>self.__next_f.push([1, "27:I[849,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"6904\",\"static/chunks/6904-8dd7fb1fb9743bdf.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"8924\",\"static/chunks/8924-65f4968e6a492577.js\",\"2124\",\"static/chunks/app/(web)/radio/%5Bslug%5D/page-30a53a94291fa8cf.js\"],\"Image\"]\n28:I[99373,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"6904\",\"static/chunks/6904-8dd7fb1fb9743bdf.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"8924\",\"static/chunks/8924-65f4968e6a492577.js\",\"2124\",\"static/chunks/app/(web)/radio/%5Bslug%5D/page-30a53a94291fa8cf.js\"],\"default\"]\n29:I[70508,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"6904\",\"static/chunks/6904-8dd7fb1fb9743bdf.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"8924\",\"static/chunks/8924-65f4968e6a492577.js\",\"2124\",\"static/chunks/app/(web)/radio/%5Bslug%5D/page-30a53a94291fa8cf.js\"],\"default\"]\n2a:I[44261,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"6904\",\"static/chunks/6904-8dd7fb1fb9743bdf.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"8924\",\"static/chunks/8924-65f4968e6a492577.js\",\"2124\",\"static/chunks/app/(web)/radio/%5Bslug%5D/page-30a53a94291fa8cf.js\"],\"default\"]\n"])</script>
+    <script>self.__next_f.push([1, "1c:[\"$\",\"article\",null,{\"children\":[[\"$\",\"div\",null,{\"className\":\"relative h-forty md:h-half border-black border-b-2\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex relative h-full overflow-hidden\",\"children\":[[\"$\",\"div\",\"0\",{\"className\":\"relative w-full lg:w-3/5 xl:w-2/5 flex-shrink-0 lg:border-r-2 border-black\",\"children\":[\"$\",\"$L27\",\"0\",{\"quality\":50,\"alt\":\"Chemical Resonance invites Moone\",\"src\":\"/api/media/file/Img381 - Blessing Ewona (1)-1200x1500.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"center\"},\"priority\":true}]}],[\"$\",\"div\",\"1\",{\"className\":\"relative w-full lg:w-3/5 xl:w-2/5 flex-shrink-0 lg:border-r-2 border-black\",\"children\":[\"$\",\"$L27\",\"1\",{\"quality\":50,\"alt\":\"Chemical Resonance invites Moone\",\"src\":\"/api/media/file/Img381 - Blessing Ewona (1)-1200x1500.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"center\"},\"priority\":true}]}],[\"$\",\"div\",\"2\",{\"className\":\"relative w-full lg:w-3/5 xl:w-2/5 flex-shrink-0 lg:border-r-2 border-black\",\"children\":[\"$\",\"$L27\",\"2\",{\"quality\":50,\"alt\":\"Chemical Resonance invites Moone\",\"src\":\"/api/media/file/Img381 - Blessing Ewona (1)-1200x1500.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"center\"},\"priority\":true}]}]]}],[\"$\",\"div\",null,{\"className\":\"absolute top-4 left-4 md:top-8 md:left-8\",\"children\":[\"$\",\"$L28\",null,{}]}]]}],[[\"$\",\"section\",null,{\"className\":\"relative border-black border-b-2 md:py-6 pb-6 lg:pb-10\",\"children\":[[\"$\",\"div\",null,{\"className\":\"grid md:flex flex-col justify-evenly auto-rows-fr grid-cols-3 md:absolute right-0 top-0 h-full border-b-2 md:border-b-0 md:border-l-2 border-black text-black mb-4 md:mb-0\",\"children\":[[\"$\",\"div\",null,{\"className\":\"px-3 md:px-4 ml-0.5 flex md:hidden items-center border-r-2 border-black col-span-2\",\"children\":[\"$\",\"div\",null,{\"className\":\"mb-0 font-sans font-semibold tracking-wide text-base\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-12-04T19:00:00.000Z\",\"format\":\"DD MMM YY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"border-black flex flex-1 justify-center md:order-2 md:border-r-0 px-4 md:px-8 xl:px-16 py-2 bg-orokoYellow\",\"children\":[\"$\",\"div\",null,{\"className\":\"self-center\",\"children\":[\"$\",\"$L2a\",null,{\"details\":{\"title\":\"Chemical Resonance invites Moone\",\"slug\":\"radio/chemicalresonance-moone\"}}]}]}],\"$undefined\"]}],[\"$\",\"div\",null,{\"className\":\"container max-w-5xl mx-auto\",\"children\":[[\"$\",\"p\",null,{\"className\":\"hidden md:block mb-4 font-sans font-semibold tracking-wide text-lg\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-12-04T19:00:00.000Z\",\"format\":\"ddd DD MMMM YYYY @ HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"text-5xl md:text-6xl lg:text-7xl mb-0 font-heading md:mr-36 lg:mr-40\",\"children\":\"Chemical Resonance invites Moone\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-3xl md:text-4xl lg:text-5xl mb-6 lg:mb-10\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"$L7\",null,{\"href\":\"/artists/weareallchemicals\",\"passHref\":true,\"children\":[\"$\",\"span\",null,{\"className\":\"border-b-2 border-black cursor-pointer\",\"children\":\"Weareallchemicals\"}]}],\", \"]}],[\"$\",\"span\",\"1\",{\"children\":[[\"$\",\"$L7\",null,{\"href\":\"/artists/moone\",\"passHref\":true,\"children\":[\"$\",\"span\",null,{\"className\":\"border-b-2 border-black cursor-pointer\",\"children\":\"Moone\"}]}],false]}]]]}],[\"$\",\"div\",null,{\"className\":\"flex gap-1 flex-wrap\",\"children\":[[\"$\",\"$L7\",null,{\"href\":\"/artists?city=Lagos\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg\",\"children\":\"Lagos\"}]}]}],[[\"$\",\"$L7\",\"0\",{\"href\":\"/radio?category=house_%2F_techno\u0026genre=afro_tech#all-shows\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg\",\"children\":\"Afro Tech\"}]}]}],[\"$\",\"$L7\",\"1\",{\"href\":\"/radio?category=house_%2F_techno\u0026genre=afro_house#all-shows\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":\"$L2b\"}]}],\"$L2c\"]]}]]}]]}],\"$L2d\",\"$L2e\"]]}]\n"])</script>
+    <script>self.__next_f.push([1, "2b:[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg\",\"children\":\"Afro House\"}]\n2c:[\"$\",\"$L7\",\"2\",{\"href\":\"/radio?category=african\u0026genre=gqom#all-shows\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg\",\"children\":\"Gqom\"}]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "2d:[\"$\",\"section\",null,{\"className\":\"container max-w-5xl mx-auto rich-text py-6 md:py-8 mb-24\",\"children\":[\"$\",\"div\",null,{\"className\":\"payload-richtext\",\"children\":[[\"$\",\"p\",\"0\",{\"children\":[[\"$\",\"strong\",\"0\",{\"children\":\"With Guest: \"}],[\"$\",\"a\",\"1\",{\"href\":\"https://www.instagram.com/gemaemoone?igsh=NmUwcWRoampjb2k5\",\"rel\":\"noopener noreferrer\",\"target\":\"_blank\",\"children\":[\"Moone\"]}],\" (They/Them) is an international Dj and writer based in Abidjan, Côte D’Ivoire. Starting out early 2021, the artist has crafted their sound around African Electronic Dance Music. Mixing a wide range of genres including Afrotech, Afro House, Gqom and Kuduro, they curate eclectic, high energy yet very emotional sets that leave a long-lasting mark on the crowds experiencing them. \"]}],[\"$\",\"p\",\"1\",{\"children\":[\"As a DJ, Moone's intention with the music they share is to make people feel something, always. They have no specific goal other than this one, for the sound to move you. And however the music touches you is directly linked to however you receive it. How open you are and how much you’re willing to surrender to it. There’s no trick and it’s always about the music. \"]}]]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "2e:[\"$\",\"div\",null,{\"className\":\"bg-offBlack\",\"id\":\"all-shows\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"font-serif text-white text-4xl md:text-5xl pt-8 px-4 md:px-8 pb-0\",\"children\":\"Related Shows\"}],[\"$\",\"div\",null,{\"className\":\"grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4 md:p-8 xl:pb-12\",\"children\":[[\"$\",\"div\",\"0\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/anda-electronix-inezganerecords\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"ANDA Electronix invites Inezgane Records\",\"src\":\"/api/media/file/INEZGANE RECORDS PRESSPIC - OG LVVSAVAGE-600x766.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"51% 3%\"}}],\"$undefined\"]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-12-05T20:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"ANDA Electronix invites Inezgane Records\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"Ferré\"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Rotterdam\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Gqom\"}]}],[\"$\",\"div\",\"1\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Batida\"}]}]]]}]]}]]}]}]}],[\"$\",\"div\",\"1\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/dawa-show-ashbanks\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"The |D/A\\\\W/A\\\\ Show invites A$H BANKS\",\"src\":\"/api/media/file/Ash Banks - Collectif DAWA-600x600.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"53% 3%\"}}],\"$undefined\"]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-12-05T19:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"The |D/A\\\\W/A\\\\ Show invites A$H BANKS\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"|D/A\\\\W/A\\\\ collective\"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Paris\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"House\"}]}],[\"$\",\"div\",\"1\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Afro House\"}]}],\"$L2f\"]]}]]}]]}]}]}],\"$L30\",\"$L31\",\"$L32\",\"$L33\",\"$L34\",\"$L35\"]}]]}]\n"])</script>
+    <script>self.__next_f.push([1, "36:I[8858,[\"8168\",\"static/chunks/8168-4914211d1c1e4ff3.js\",\"3727\",\"static/chunks/3727-10089c22a3a69d08.js\",\"6904\",\"static/chunks/6904-8dd7fb1fb9743bdf.js\",\"8243\",\"static/chunks/8243-779374a66c45ae86.js\",\"8924\",\"static/chunks/8924-65f4968e6a492577.js\",\"2124\",\"static/chunks/app/(web)/radio/%5Bslug%5D/page-30a53a94291fa8cf.js\"],\"default\"]\n2f:[\"$\",\"div\",\"2\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Deep House\"}]}]\n"])</script>
+    <script>self.__next_f.push([1, "30:[\"$\",\"div\",\"2\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/umgqibelo-radio-1225\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"Umgqibelo Radio\",\"src\":\"/api/media/file/dnowh-600x745.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"52% 4%\"}}],\"$undefined\"]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-12-04T20:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"Umgqibelo Radio\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"D[Nowhere]J\"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Johannesburg\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Gqom\"}]}]]]}]]}]]}]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "31:[\"$\",\"div\",\"3\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/1hour-in224-yudini\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"1 hour in 224 invites Yudini\",\"src\":\"/api/media/file/mimi12-600x799.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"50% 2%\"}}],\"$undefined\"]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-12-04T15:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"1 hour in 224 invites Yudini\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"Mimi Géniale \"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Conakry\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Namougnic\"}]}],[\"$\",\"div\",\"1\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"House\"}]}],[\"$\",\"div\",\"2\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Afro House\"}]}]]]}]]}]]}]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "32:[\"$\",\"div\",\"4\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/afrohuntingradio-oumoukala\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"Afrohunting Radio invites Oumoukala\",\"src\":\"/api/media/file/orokooumoukal - Afrohunting Team-600x900.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"51% 3%\"}}],\"$undefined\"]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-12-02T16:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"Afrohunting Radio invites Oumoukala\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"Afrohunting\"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Buenos Aires\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Gqom\"}]}],[\"$\",\"div\",\"1\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Electronica\"}]}],[\"$\",\"div\",\"2\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Bouyon\"}]}]]]}]]}]]}]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "33:[\"$\",\"div\",\"5\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/home2homeradio-1125\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"HOME2HOME Radio\",\"src\":\"/api/media/file/jabulani-1-600x639.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"50% 50%\"}}],[\"$\",\"div\",null,{\"className\":\"absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2\",\"children\":[\"$\",\"$L36\",null,{\"colorScheme\":\"transparent\",\"mixcloudLink\":\"https://www.mixcloud.com/OrokoRadio/jabulani-home2home-radio-28th-november-2025/\"}]}]]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-11-28T21:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"HOME2HOME Radio\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"jabulani.\"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Accra\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Afro House\"}]}]]]}]]}]]}]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "34:[\"$\",\"div\",\"6\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/fairydustdynamite-1125\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"FAIRYDUST DYNAMITE\",\"src\":\"/api/media/file/FDN10-CVR - Kaz Aninkorah-600x600.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"50% 50%\"}}],[\"$\",\"div\",null,{\"className\":\"absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2\",\"children\":[\"$\",\"$L36\",null,{\"colorScheme\":\"transparent\",\"mixcloudLink\":\"https://www.mixcloud.com/OrokoRadio/kxz-fairydust-dynamite-27th-november-2025/\"}]}]]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-11-27T17:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"FAIRYDUST DYNAMITE\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"KXZ\"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Accra\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Afro House\"}]}],[\"$\",\"div\",\"1\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Gqom\"}]}]]]}]]}]]}]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "35:[\"$\",\"div\",\"7\",{\"className\":\"border-black border-2 bg-white\",\"children\":[\"$\",\"$L7\",null,{\"href\":\"/radio/fiyah-favs-1125\",\"passHref\":true,\"children\":[\"$\",\"div\",null,{\"className\":\"cursor-pointer h-full flex flex-col\",\"children\":[[\"$\",\"div\",null,{\"className\":\"relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80\",\"children\":[[\"$\",\"$L27\",null,{\"quality\":50,\"alt\":\"Fiyah Favs - Ember #4 Clip\",\"src\":\"/api/media/file/Fiyahdred Fiyah Favs Nov 25 - Kadence-600x600.webp\",\"fill\":true,\"className\":\"object-cover\",\"style\":{\"objectPosition\":\"50% 50%\"}}],[\"$\",\"div\",null,{\"className\":\"absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2\",\"children\":[\"$\",\"$L36\",null,{\"colorScheme\":\"transparent\",\"mixcloudLink\":\"https://www.mixcloud.com/OrokoRadio/fiyahdred-fiyah-favs-ember-4-clip-26th-november-2025/\"}]}]]}],[\"$\",\"div\",null,{\"className\":\"p-4 flex flex-col justify-between flex-1\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"font-sans text-sm md:text-base mb-2 font-medium\",\"children\":[[\"$\",\"$L29\",null,{\"date\":\"2025-11-26T20:00:00.000Z\",\"format\":\"DD MMM YYYY HH:mm\"}],[\"$\",\"span\",null,{\"children\":\"H\"}]]}],null,[\"$\",\"h1\",null,{\"className\":\"font-heading card-leading text-4xl\",\"children\":\"Fiyah Favs - Ember #4 Clip\"}],[\"$\",\"h2\",null,{\"className\":\"font-serif text-2xl lg:text-3xl mb-4\",\"children\":[\" \",\"With\",\" \",[[\"$\",\"span\",\"0\",{\"children\":[[\"$\",\"span\",null,{\"children\":\"Fiyahdred\"}],false]}]]]}]]}],[\"$\",\"div\",null,{\"className\":\"flex flex-wrap gap-1 mb-4\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex-shrink-0 border-2 bg-black text-white border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"London\"}]}],[[\"$\",\"div\",\"0\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"House\"}]}],[\"$\",\"div\",\"1\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Afro House\"}]}],[\"$\",\"div\",\"2\",{\"className\":\"flex-shrink-0 border-2 text-black border-black\",\"children\":[\"$\",\"p\",null,{\"className\":\"font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase\",\"children\":\"Deep House\"}]}]]]}]]}]]}]}]}]\n"])</script>
+    <script>self.__next_f.push([1, "37:I[38897,[],\"IconMark\"]\n"])</script>
+    <script>self.__next_f.push([1, "20:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Oroko | Chemical Resonance invites Moone\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.\"}],[\"$\",\"meta\",\"2\",{\"property\":\"og:title\",\"content\":\"Oroko Radio\"}],[\"$\",\"meta\",\"3\",{\"property\":\"og:description\",\"content\":\"Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.\"}],[\"$\",\"meta\",\"4\",{\"property\":\"og:url\",\"content\":\"https://oroko.live/\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:site_name\",\"content\":\"Oroko Radio\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:image\",\"content\":\"https://oroko.live/OROKO_OG_1200px.png\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:image:secure_url\",\"content\":\"https://oroko.live/OROKO_OG_1200px.png\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image:height\",\"content\":\"627\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image:alt\",\"content\":\"Oroko Radio Logo\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"14\",{\"name\":\"twitter:title\",\"content\":\"Oroko Radio\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:description\",\"content\":\"Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:image\",\"content\":\"https://oroko.live/OROKO_OG_1200px.png\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:image:secure_url\",\"content\":\"https://oroko.live/OROKO_OG_1200px.png\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:image:height\",\"content\":\"627\"}],[\"$\",\"meta\",\"20\",{\"name\":\"twitter:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"21\",{\"name\":\"twitter:image:alt\",\"content\":\"Oroko Radio Logo\"}],[\"$\",\"link\",\"22\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\"}],[\"$\",\"$L37\",\"23\",{}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script>
+    <script>self.__next_f.push([1, "25:\"$20:metadata\"\n"])</script>
+    <div hidden=""></div>
+    <div class="relative flex items-center justify-between py-2 xl:py-1 z-50 bg-black">
+        <div class="flex items-center gap-2 md:gap-6"><a class="z-50" href="/">
+                <div class="flex ml-4 md:ml-8 h-10 w-10"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="text-black stroke-current stroke-1 mt-1 md:mt-0 w-8 h-8 md:w-10 md:h-10"
+                        viewBox="0 0 48.688 66.5">
+                        <g id="Oroko_Small_Logo_Color" data-name="Oroko Small Logo Color"
+                            transform="translate(0.774 0.75)">
+                            <path id="Pfad_9" data-name="Pfad 9"
+                                d="M309.112,1774.6s-7.665,6.745-2.749,14.616c5.7,9.122,6.253,12.526,6.286,12.724l4.626-11.937s-8.163-5.664-8.163-15.638"
+                                transform="translate(-304.718 -1755.593)" fill="#ff4948" stroke-width="1"></path>
+                            <path id="Pfad_7" data-name="Pfad 7"
+                                d="M325.783,1940.7l22.717-.261,11.8,30.766H314.569l11.875-31.794"
+                                transform="translate(-313.706 -1906.203)" fill="#27abfe" stroke-width="1"></path>
+                            <path id="Pfad_8" data-name="Pfad 8"
+                                d="M319.6,2126.07s7.224-5.615,8.568.893c1.273,5.235,8.7-.111,8.7-.111s9.126-6.681,9.268,0c-.141,4.285,5.1,4.874,8.862-1.045l5.308,13.647H314.569Z"
+                                transform="translate(-313.706 -2074.455)" fill="#339d43" stroke-width="1"></path>
+                            <path id="Pfad_10" data-name="Pfad 10"
+                                d="M709.479,1777.053s7.978,6.722,3.062,14.594c-5.532,8.858-6.134,12.634-6.134,12.634l-4.61-11.973a19.3,19.3,0,0,0,7.682-15.193"
+                                transform="translate(-667.002 -1758.043)" fill="#ff4948" stroke-width="1"></path>
+                            <path id="Pfad_11" data-name="Pfad 11"
+                                d="M565.017,1993.665v27.04h2.435v-27.04A16.245,16.245,0,0,1,565.017,1993.665Z"
+                                transform="translate(-542.801 -1955.705)" fill="#ff6a37" stroke-width="1"></path>
+                            <path id="Pfad_12" data-name="Pfad 12"
+                                d="M392.949,1578.791a19.041,19.041,0,1,1-19.041-19.041A19.041,19.041,0,0,1,392.949,1578.791Z"
+                                transform="translate(-350.473 -1559.75)" fill="#ffc928" stroke-width="1"></path>
+                            <circle id="Ellipse_3" data-name="Ellipse 3" cx="11.358" cy="11.358" r="11.358"
+                                transform="translate(12.077 7.591)" fill="#ff6a37" stroke-width="1"></circle>
+                            <circle id="Ellipse_4" data-name="Ellipse 4" cx="4.126" cy="4.126" r="4.126"
+                                transform="translate(19.309 14.899)" fill="#ff4948" stroke-width="1"></circle>
+                        </g>
+                    </svg></div>
+            </a>
+            <div class="absolute left-1/2 -translate-x-1/2 md:relative md:left-0 md:-translate-x-0 z-50"><a class="z-50"
+                    href="/">
+                    <h1 class="mb-0 whitespace-nowrap inline font-heading text-4xl md:text-5xl xl:text-6xl text-white">
+                        Oroko Radio</h1>
+                </a></div>
+        </div>
+        <div class="flex items-center gap-4 z-50 text-black justify-self-end mr-4">
+            <div class="lg:mr-2"><a href="/search">
+                    <div class="cursor-pointer fill-current text-white"><svg version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22"
+                            height="22" viewBox="0 0 20 20">
+                            <path
+                                d="M18.869 19.162l-5.943-6.484c1.339-1.401 2.075-3.233 2.075-5.178 0-2.003-0.78-3.887-2.197-5.303s-3.3-2.197-5.303-2.197-3.887 0.78-5.303 2.197-2.197 3.3-2.197 5.303 0.78 3.887 2.197 5.303 3.3 2.197 5.303 2.197c1.726 0 3.362-0.579 4.688-1.645l5.943 6.483c0.099 0.108 0.233 0.162 0.369 0.162 0.121 0 0.242-0.043 0.338-0.131 0.204-0.187 0.217-0.503 0.031-0.706zM1 7.5c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5-2.916 6.5-6.5 6.5-6.5-2.916-6.5-6.5z"
+                                width="2"></path>
+                        </svg></div>
+                </a></div>
+            <div class="hidden lg:flex items-center gap-4"><a href="/radio"><button type="button"
+                        class="inline-block group xl:text-xl cursor-pointer rounded-full font-bold bg-transparent border-white text-white px-3 py-1.5 md:px-4 border-2">Shows</button></a><a
+                    href="/artists"><button type="button"
+                        class="inline-block group xl:text-xl cursor-pointer rounded-full font-bold bg-transparent border-white text-white px-3 py-1.5 md:px-4 border-2">Artists</button></a><a
+                    href="/news"><button type="button"
+                        class="inline-block group xl:text-xl cursor-pointer rounded-full font-bold bg-transparent border-white text-white px-3 py-1.5 md:px-4 border-2">News</button></a><a
+                    href="https://shop.oroko.live"><button type="button"
+                        class="inline-block group xl:text-xl cursor-pointer rounded-full font-bold bg-transparent border-white text-white px-3 py-1.5 md:px-4 border-2">Shop</button></a>
+            </div>
+            <div class="hidden md:block">
+                <div
+                    class="inline group bg-white xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1.5 md:py-2 md:px-5">
+                    <div class="relative inline-block h-3 w-3 xl:h-4 xl:w-4 mr-2 xl:mr-3">
+                        <div>
+                            <div
+                                class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                            </div>
+                            <div
+                                class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                            <div
+                                class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                    </div>Menu
+                </div>
+            </div>
+            <div class="h-full w-7 mb-0.5 md:hidden cursor-pointer fill-current text-white"><svg version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+                    <path
+                        d="M17.5 6h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z">
+                    </path>
+                    <path
+                        d="M17.5 11h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z">
+                    </path>
+                    <path
+                        d="M17.5 16h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z">
+                    </path>
+                </svg></div>
+        </div>
+        <div
+            class="absolute top-0 p-4 pt-20 xl:p-20 xl:pt-28 w-full min-h-screen sm:min-h-0 bg-orokoYellow text-black border-b-2 border-black z-40 shadow-3xl transition-transform -translate-y-full">
+            <nav class="mt-4 mb-10 md:flex md:justify-center">
+                <ul class="hidden sm:flex flex-wrap justify-center max-w-[1000px] 2xl:max-w-none gap-4 xl:gap-6"><a
+                        href="/radio">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>Radio
+                            </div>
+                        </li>
+                    </a><a href="/artists">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>Artists
+                            </div>
+                        </li>
+                    </a><a href="/news">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>News
+                            </div>
+                        </li>
+                    </a><a href="https://shop.oroko.live">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>Shop
+                            </div>
+                        </li>
+                    </a><a href="/support">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>Support
+                            </div>
+                        </li>
+                    </a><a href="/about">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>About
+                            </div>
+                        </li>
+                    </a><a href="/newsletter">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>Newsletter
+                            </div>
+                        </li>
+                    </a><a href="/apply">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>Apply
+                            </div>
+                        </li>
+                    </a><a href="/partners">
+                        <li class="flex-shrink-0 pb-4">
+                            <div
+                                class="inline group xl:text-xl cursor-pointer border-2 border-black rounded-full font-bold px-3 py-1 py-1.5 md:py-2 md:px-5 bg-transparent">
+                                <div class="relative h-3 w-3 xl:h-4 xl:w-4 inline-block mr-2 xl:mr-3">
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-black w-full h-full rounded-full inline-block group-hover:h-1.5 group-hover:w-1.5 xl:group-hover:h-2 xl:group-hover:w-2 transition-all">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-3.5 h-3.5 xl:w-4 xl:h-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                    <div
+                                        class="absolute right-1/2 top-1/2 transform translate-x-1/2 -translate-y-1/2 border rounded-full border-black w-5 h-5 xl:w-6 xl:h-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    </div>
+                                </div>Partners
+                            </div>
+                        </li>
+                    </a></ul>
+                <ul class="sm:hidden"><a href="/radio">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">Radio</li>
+                    </a><a href="/artists">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">Artists</li>
+                    </a><a href="/news">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">News</li>
+                    </a><a href="https://shop.oroko.live">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">Shop</li>
+                    </a><a href="/support">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">Support</li>
+                    </a><a href="/about">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">About</li>
+                    </a><a href="/newsletter">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">Newsletter</li>
+                    </a><a href="/apply">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">Apply</li>
+                    </a><a href="/partners">
+                        <li class="text-black text-2xl underline mb-2 cursor-pointer">Partners</li>
+                    </a></ul>
+            </nav>
+            <p class="font-serif block text-xl md:text-3xl xl:text-4xl sm:text-center max-w-md sm:max-w-none">Oroko is a
+                not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and
+                empower through conversation, collaboration and community.</p>
+        </div>
+    </div><audio hidden="" id="oroko-live-player" preload="none">
+        <source type="audio/mpeg">Your browser does not support the audio element.
+    </audio>
+    <section class="sticky top-0 z-30 mb-14 md:mb-18">
+        <div class="absolute w-full">
+            <div class="relative group">
+                <div class="flex items-center h-14 md:h-18 border-b-2 border-t-2 border-black text-white">
+                    <div class="px-4 h-full flex bg-orokoYellow text-black border-r-2 border-black">
+                        <div
+                            class="rounded-full self-center bg-white border-black border-2 h-12 w-12 md:h-16 md:w-16 flex justify-center items-center">
+                            <button class="h-7 w-7 md:h-9 md:w-9 focus:outline-none focus:ring-4"
+                                aria-label="Play Live Broadcast"><svg xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="-6 -2 40 40">
+                                    <path d="M35 17.5L0 35V0z" fill="currentColor"></path>
+                                </svg></button></div>
+                    </div>
+                    <div class="overflow-hidden h-full z-30 cursor-pointer">
+                        <div class="h-full w-full bg-orokoRed text-black">
+                            <div class="rfm-marquee-container marquee-wrapper"
+                                style="height: 100%; --pause-on-hover: running; --pause-on-click: running; --width: 100%; --transform: none;">
+                                <div class="rfm-marquee"
+                                    style="--play: running; --direction: normal; --duration: 45.46484375s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+                                    <div class="rfm-initial-child-container">
+                                        <div class="rfm-child" style="--transform: none;">
+                                            <div class="h-full flex align-middle items-center border-black border-l-2">
+                                                <div class="flex-grow-0 flex items-center">
+                                                    <div class="pl-10 pr-4"><svg
+                                                            class="text-black stroke-current stroke-2 w-8 md:w-10 h-full"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.417 66">
+                                                            <g id="Oroko_Small_Logo_White_Lines"
+                                                                data-name="Oroko Small Logo White Lines"
+                                                                transform="translate(1.025 1)">
+                                                                <path id="Pfad_23" data-name="Pfad 23"
+                                                                    d="M4481.979,744.177c2.333-1.471,8.027-4.523,8.138.654-.14,4.178,5.018,4.753,8.718-1.019l5.222,13.308h-45l4.946-13.051s7.107-5.476,8.43.871c1.089,4.436,6.75,1.081,8.215.126"
+                                                                    transform="translate(-4458.219 -693.119)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_24" data-name="Pfad 24"
+                                                                    d="M4853.778,395.106s7.78,6.555,2.986,14.231c-5.394,8.637-5.982,12.319-5.982,12.319l-4.5-11.675a18.821,18.821,0,0,0,7.491-14.815"
+                                                                    transform="translate(-4811.96 -375.755)"
+                                                                    fill="none"></path>
+                                                                <rect id="Rechteck_2" data-name="Rechteck 2"
+                                                                    width="1.219" height="26.282"
+                                                                    transform="translate(22.439 37.718)" fill="none">
+                                                                </rect>
+                                                                <path id="Pfad_25" data-name="Pfad 25"
+                                                                    d="M4536.892,196.371a18.809,18.809,0,0,1-32.276,12.888,18.4,18.4,0,0,1-5.257-12.888,18.768,18.768,0,0,1,37.533,0Z"
+                                                                    transform="translate(-4495.074 -177.804)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_26" data-name="Pfad 26"
+                                                                    d="M4492.451,569.452a18.874,18.874,0,0,1-22.049.229l-.131,0-11.21,29.748h45Z"
+                                                                    transform="translate(-4458.218 -535.43)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_27" data-name="Pfad 27"
+                                                                    d="M4499.359,392.421v.229c0-.038,0-.076,0-.114S4499.359,392.46,4499.359,392.421Z"
+                                                                    transform="translate(-4495.074 -373.303)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_28" data-name="Pfad 28"
+                                                                    d="M4460.985,410.009a18.717,18.717,0,0,1-2.29-2.016,18.506,18.506,0,0,1-5.2-12.888s-7.474,6.577-2.68,14.253c5.555,8.895,6.046,12.174,6.079,12.368l4.331-11.543Z"
+                                                                    transform="translate(-4449.209 -375.758)"
+                                                                    fill="none"></path>
+                                                                <circle id="Ellipse_5" data-name="Ellipse 5" cx="11.076"
+                                                                    cy="11.076" r="11.076"
+                                                                    transform="translate(11.974 7.402)" fill="none">
+                                                                </circle>
+                                                                <circle id="Ellipse_6" data-name="Ellipse 6" cx="4.023"
+                                                                    cy="4.023" r="4.023"
+                                                                    transform="translate(19.027 14.953)" fill="none">
+                                                                </circle>
+                                                            </g>
+                                                        </svg></div>
+                                                    <p class="leading-none font-sans mb-0 pr-10">Live</p>
+                                                </div>
+                                                <h2 class="font-heading inline text-5xl xl:text-6xl">(R) Heard Radio
+                                                </h2>
+                                                <h2 class="font-serif inline text-4xl xl:text-5xl mx-10">With 999ADJ
+                                                </h2>
+                                            </div>
+                                        </div>
+                                        <div class="rfm-child" style="--transform: none;">
+                                            <div class="h-full flex align-middle items-center border-black border-l-2">
+                                                <div class="flex-grow-0 flex items-center">
+                                                    <div class="pl-10 pr-4"><svg
+                                                            class="text-black stroke-current stroke-2 w-8 md:w-10 h-full"
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.417 66">
+                                                            <g id="Oroko_Small_Logo_White_Lines"
+                                                                data-name="Oroko Small Logo White Lines"
+                                                                transform="translate(1.025 1)">
+                                                                <path id="Pfad_23" data-name="Pfad 23"
+                                                                    d="M4481.979,744.177c2.333-1.471,8.027-4.523,8.138.654-.14,4.178,5.018,4.753,8.718-1.019l5.222,13.308h-45l4.946-13.051s7.107-5.476,8.43.871c1.089,4.436,6.75,1.081,8.215.126"
+                                                                    transform="translate(-4458.219 -693.119)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_24" data-name="Pfad 24"
+                                                                    d="M4853.778,395.106s7.78,6.555,2.986,14.231c-5.394,8.637-5.982,12.319-5.982,12.319l-4.5-11.675a18.821,18.821,0,0,0,7.491-14.815"
+                                                                    transform="translate(-4811.96 -375.755)"
+                                                                    fill="none"></path>
+                                                                <rect id="Rechteck_2" data-name="Rechteck 2"
+                                                                    width="1.219" height="26.282"
+                                                                    transform="translate(22.439 37.718)" fill="none">
+                                                                </rect>
+                                                                <path id="Pfad_25" data-name="Pfad 25"
+                                                                    d="M4536.892,196.371a18.809,18.809,0,0,1-32.276,12.888,18.4,18.4,0,0,1-5.257-12.888,18.768,18.768,0,0,1,37.533,0Z"
+                                                                    transform="translate(-4495.074 -177.804)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_26" data-name="Pfad 26"
+                                                                    d="M4492.451,569.452a18.874,18.874,0,0,1-22.049.229l-.131,0-11.21,29.748h45Z"
+                                                                    transform="translate(-4458.218 -535.43)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_27" data-name="Pfad 27"
+                                                                    d="M4499.359,392.421v.229c0-.038,0-.076,0-.114S4499.359,392.46,4499.359,392.421Z"
+                                                                    transform="translate(-4495.074 -373.303)"
+                                                                    fill="none"></path>
+                                                                <path id="Pfad_28" data-name="Pfad 28"
+                                                                    d="M4460.985,410.009a18.717,18.717,0,0,1-2.29-2.016,18.506,18.506,0,0,1-5.2-12.888s-7.474,6.577-2.68,14.253c5.555,8.895,6.046,12.174,6.079,12.368l4.331-11.543Z"
+                                                                    transform="translate(-4449.209 -375.758)"
+                                                                    fill="none"></path>
+                                                                <circle id="Ellipse_5" data-name="Ellipse 5" cx="11.076"
+                                                                    cy="11.076" r="11.076"
+                                                                    transform="translate(11.974 7.402)" fill="none">
+                                                                </circle>
+                                                                <circle id="Ellipse_6" data-name="Ellipse 6" cx="4.023"
+                                                                    cy="4.023" r="4.023"
+                                                                    transform="translate(19.027 14.953)" fill="none">
+                                                                </circle>
+                                                            </g>
+                                                        </svg></div>
+                                                    <p class="leading-none font-sans mb-0 pr-10">Live</p>
+                                                </div>
+                                                <h2 class="font-heading inline text-5xl xl:text-6xl">(R) Heard Radio
+                                                </h2>
+                                                <h2 class="font-serif inline text-4xl xl:text-5xl mx-10">With 999ADJ
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rfm-marquee"
+                                    style="--play: running; --direction: normal; --duration: 45.46484375s; --delay: 0s; --iteration-count: infinite; --min-width: 100%;">
+                                    <div class="rfm-child" style="--transform: none;">
+                                        <div class="h-full flex align-middle items-center border-black border-l-2">
+                                            <div class="flex-grow-0 flex items-center">
+                                                <div class="pl-10 pr-4"><svg
+                                                        class="text-black stroke-current stroke-2 w-8 md:w-10 h-full"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.417 66">
+                                                        <g id="Oroko_Small_Logo_White_Lines"
+                                                            data-name="Oroko Small Logo White Lines"
+                                                            transform="translate(1.025 1)">
+                                                            <path id="Pfad_23" data-name="Pfad 23"
+                                                                d="M4481.979,744.177c2.333-1.471,8.027-4.523,8.138.654-.14,4.178,5.018,4.753,8.718-1.019l5.222,13.308h-45l4.946-13.051s7.107-5.476,8.43.871c1.089,4.436,6.75,1.081,8.215.126"
+                                                                transform="translate(-4458.219 -693.119)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_24" data-name="Pfad 24"
+                                                                d="M4853.778,395.106s7.78,6.555,2.986,14.231c-5.394,8.637-5.982,12.319-5.982,12.319l-4.5-11.675a18.821,18.821,0,0,0,7.491-14.815"
+                                                                transform="translate(-4811.96 -375.755)" fill="none">
+                                                            </path>
+                                                            <rect id="Rechteck_2" data-name="Rechteck 2" width="1.219"
+                                                                height="26.282" transform="translate(22.439 37.718)"
+                                                                fill="none"></rect>
+                                                            <path id="Pfad_25" data-name="Pfad 25"
+                                                                d="M4536.892,196.371a18.809,18.809,0,0,1-32.276,12.888,18.4,18.4,0,0,1-5.257-12.888,18.768,18.768,0,0,1,37.533,0Z"
+                                                                transform="translate(-4495.074 -177.804)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_26" data-name="Pfad 26"
+                                                                d="M4492.451,569.452a18.874,18.874,0,0,1-22.049.229l-.131,0-11.21,29.748h45Z"
+                                                                transform="translate(-4458.218 -535.43)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_27" data-name="Pfad 27"
+                                                                d="M4499.359,392.421v.229c0-.038,0-.076,0-.114S4499.359,392.46,4499.359,392.421Z"
+                                                                transform="translate(-4495.074 -373.303)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_28" data-name="Pfad 28"
+                                                                d="M4460.985,410.009a18.717,18.717,0,0,1-2.29-2.016,18.506,18.506,0,0,1-5.2-12.888s-7.474,6.577-2.68,14.253c5.555,8.895,6.046,12.174,6.079,12.368l4.331-11.543Z"
+                                                                transform="translate(-4449.209 -375.758)" fill="none">
+                                                            </path>
+                                                            <circle id="Ellipse_5" data-name="Ellipse 5" cx="11.076"
+                                                                cy="11.076" r="11.076"
+                                                                transform="translate(11.974 7.402)" fill="none">
+                                                            </circle>
+                                                            <circle id="Ellipse_6" data-name="Ellipse 6" cx="4.023"
+                                                                cy="4.023" r="4.023"
+                                                                transform="translate(19.027 14.953)" fill="none">
+                                                            </circle>
+                                                        </g>
+                                                    </svg></div>
+                                                <p class="leading-none font-sans mb-0 pr-10">Live</p>
+                                            </div>
+                                            <h2 class="font-heading inline text-5xl xl:text-6xl">(R) Heard Radio</h2>
+                                            <h2 class="font-serif inline text-4xl xl:text-5xl mx-10">With 999ADJ</h2>
+                                        </div>
+                                    </div>
+                                    <div class="rfm-child" style="--transform: none;">
+                                        <div class="h-full flex align-middle items-center border-black border-l-2">
+                                            <div class="flex-grow-0 flex items-center">
+                                                <div class="pl-10 pr-4"><svg
+                                                        class="text-black stroke-current stroke-2 w-8 md:w-10 h-full"
+                                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.417 66">
+                                                        <g id="Oroko_Small_Logo_White_Lines"
+                                                            data-name="Oroko Small Logo White Lines"
+                                                            transform="translate(1.025 1)">
+                                                            <path id="Pfad_23" data-name="Pfad 23"
+                                                                d="M4481.979,744.177c2.333-1.471,8.027-4.523,8.138.654-.14,4.178,5.018,4.753,8.718-1.019l5.222,13.308h-45l4.946-13.051s7.107-5.476,8.43.871c1.089,4.436,6.75,1.081,8.215.126"
+                                                                transform="translate(-4458.219 -693.119)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_24" data-name="Pfad 24"
+                                                                d="M4853.778,395.106s7.78,6.555,2.986,14.231c-5.394,8.637-5.982,12.319-5.982,12.319l-4.5-11.675a18.821,18.821,0,0,0,7.491-14.815"
+                                                                transform="translate(-4811.96 -375.755)" fill="none">
+                                                            </path>
+                                                            <rect id="Rechteck_2" data-name="Rechteck 2" width="1.219"
+                                                                height="26.282" transform="translate(22.439 37.718)"
+                                                                fill="none"></rect>
+                                                            <path id="Pfad_25" data-name="Pfad 25"
+                                                                d="M4536.892,196.371a18.809,18.809,0,0,1-32.276,12.888,18.4,18.4,0,0,1-5.257-12.888,18.768,18.768,0,0,1,37.533,0Z"
+                                                                transform="translate(-4495.074 -177.804)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_26" data-name="Pfad 26"
+                                                                d="M4492.451,569.452a18.874,18.874,0,0,1-22.049.229l-.131,0-11.21,29.748h45Z"
+                                                                transform="translate(-4458.218 -535.43)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_27" data-name="Pfad 27"
+                                                                d="M4499.359,392.421v.229c0-.038,0-.076,0-.114S4499.359,392.46,4499.359,392.421Z"
+                                                                transform="translate(-4495.074 -373.303)" fill="none">
+                                                            </path>
+                                                            <path id="Pfad_28" data-name="Pfad 28"
+                                                                d="M4460.985,410.009a18.717,18.717,0,0,1-2.29-2.016,18.506,18.506,0,0,1-5.2-12.888s-7.474,6.577-2.68,14.253c5.555,8.895,6.046,12.174,6.079,12.368l4.331-11.543Z"
+                                                                transform="translate(-4449.209 -375.758)" fill="none">
+                                                            </path>
+                                                            <circle id="Ellipse_5" data-name="Ellipse 5" cx="11.076"
+                                                                cy="11.076" r="11.076"
+                                                                transform="translate(11.974 7.402)" fill="none">
+                                                            </circle>
+                                                            <circle id="Ellipse_6" data-name="Ellipse 6" cx="4.023"
+                                                                cy="4.023" r="4.023"
+                                                                transform="translate(19.027 14.953)" fill="none">
+                                                            </circle>
+                                                        </g>
+                                                    </svg></div>
+                                                <p class="leading-none font-sans mb-0 pr-10">Live</p>
+                                            </div>
+                                            <h2 class="font-heading inline text-5xl xl:text-6xl">(R) Heard Radio</h2>
+                                            <h2 class="font-serif inline text-4xl xl:text-5xl mx-10">With 999ADJ</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="hidden md:block absolute transition-all -translate-x-1/2 -translate-y-1/2 left-1/2 z-10 z-10 -bottom-8 group-hover:-bottom-18 delay-200">
+                    <button
+                        class="group hover:scale-110 cursor-pointer bg-offBlack rounded-full h-16 w-16 border-black border-2 flex justify-center items-center transition-transform">
+                        <div
+                            class="relative h-full w-full m-4 transition-transform delay-200 group-hover:translate-y-0.5">
+                            <span
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                    alt="Open/Close player dropdown" decoding="async" data-nimg="fill"
+                                    src="/_next/static/media/chevron-down.04def673.svg" sizes="100vw"
+                                    srcset="/_next/static/media/chevron-down.04def673.svg 640w, /_next/static/media/chevron-down.04def673.svg 750w, /_next/static/media/chevron-down.04def673.svg 828w, /_next/static/media/chevron-down.04def673.svg 1080w, /_next/static/media/chevron-down.04def673.svg 1200w, /_next/static/media/chevron-down.04def673.svg 1920w, /_next/static/media/chevron-down.04def673.svg 2048w, /_next/static/media/chevron-down.04def673.svg 3840w"
+                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+                        </div>
+                    </button></div>
+                <div class="w-full transition-all h-0 overflow-hidden">
+                    <section
+                        class="md:grid mx-auto border-b-2 lg:border-2 lg:border-t-0 border-black shadow-3xl max-w-3xl md:border-r-2 md:border-l-2">
+                        <div class="flex-grow p-4 bg-orokoRed">
+                            <div class="relative border-2 border-black w-full h-72 xl:h-96 mb-4"><span
+                                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                        alt="Heard Radio" decoding="async" data-nimg="fill"
+                                        src="https://d4mt18vwj73wk.cloudfront.net/trackImage/35eF1ej09YgqyyJeobqG5AKQ7eM-2025-11-18T11:23:15Z-512x512.jpg"
+                                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"></span>
+                            </div>
+                            <p class="font-sans font-semibold text-black text-sm mb-2">NOW PLAYING</p>
+                            <h1 class="font-heading text-3xl md:text-5xl text-black">(R) Heard Radio</h1>
+                            <h1 class="font-serif text-2xl md:text-4xl text-black mb-2">With 999ADJ</h1>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <article>
+        <div class="relative h-forty md:h-half border-black border-b-2">
+            <div class="flex relative h-full overflow-hidden">
+                <div class="relative w-full lg:w-3/5 xl:w-2/5 flex-shrink-0 lg:border-r-2 border-black"><img
+                        alt="Chemical Resonance invites Moone" decoding="async" data-nimg="fill" class="object-cover"
+                        sizes="100vw"
+                        srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=3840&amp;q=50 3840w"
+                        src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=3840&amp;q=50"
+                        style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: center center; color: transparent;">
+                </div>
+                <div class="relative w-full lg:w-3/5 xl:w-2/5 flex-shrink-0 lg:border-r-2 border-black"><img
+                        alt="Chemical Resonance invites Moone" decoding="async" data-nimg="fill" class="object-cover"
+                        sizes="100vw"
+                        srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=3840&amp;q=50 3840w"
+                        src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=3840&amp;q=50"
+                        style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: center center; color: transparent;">
+                </div>
+                <div class="relative w-full lg:w-3/5 xl:w-2/5 flex-shrink-0 lg:border-r-2 border-black"><img
+                        alt="Chemical Resonance invites Moone" decoding="async" data-nimg="fill" class="object-cover"
+                        sizes="100vw"
+                        srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=3840&amp;q=50 3840w"
+                        src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FImg381%20-%20Blessing%20Ewona%20(1)-1200x1500.webp&amp;w=3840&amp;q=50"
+                        style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: center center; color: transparent;">
+                </div>
+            </div>
+            <div class="absolute top-4 left-4 md:top-8 md:left-8"><button
+                    class="py-1 px-4 md:px-8 border-2 rounded-full border-black bg-white focus:outline-none focus:ring-4 font-sans font-semibold text-base md:text-xl">Back</button>
+            </div>
+        </div>
+        <section class="relative border-black border-b-2 md:py-6 pb-6 lg:pb-10">
+            <div
+                class="grid md:flex flex-col justify-evenly auto-rows-fr grid-cols-3 md:absolute right-0 top-0 h-full border-b-2 md:border-b-0 md:border-l-2 border-black text-black mb-4 md:mb-0">
+                <div class="px-3 md:px-4 ml-0.5 flex md:hidden items-center border-r-2 border-black col-span-2">
+                    <div class="mb-0 font-sans font-semibold tracking-wide text-base"><span>04 Dec 25
+                            22:00</span><span>H</span></div>
+                </div>
+                <div
+                    class="border-black flex flex-1 justify-center md:order-2 md:border-r-0 px-4 md:px-8 xl:px-16 py-2 bg-orokoYellow">
+                    <div class="self-center">
+                        <div class="relative inline-block text-left" data-headlessui-state="">
+                            <div><button class="focus:outline-none" id="headlessui-menu-button-_r_2_" type="button"
+                                    aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">
+                                    <div
+                                        class="bg-white rounded-full px-4 lg:px-6 py-1.5 border-black border-2 font-semibold text-base md:text-lg lg:text-xl">
+                                        Share</div>
+                                </button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container max-w-5xl mx-auto">
+                <p class="hidden md:block mb-4 font-sans font-semibold tracking-wide text-lg"><span>Thu 04 December 2025
+                        @ 22:00</span><span>H</span></p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl mb-0 font-heading md:mr-36 lg:mr-40">Chemical Resonance
+                    invites Moone</h1>
+                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl mb-6 lg:mb-10"> With <span><a
+                            href="/artists/weareallchemicals"><span
+                                class="border-b-2 border-black cursor-pointer">Weareallchemicals</span></a>,
+                    </span><span><a href="/artists/moone"><span
+                                class="border-b-2 border-black cursor-pointer">Moone</span></a></span></h2>
+                <div class="flex gap-1 flex-wrap"><a href="/artists?city=Lagos">
+                        <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                            <p
+                                class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg">
+                                Lagos</p>
+                        </div>
+                    </a><a href="/radio?category=house_%2F_techno&amp;genre=afro_tech#all-shows">
+                        <div class="flex-shrink-0 border-2 text-black border-black">
+                            <p
+                                class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg">
+                                Afro Tech</p>
+                        </div>
+                    </a><a href="/radio?category=house_%2F_techno&amp;genre=afro_house#all-shows">
+                        <div class="flex-shrink-0 border-2 text-black border-black">
+                            <p
+                                class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg">
+                                Afro House</p>
+                        </div>
+                    </a><a href="/radio?category=african&amp;genre=gqom#all-shows">
+                        <div class="flex-shrink-0 border-2 text-black border-black">
+                            <p
+                                class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase lg:text-lg">
+                                Gqom</p>
+                        </div>
+                    </a></div>
+            </div>
+        </section>
+        <section class="container max-w-5xl mx-auto rich-text py-6 md:py-8 mb-24">
+            <div class="payload-richtext">
+                <p><strong>With Guest: </strong><a href="https://www.instagram.com/gemaemoone?igsh=NmUwcWRoampjb2k5"
+                        rel="noopener noreferrer" target="_blank">Moone</a> (They/Them) is an international Dj and
+                    writer based in Abidjan, Côte D’Ivoire. Starting out early 2021, the artist has crafted their sound
+                    around African Electronic Dance Music. Mixing a wide range of genres including Afrotech, Afro House,
+                    Gqom and Kuduro, they curate eclectic, high energy yet very emotional sets that leave a long-lasting
+                    mark on the crowds experiencing them. </p>
+                <p>As a DJ, Moone's intention with the music they share is to make people feel something, always. They
+                    have no specific goal other than this one, for the sound to move you. And however the music touches
+                    you is directly linked to however you receive it. How open you are and how much you’re willing to
+                    surrender to it. There’s no trick and it’s always about the music. </p>
+            </div>
+        </section>
+        <div class="bg-offBlack" id="all-shows">
+            <h1 class="font-serif text-white text-4xl md:text-5xl pt-8 px-4 md:px-8 pb-0">Related Shows</h1>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4 md:p-8 xl:pb-12">
+                <div class="border-black border-2 bg-white"><a href="/radio/anda-electronix-inezganerecords">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="ANDA Electronix invites Inezgane Records" loading="lazy" decoding="async"
+                                    data-nimg="fill" class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FINEZGANE%20RECORDS%20PRESSPIC%20-%20OG%20LVVSAVAGE-600x766.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 51% 3%; color: transparent;">
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>05 Dec 2025
+                                            23:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">ANDA Electronix invites Inezgane
+                                        Records</h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With
+                                        <span><span>Ferré</span></span></h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Rotterdam</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Gqom</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Batida</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="border-black border-2 bg-white"><a href="/radio/dawa-show-ashbanks">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="The |D/A\W/A\ Show invites A$H BANKS" loading="lazy" decoding="async"
+                                    data-nimg="fill" class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FAsh%20Banks%20-%20Collectif%20DAWA-600x600.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 53% 3%; color: transparent;">
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>05 Dec 2025
+                                            22:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">The |D/A\W/A\ Show invites A$H BANKS
+                                    </h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With <span><span>|D/A\W/A\
+                                                collective</span></span></h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Paris</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            House</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Afro House</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Deep House</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="border-black border-2 bg-white"><a href="/radio/umgqibelo-radio-1225">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="Umgqibelo Radio" loading="lazy" decoding="async" data-nimg="fill"
+                                    class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fdnowh-600x745.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 52% 4%; color: transparent;">
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>04 Dec 2025
+                                            23:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">Umgqibelo Radio</h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With
+                                        <span><span>D[Nowhere]J</span></span></h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Johannesburg</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Gqom</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="border-black border-2 bg-white"><a href="/radio/1hour-in224-yudini">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="1 hour in 224 invites Yudini" loading="lazy" decoding="async" data-nimg="fill"
+                                    class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fmimi12-600x799.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 50% 2%; color: transparent;">
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>04 Dec 2025
+                                            18:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">1 hour in 224 invites Yudini</h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With <span><span>Mimi Géniale
+                                            </span></span></h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Conakry</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Namougnic</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            House</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Afro House</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="border-black border-2 bg-white"><a href="/radio/afrohuntingradio-oumoukala">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="Afrohunting Radio invites Oumoukala" loading="lazy" decoding="async"
+                                    data-nimg="fill" class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Forokooumoukal%20-%20Afrohunting%20Team-600x900.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 51% 3%; color: transparent;">
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>02 Dec 2025
+                                            19:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">Afrohunting Radio invites Oumoukala
+                                    </h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With
+                                        <span><span>Afrohunting</span></span></h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Buenos Aires</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Gqom</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Electronica</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Bouyon</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="border-black border-2 bg-white"><a href="/radio/home2homeradio-1125">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="HOME2HOME Radio" loading="lazy" decoding="async" data-nimg="fill"
+                                    class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2Fjabulani-1-600x639.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 50% 50%; color: transparent;">
+                                <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"><button
+                                        class="hover:scale-110 transition-transform w-16 h-16 lg:w-24 lg:h-24"><svg
+                                            id="Play_Button_Transparent" data-name="Play Button Transparent"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114">
+                                            <g id="Ellipse_24" data-name="Ellipse 24" fill="rgba(0,0,0,0.2)"
+                                                stroke="#fff" stroke-width="2">
+                                                <circle cx="57" cy="57" r="57" stroke="none"></circle>
+                                                <circle cx="57" cy="57" r="56" fill="none"></circle>
+                                            </g>
+                                            <g id="Pfad_65" data-name="Pfad 65"
+                                                transform="translate(93.107 28) rotate(90)" fill="none">
+                                                <path d="M29.182,0,58.363,56.595H0Z" stroke="none"></path>
+                                                <path
+                                                    d="M 29.18161964416504 4.364063262939453 L 3.281467437744141 54.59469985961914 L 55.08180618286133 54.59469985961914 L 29.18161964416504 4.364063262939453 M 29.18161964416504 -3.814697265625e-06 L 58.36327743530273 56.59469985961914 L 0 56.59469985961914 L 29.18161964416504 -3.814697265625e-06 Z"
+                                                    stroke="none" fill="#fff"></path>
+                                            </g>
+                                        </svg></button></div>
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>29 Nov 2025
+                                            00:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">HOME2HOME Radio</h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With
+                                        <span><span>jabulani.</span></span></h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Accra</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Afro House</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="border-black border-2 bg-white"><a href="/radio/fairydustdynamite-1125">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="FAIRYDUST DYNAMITE" loading="lazy" decoding="async" data-nimg="fill"
+                                    class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFDN10-CVR%20-%20Kaz%20Aninkorah-600x600.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 50% 50%; color: transparent;">
+                                <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"><button
+                                        class="hover:scale-110 transition-transform w-16 h-16 lg:w-24 lg:h-24"><svg
+                                            id="Play_Button_Transparent" data-name="Play Button Transparent"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114">
+                                            <g id="Ellipse_24" data-name="Ellipse 24" fill="rgba(0,0,0,0.2)"
+                                                stroke="#fff" stroke-width="2">
+                                                <circle cx="57" cy="57" r="57" stroke="none"></circle>
+                                                <circle cx="57" cy="57" r="56" fill="none"></circle>
+                                            </g>
+                                            <g id="Pfad_65" data-name="Pfad 65"
+                                                transform="translate(93.107 28) rotate(90)" fill="none">
+                                                <path d="M29.182,0,58.363,56.595H0Z" stroke="none"></path>
+                                                <path
+                                                    d="M 29.18161964416504 4.364063262939453 L 3.281467437744141 54.59469985961914 L 55.08180618286133 54.59469985961914 L 29.18161964416504 4.364063262939453 M 29.18161964416504 -3.814697265625e-06 L 58.36327743530273 56.59469985961914 L 0 56.59469985961914 L 29.18161964416504 -3.814697265625e-06 Z"
+                                                    stroke="none" fill="#fff"></path>
+                                            </g>
+                                        </svg></button></div>
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>27 Nov 2025
+                                            20:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">FAIRYDUST DYNAMITE</h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With <span><span>KXZ</span></span>
+                                    </h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Accra</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Afro House</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Gqom</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                <div class="border-black border-2 bg-white"><a href="/radio/fiyah-favs-1125">
+                        <div class="cursor-pointer h-full flex flex-col">
+                            <div class="relative w-full h-80 md:h-72 3xl:h-96 border-b-2 border-black xl:h-80"><img
+                                    alt="Fiyah Favs - Ember #4 Clip" loading="lazy" decoding="async" data-nimg="fill"
+                                    class="object-cover" sizes="100vw"
+                                    srcset="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=640&amp;q=50 640w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=750&amp;q=50 750w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=828&amp;q=50 828w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=1080&amp;q=50 1080w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=1200&amp;q=50 1200w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=1920&amp;q=50 1920w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=2048&amp;q=50 2048w, /_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=3840&amp;q=50 3840w"
+                                    src="/_next/image?url=%2Fapi%2Fmedia%2Ffile%2FFiyahdred%20Fiyah%20Favs%20Nov%2025%20-%20Kadence-600x600.webp&amp;w=3840&amp;q=50"
+                                    style="position: absolute; height: 100%; width: 100%; inset: 0px; object-position: 50% 50%; color: transparent;">
+                                <div class="absolute z-10 top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"><button
+                                        class="hover:scale-110 transition-transform w-16 h-16 lg:w-24 lg:h-24"><svg
+                                            id="Play_Button_Transparent" data-name="Play Button Transparent"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114">
+                                            <g id="Ellipse_24" data-name="Ellipse 24" fill="rgba(0,0,0,0.2)"
+                                                stroke="#fff" stroke-width="2">
+                                                <circle cx="57" cy="57" r="57" stroke="none"></circle>
+                                                <circle cx="57" cy="57" r="56" fill="none"></circle>
+                                            </g>
+                                            <g id="Pfad_65" data-name="Pfad 65"
+                                                transform="translate(93.107 28) rotate(90)" fill="none">
+                                                <path d="M29.182,0,58.363,56.595H0Z" stroke="none"></path>
+                                                <path
+                                                    d="M 29.18161964416504 4.364063262939453 L 3.281467437744141 54.59469985961914 L 55.08180618286133 54.59469985961914 L 29.18161964416504 4.364063262939453 M 29.18161964416504 -3.814697265625e-06 L 58.36327743530273 56.59469985961914 L 0 56.59469985961914 L 29.18161964416504 -3.814697265625e-06 Z"
+                                                    stroke="none" fill="#fff"></path>
+                                            </g>
+                                        </svg></button></div>
+                            </div>
+                            <div class="p-4 flex flex-col justify-between flex-1">
+                                <div>
+                                    <p class="font-sans text-sm md:text-base mb-2 font-medium"><span>26 Nov 2025
+                                            23:00</span><span>H</span></p>
+                                    <h1 class="font-heading card-leading text-4xl">Fiyah Favs - Ember #4 Clip</h1>
+                                    <h2 class="font-serif text-2xl lg:text-3xl mb-4"> With
+                                        <span><span>Fiyahdred</span></span></h2>
+                                </div>
+                                <div class="flex flex-wrap gap-1 mb-4">
+                                    <div class="flex-shrink-0 border-2 bg-black text-white border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            London</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            House</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Afro House</p>
+                                    </div>
+                                    <div class="flex-shrink-0 border-2 text-black border-black">
+                                        <p
+                                            class="font-sans inline-block font-semibold text-sm md:text-base mb-0 px-2 py-1 uppercase">
+                                            Deep House</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </article>
+    <div class="hidden lg:flex fixed bottom-4 right-8 flex gap-2 z-20"><a target="_blank"
+            rel="noopener nofollow noreferrer" href="https://www.instagram.com/orokoradio/">
+            <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                        alt="Instagram" decoding="async" data-nimg="responsive"
+                        src="/_next/static/media/Instagram.408c8a50.svg" sizes="100vw"
+                        srcset="/_next/static/media/Instagram.408c8a50.svg 640w, /_next/static/media/Instagram.408c8a50.svg 750w, /_next/static/media/Instagram.408c8a50.svg 828w, /_next/static/media/Instagram.408c8a50.svg 1080w, /_next/static/media/Instagram.408c8a50.svg 1200w, /_next/static/media/Instagram.408c8a50.svg 1920w, /_next/static/media/Instagram.408c8a50.svg 2048w, /_next/static/media/Instagram.408c8a50.svg 3840w"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+            </div>
+        </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://www.tiktok.com/@orokoradio">
+            <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                        alt="TikTok" decoding="async" data-nimg="responsive"
+                        src="/_next/static/media/TikTok.4bdb92df.svg" sizes="100vw"
+                        srcset="/_next/static/media/TikTok.4bdb92df.svg 640w, /_next/static/media/TikTok.4bdb92df.svg 750w, /_next/static/media/TikTok.4bdb92df.svg 828w, /_next/static/media/TikTok.4bdb92df.svg 1080w, /_next/static/media/TikTok.4bdb92df.svg 1200w, /_next/static/media/TikTok.4bdb92df.svg 1920w, /_next/static/media/TikTok.4bdb92df.svg 2048w, /_next/static/media/TikTok.4bdb92df.svg 3840w"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+            </div>
+        </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://twitter.com/orokoradio">
+            <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                        alt="Twitter" decoding="async" data-nimg="responsive"
+                        src="/_next/static/media/Twitter.dab09420.svg" sizes="100vw"
+                        srcset="/_next/static/media/Twitter.dab09420.svg 640w, /_next/static/media/Twitter.dab09420.svg 750w, /_next/static/media/Twitter.dab09420.svg 828w, /_next/static/media/Twitter.dab09420.svg 1080w, /_next/static/media/Twitter.dab09420.svg 1200w, /_next/static/media/Twitter.dab09420.svg 1920w, /_next/static/media/Twitter.dab09420.svg 2048w, /_next/static/media/Twitter.dab09420.svg 3840w"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+            </div>
+        </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://www.facebook.com/OrokoRadio">
+            <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                        alt="Facebook" decoding="async" data-nimg="responsive"
+                        src="/_next/static/media/Facebook.36439eff.svg" sizes="100vw"
+                        srcset="/_next/static/media/Facebook.36439eff.svg 640w, /_next/static/media/Facebook.36439eff.svg 750w, /_next/static/media/Facebook.36439eff.svg 828w, /_next/static/media/Facebook.36439eff.svg 1080w, /_next/static/media/Facebook.36439eff.svg 1200w, /_next/static/media/Facebook.36439eff.svg 1920w, /_next/static/media/Facebook.36439eff.svg 2048w, /_next/static/media/Facebook.36439eff.svg 3840w"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+            </div>
+        </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://discord.gg/BDSBE6Ey4w">
+            <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                    style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                        style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                        alt="Discord" decoding="async" data-nimg="responsive"
+                        src="/_next/static/media/Discord.6a0d6aa5.svg" sizes="100vw"
+                        srcset="/_next/static/media/Discord.6a0d6aa5.svg 640w, /_next/static/media/Discord.6a0d6aa5.svg 750w, /_next/static/media/Discord.6a0d6aa5.svg 828w, /_next/static/media/Discord.6a0d6aa5.svg 1080w, /_next/static/media/Discord.6a0d6aa5.svg 1200w, /_next/static/media/Discord.6a0d6aa5.svg 1920w, /_next/static/media/Discord.6a0d6aa5.svg 2048w, /_next/static/media/Discord.6a0d6aa5.svg 3840w"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"><noscript></noscript></span>
+            </div>
+        </a></div>
+    <div class="bg-black p-8">
+        <div class="mx-auto text-center text-white">
+            <ul class="flex flex-wrap text-lg md:text-xl xl:text-2xl justify-center gap-6 md:gap-10 mb-8"><a
+                    href="/radio">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">Radio</li>
+                </a><a href="/artists">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">Artists</li>
+                </a><a href="/news">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">News</li>
+                </a><a href="https://shop.oroko.live">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">Shop</li>
+                </a><a href="/support">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">Support</li>
+                </a><a href="/about">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">About</li>
+                </a><a href="/newsletter">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">Newsletter</li>
+                </a><a href="/apply">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">Apply</li>
+                </a><a href="/partners">
+                    <li class="font-bold cursor-pointer hover:opacity-70 transition-opacity">Partners</li>
+                </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://www.patreon.com/orokoradio">
+                    <li class="font-bold hover:opacity-70 transition-opacity">Patreon</li>
+                </a><a href="mailto:info@oroko.live">
+                    <li class="font-bold hover:opacity-70 transition-opacity">Contact</li>
+                </a></ul>
+            <div class="flex justify-center mb-8">
+                <div class="undefined flex gap-2 z-20"><a target="_blank" rel="noopener nofollow noreferrer"
+                        href="https://www.instagram.com/orokoradio/">
+                        <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                    alt="Instagram" decoding="async" data-nimg="responsive"
+                                    src="/_next/static/media/Instagram.408c8a50.svg" sizes="100vw"
+                                    srcset="/_next/static/media/Instagram.408c8a50.svg 640w, /_next/static/media/Instagram.408c8a50.svg 750w, /_next/static/media/Instagram.408c8a50.svg 828w, /_next/static/media/Instagram.408c8a50.svg 1080w, /_next/static/media/Instagram.408c8a50.svg 1200w, /_next/static/media/Instagram.408c8a50.svg 1920w, /_next/static/media/Instagram.408c8a50.svg 2048w, /_next/static/media/Instagram.408c8a50.svg 3840w"
+                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                        </div>
+                    </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://www.tiktok.com/@orokoradio">
+                        <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                    alt="TikTok" decoding="async" data-nimg="responsive"
+                                    src="/_next/static/media/TikTok.4bdb92df.svg" sizes="100vw"
+                                    srcset="/_next/static/media/TikTok.4bdb92df.svg 640w, /_next/static/media/TikTok.4bdb92df.svg 750w, /_next/static/media/TikTok.4bdb92df.svg 828w, /_next/static/media/TikTok.4bdb92df.svg 1080w, /_next/static/media/TikTok.4bdb92df.svg 1200w, /_next/static/media/TikTok.4bdb92df.svg 1920w, /_next/static/media/TikTok.4bdb92df.svg 2048w, /_next/static/media/TikTok.4bdb92df.svg 3840w"
+                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                        </div>
+                    </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://twitter.com/orokoradio">
+                        <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                    alt="Twitter" decoding="async" data-nimg="responsive"
+                                    src="/_next/static/media/Twitter.dab09420.svg" sizes="100vw"
+                                    srcset="/_next/static/media/Twitter.dab09420.svg 640w, /_next/static/media/Twitter.dab09420.svg 750w, /_next/static/media/Twitter.dab09420.svg 828w, /_next/static/media/Twitter.dab09420.svg 1080w, /_next/static/media/Twitter.dab09420.svg 1200w, /_next/static/media/Twitter.dab09420.svg 1920w, /_next/static/media/Twitter.dab09420.svg 2048w, /_next/static/media/Twitter.dab09420.svg 3840w"
+                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                        </div>
+                    </a><a target="_blank" rel="noopener nofollow noreferrer"
+                        href="https://www.facebook.com/OrokoRadio">
+                        <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                    alt="Facebook" decoding="async" data-nimg="responsive"
+                                    src="/_next/static/media/Facebook.36439eff.svg" sizes="100vw"
+                                    srcset="/_next/static/media/Facebook.36439eff.svg 640w, /_next/static/media/Facebook.36439eff.svg 750w, /_next/static/media/Facebook.36439eff.svg 828w, /_next/static/media/Facebook.36439eff.svg 1080w, /_next/static/media/Facebook.36439eff.svg 1200w, /_next/static/media/Facebook.36439eff.svg 1920w, /_next/static/media/Facebook.36439eff.svg 2048w, /_next/static/media/Facebook.36439eff.svg 3840w"
+                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                        </div>
+                    </a><a target="_blank" rel="noopener nofollow noreferrer" href="https://discord.gg/BDSBE6Ey4w">
+                        <div class="w-8 h-8 hover:scale-110 transition-transform"><span
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"><span
+                                    style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span><img
+                                    alt="Discord" decoding="async" data-nimg="responsive"
+                                    src="/_next/static/media/Discord.6a0d6aa5.svg" sizes="100vw"
+                                    srcset="/_next/static/media/Discord.6a0d6aa5.svg 640w, /_next/static/media/Discord.6a0d6aa5.svg 750w, /_next/static/media/Discord.6a0d6aa5.svg 828w, /_next/static/media/Discord.6a0d6aa5.svg 1080w, /_next/static/media/Discord.6a0d6aa5.svg 1200w, /_next/static/media/Discord.6a0d6aa5.svg 1920w, /_next/static/media/Discord.6a0d6aa5.svg 2048w, /_next/static/media/Discord.6a0d6aa5.svg 3840w"
+                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"></span>
+                        </div>
+                    </a></div>
+            </div><svg class="stroke-current stroke-2 text-white w-10 h-10 lg:w-14 lg:h-14 inline-block mb-4"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.417 66">
+                <g id="Oroko_Small_Logo_White_Lines" data-name="Oroko Small Logo White Lines"
+                    transform="translate(1.025 1)">
+                    <path id="Pfad_23" data-name="Pfad 23"
+                        d="M4481.979,744.177c2.333-1.471,8.027-4.523,8.138.654-.14,4.178,5.018,4.753,8.718-1.019l5.222,13.308h-45l4.946-13.051s7.107-5.476,8.43.871c1.089,4.436,6.75,1.081,8.215.126"
+                        transform="translate(-4458.219 -693.119)" fill="none"></path>
+                    <path id="Pfad_24" data-name="Pfad 24"
+                        d="M4853.778,395.106s7.78,6.555,2.986,14.231c-5.394,8.637-5.982,12.319-5.982,12.319l-4.5-11.675a18.821,18.821,0,0,0,7.491-14.815"
+                        transform="translate(-4811.96 -375.755)" fill="none"></path>
+                    <rect id="Rechteck_2" data-name="Rechteck 2" width="1.219" height="26.282"
+                        transform="translate(22.439 37.718)" fill="none"></rect>
+                    <path id="Pfad_25" data-name="Pfad 25"
+                        d="M4536.892,196.371a18.809,18.809,0,0,1-32.276,12.888,18.4,18.4,0,0,1-5.257-12.888,18.768,18.768,0,0,1,37.533,0Z"
+                        transform="translate(-4495.074 -177.804)" fill="none"></path>
+                    <path id="Pfad_26" data-name="Pfad 26"
+                        d="M4492.451,569.452a18.874,18.874,0,0,1-22.049.229l-.131,0-11.21,29.748h45Z"
+                        transform="translate(-4458.218 -535.43)" fill="none"></path>
+                    <path id="Pfad_27" data-name="Pfad 27"
+                        d="M4499.359,392.421v.229c0-.038,0-.076,0-.114S4499.359,392.46,4499.359,392.421Z"
+                        transform="translate(-4495.074 -373.303)" fill="none"></path>
+                    <path id="Pfad_28" data-name="Pfad 28"
+                        d="M4460.985,410.009a18.717,18.717,0,0,1-2.29-2.016,18.506,18.506,0,0,1-5.2-12.888s-7.474,6.577-2.68,14.253c5.555,8.895,6.046,12.174,6.079,12.368l4.331-11.543Z"
+                        transform="translate(-4449.209 -375.758)" fill="none"></path>
+                    <circle id="Ellipse_5" data-name="Ellipse 5" cx="11.076" cy="11.076" r="11.076"
+                        transform="translate(11.974 7.402)" fill="none"></circle>
+                    <circle id="Ellipse_6" data-name="Ellipse 6" cx="4.023" cy="4.023" r="4.023"
+                        transform="translate(19.027 14.953)" fill="none"></circle>
+                </g>
+            </svg>
+            <p class="mt-2 mb-8 font-sans xl:text-base">©OROKO 2021</p>
+            <div class="flex flex-col md:flex-row justify-center gap-2 font-sans text-sm xl:text-base">
+                <div>Designed by <a target="_blank" rel="noopener nofollow noreferrer"
+                        href="https://www.studiopanorama.de/"><span
+                            class="underline tracking-widest cursor-pointer">panorama</span></a> </div>
+                <div>Developed by <a target="_blank" rel="noopener nofollow noreferrer"
+                        href="https://github.com/je-boska"><span class="underline tracking-widest cursor-pointer">je
+                            boska</span></a> </div>
+            </div>
+        </div>
+    </div><next-route-announcer style="position: absolute;"><template shadowrootmode="open">
+            <div aria-live="assertive" id="__next-route-announcer__" role="alert"
+                style="position: absolute; border: 0px; height: 1px; margin: -1px; padding: 0px; width: 1px; clip: rect(0px, 0px, 0px, 0px); overflow: hidden; white-space: nowrap; overflow-wrap: normal;">
+            </div>
+        </template></next-route-announcer>
+    <script src="//widget.mixcloud.com/media/js/widgetApi.js" async="" defer="" data-status="ready"></script>
+
+    <head>
+        <link rel="stylesheet" href="/_next/static/css/eff2c13fcdcd54e2.css" data-precedence="next">
+        <script src="/_next/static/chunks/02013d83-9a334eaa04378443.js" async=""></script>
+        <script src="/_next/static/chunks/7200-e0ef7b342849ed84.js" async=""></script>
+        <script src="/_next/static/chunks/main-app-791d828c7b71a21b.js" async=""></script>
+        <script src="/_next/static/chunks/8168-4914211d1c1e4ff3.js" async=""></script>
+        <script src="/_next/static/chunks/3727-10089c22a3a69d08.js" async=""></script>
+        <script src="/_next/static/chunks/8243-779374a66c45ae86.js" async=""></script>
+        <script src="/_next/static/chunks/1049-a16d7e5950a6140d.js" async=""></script>
+        <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" nomodule=""></script>
+        <style type="text/css">
+            .rfm-marquee-container {
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                width: var(--width);
+                transform: var(--transform);
+            }
+
+            .rfm-marquee-container:hover div {
+                animation-play-state: var(--pause-on-hover);
+            }
+
+            .rfm-marquee-container:active div {
+                animation-play-state: var(--pause-on-click);
+            }
+
+            .rfm-overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+
+            .rfm-overlay::before,
+            .rfm-overlay::after {
+                background: linear-gradient(to right, var(--gradient-color), rgba(255, 255, 255, 0));
+                content: "";
+                height: 100%;
+                position: absolute;
+                width: var(--gradient-width);
+                z-index: 2;
+                pointer-events: none;
+                touch-action: none;
+            }
+
+            .rfm-overlay::after {
+                right: 0;
+                top: 0;
+                transform: rotateZ(180deg);
+            }
+
+            .rfm-overlay::before {
+                left: 0;
+                top: 0;
+            }
+
+            .rfm-marquee {
+                flex: 0 0 auto;
+                min-width: var(--min-width);
+                z-index: 1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+                animation-play-state: var(--play);
+                animation-delay: var(--delay);
+                animation-direction: var(--direction);
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+
+            .rfm-initial-child-container {
+                flex: 0 0 auto;
+                display: flex;
+                min-width: auto;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .rfm-child {
+                transform: var(--transform);
+            }
+        </style>
+        <style></style>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Oroko | Chemical Resonance invites Moone</title>
+        <meta name="description"
+            content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+        <meta property="og:title" content="Oroko Radio">
+        <meta property="og:description"
+            content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+        <meta property="og:url" content="https://oroko.live/">
+        <meta property="og:site_name" content="Oroko Radio">
+        <meta property="og:image" content="https://oroko.live/OROKO_OG_1200px.png">
+        <meta property="og:image:secure_url" content="https://oroko.live/OROKO_OG_1200px.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="627">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:alt" content="Oroko Radio Logo">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Oroko Radio">
+        <meta name="twitter:description"
+            content="Oroko is a not-for-profit independent internet radio station based in Accra, Ghana. We aim to connect, inspire and empower through conversation, collaboration and community.">
+        <meta name="twitter:image" content="https://oroko.live/OROKO_OG_1200px.png">
+        <meta name="twitter:image:secure_url" content="https://oroko.live/OROKO_OG_1200px.png">
+        <meta name="twitter:image:width" content="1200">
+        <meta name="twitter:image:height" content="627">
+        <meta name="twitter:image:type" content="image/png">
+        <meta name="twitter:image:alt" content="Oroko Radio Logo">
+        <link rel="icon" href="/favicon.ico">
+        <script src="/_vercel/insights/script.js" defer="" data-sdkn="@vercel/analytics/react"
+            data-sdkv="1.5.0"></script>
+    </head>
+</body>
+
+</html>

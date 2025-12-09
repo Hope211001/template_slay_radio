@@ -14,7 +14,11 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                        // 🎸 ROCK ALTERNATIF REBEL - Fonts Artistiques
+                        'title': ['Black Ops One', 'sans-serif'],      // Grands titres
+                        'heading': ['Permanent Marker', 'sans-serif'],  // Sous-titres
+                        'body': ['Archivo Black', 'sans-serif'],        // Paragraphes
+                        sans: ['Archivo Black', 'sans-serif'],          // Par défaut
                     },
                     colors: {
                         border: 'hsl(var(--border))',
@@ -56,12 +60,140 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"
+
+
+    <!-- 🎸 Google Fonts - ROCK ALTERNATIF REBEL -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Permanent+Marker&family=Archivo+Black&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        /* ========================================
+           🎸 SLAY RADIO - ROCK ALTERNATIF REBEL
+           Typographie Artistique
+           ======================================== */
+
+        /* GRANDS TITRES - H1 */
+        h1 {
+            font-family: 'Black Ops One', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        /* SOUS-TITRES - H2 */
+        h2 {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+        }
+
+        /* SOUS-TITRES - H3 */
+        h3 {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+        }
+
+        /* SOUS-TITRES - H4, H5, H6 */
+        h4,
+        h5,
+        h6 {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+        }
+
+        /* PARAGRAPHES & TEXTE BODY */
+        p {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+
+        /* TEXTE GÉNÉRAL (body, div, span par défaut) */
+        body {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+        }
+
+        /* LABELS & PETITS TEXTES */
+        label,
+        small {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* BOUTONS */
+        button,
+        .btn {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* LIENS */
+        a {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .scrolling-text {
+            animation: scroll 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes equalizer {
+
+            0%,
+            100% {
+                height: 8px;
+            }
+
+            50% {
+                height: 100%;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 1s ease-out;
+        }
+
+        .animate-equalizer {
+            animation: equalizer 0.8s ease-in-out infinite;
+        }
+    </style>
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -80,6 +212,7 @@
     <div id="root">
         <div class="min-h-screen bg-background">
             <!--  navbar -->
+            <!-- Desktop -->
             <nav
                 class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
                 <div class="container mx-auto px-4">
@@ -123,8 +256,8 @@
                             </a>
                             <a href="./dashbord.html">
                                 <button
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary text-primary-foreground glow-primary">Espace
-                                    DJ
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary text-primary-foreground glow-primary">
+                                    Espace Admin
                                 </button>
                             </a>
                         </div>
@@ -142,15 +275,52 @@
                     </div>
                 </div>
             </nav>
-            <!--  end navbar -->
 
+            <!-- AUDIO PLAYER HEADER (sous la navbar) -->
+            <div class="fixed top-16 md:top-20 left-0 right-0 z-40 bg-primary shadow-xl">
+                <div class="container mx-auto px-4 py-2 sm:py-3">
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <!-- Play Button -->
+                        <button id="playBtnTop"
+                            class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-primary-foreground flex items-center justify-center shadow-2xl hover:scale-110 transition-transform flex-shrink-0">
+                            <svg id="playIconTop" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary ml-1">
+                                <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                            </svg>
+                            <svg id="pauseIconTop" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary hidden">
+                                <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                                <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                            </svg>
+                        </button>
 
+                        <!-- Scrolling Text -->
+                        <div class="flex-1 overflow-hidden min-w-0">
+                            <div
+                                class="scrolling-text text-primary-foreground font-bold text-sm sm:text-lg md:text-xl lg:text-2xl">
+                                🎵 EN DIRECT: DJ MaxFlow - Deep House Session 🎧 La Radio des DJs Locaux 🔥 Soutenez vos
+                                artistes préférés 🎶
+                            </div>
+                        </div>
 
+                        <!-- Live Indicator -->
+                        <div
+                            class="flex items-center gap-2 bg-red-500 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full flex-shrink-0">
+                            <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white animate-pulse"></span>
+                            <span class="text-xs sm:text-sm font-bold text-white hidden sm:inline">LIVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- MENU MOBILE (slide depuis le bas) -->
             <div id="mobileMenu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl
-            translate-y-full transition-transform duration-300
-            flex flex-col p-6">
+                translate-y-full transition-transform duration-300
+                flex flex-col p-6">
                 <!-- en-tête -->
                 <div class="flex items-center justify-between mb-8">
                     <span class="text-lg font-bold text-primary">Menu</span>
@@ -177,17 +347,16 @@
                     <a href="./login.html"
                         class="w-full px-4 py-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-center">Connexion</a>
                     <a href="./dashbord.html"
-                        class="w-full px-4 py-2 rounded-md gradient-primary text-primary-foreground text-center">Espace
-                        DJ</a>
+                        class="w-full px-4 py-2 rounded-md gradient-primary text-primary-foreground text-center"> Espace
+                        Admin</a>
                 </div>
             </div>
-
-
+            <!--  end navbar -->
 
             <main>
 
                 <!--  hero -->
-                <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+                <section class="relative flex items-center justify-center overflow-hidden pt-32 sm:pt-36 md:pt-40">
                     <!-- Background Gradient -->
                     <div class="absolute inset-0 gradient-hero"></div>
                     <div
@@ -199,118 +368,41 @@
                     </div>
                     <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-pulse"
                         style="animation-delay: 1s;"></div>
-
                     <!-- Content -->
-                    <div class="relative z-10 container mx-auto px-4 pt-20 text-center">
-                        <div class="max-w-4xl mx-auto space-y-8 animate-fade-in">
+                    <div class="relative z-10 container mx-auto px-4 text-center mb-16 mt-6">
+                        <div class="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in px-4">
                             <!-- Live Badge -->
                             <div
-                                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 backdrop-blur-sm">
+                                class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 backdrop-blur-sm">
                                 <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                                <span class="text-sm font-medium text-primary-foreground">EN DIRECT</span>
+                                <span class="text-xs sm:text-sm font-medium text-primary-foreground">EN DIRECT</span>
                             </div>
 
                             <!-- Title -->
                             <h1
-                                class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight text-primary-foreground">
+                                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-primary-foreground">
                                 La Radio des<br>
                                 <span class="text-accent">DJs Locaux</span>
                             </h1>
 
                             <!-- Subtitle -->
-                            <p class="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+                            <p
+                                class="text-sm sm:text-base md:text-lg lg:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
                                 Découvrez les talents de votre région. Écoutez, soutenez et connectez-vous avec la
-                                communauté musicale locale.
+                                communauté musicale
+                                locale.
                             </p>
 
-                            <!-- Live Player -->
-                            <div
-                                class="max-w-md mx-auto bg-primary-foreground/10 backdrop-blur-xl rounded-2xl p-6 border border-primary-foreground/20">
-                                <div class="flex items-center gap-4">
-                                    <!-- Play Button -->
-                                    <button id="playBtn"
-                                        class="w-16 h-16 rounded-full bg-primary-foreground flex items-center justify-center shadow-lg transition-transform hover:scale-105">
-                                        <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-6 h-6 text-primary ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                        </svg>
-                                        <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-6 h-6 text-primary hidden">
-                                            <rect x="14" y="4" width="4" height="16" rx="1"></rect>
-                                            <rect x="6" y="4" width="4" height="16" rx="1"></rect>
-                                        </svg>
-                                    </button>
-
-                                    <!-- Track Info -->
-                                    <div class="flex-1 text-left">
-                                        <p class="text-xs text-accent font-medium uppercase tracking-wider">En direct
-                                            maintenant</p>
-                                        <p class="text-lg font-semibold text-primary-foreground">DJ MaxFlow</p>
-                                        <p class="text-sm text-primary-foreground/70">Deep House Session</p>
-                                    </div>
-
-                                    <!-- Equalizer Animation -->
-                                    <div class="flex items-end gap-1 h-8">
-                                        <div class="w-1 bg-accent rounded-full h-2" style="animation-delay: 0.1s;">
-                                        </div>
-                                        <div class="w-1 bg-accent rounded-full h-2" style="animation-delay: 0.2s;">
-                                        </div>
-                                        <div class="w-1 bg-accent rounded-full h-2" style="animation-delay: 0.3s;">
-                                        </div>
-                                        <div class="w-1 bg-accent rounded-full h-2" style="animation-delay: 0.4s;">
-                                        </div>
-                                        <div class="w-1 bg-accent rounded-full h-2" style="animation-delay: 0.5s;">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Volume -->
-                                <div class="flex items-center gap-2 mt-4 pt-4 border-t border-primary-foreground/20">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="w-4 h-4 text-primary-foreground/70">
-                                        <path
-                                            d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z">
-                                        </path>
-                                        <path d="M16 9a5 5 0 0 1 0 6"></path>
-                                        <path d="M19.364 18.364a9 9 0 0 0 0-12.728"></path>
-                                    </svg>
-                                    <div class="flex-1 h-1 bg-primary-foreground/20 rounded-full overflow-hidden">
-                                        <div class="w-3/4 h-full bg-accent rounded-full"></div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <!-- CTA Buttons -->
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                                 <a href="./live.html"
-                                    class="inline-flex items-center justify-center gap-2 h-11 rounded-md bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 font-semibold transition-colors">
+                                    class="inline-flex items-center justify-center gap-2 h-10 sm:h-11 rounded-md bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-6 sm:px-8 text-sm sm:text-base md:text-lg font-semibold transition-colors hover:scale-105 transition-transform">
                                     Écouter maintenant
                                 </a>
                                 <a href="./boutique.html"
-                                    class="inline-flex items-center justify-center gap-2 h-11 rounded-md border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 transition-colors">
+                                    class="inline-flex items-center justify-center gap-2 h-10 sm:h-11 rounded-md border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-6 sm:px-8 text-sm sm:text-base md:text-lg transition-colors hover:scale-105 transition-transform">
                                     Découvrir les artistes
                                 </a>
-                            </div>
-
-                            <!-- Stats -->
-                            <div class="flex flex-wrap justify-center gap-8 pt-8">
-                                <div class="text-center">
-                                    <p class="text-3xl md:text-4xl font-bold text-accent">50+</p>
-                                    <p class="text-sm text-primary-foreground/70">DJs Actifs</p>
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-3xl md:text-4xl font-bold text-accent">1.2K</p>
-                                    <p class="text-sm text-primary-foreground/70">Auditeurs</p>
-                                </div>
-                                <div class="text-center">
-                                    <p class="text-3xl md:text-4xl font-bold text-accent">200+</p>
-                                    <p class="text-sm text-primary-foreground/70">Podcasts</p>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -324,428 +416,447 @@
                     </div>
                 </section>
 
-                <style>
-                    @keyframes fade-in {
-                        from {
-                            opacity: 0;
-                            transform: translateY(20px);
-                        }
-
-                        to {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-
-                    @keyframes equalizer {
-
-                        0%,
-                        100% {
-                            height: 8px;
-                        }
-
-                        50% {
-                            height: 100%;
-                        }
-                    }
-
-                    .animate-fade-in {
-                        animation: fade-in 1s ease-out;
-                    }
-
-                    .animate-equalizer {
-                        animation: equalizer 0.8s ease-in-out infinite;
-                    }
-                </style>
-
-                <script>
-                    // Toggle play/pause
-                    const playBtn = document.getElementById('playBtn');
-                    const playIcon = document.getElementById('playIcon');
-                    const pauseIcon = document.getElementById('pauseIcon');
-                    const equalizers = document.querySelectorAll('.flex.items-end.gap-1 > div');
-
-                    let isPlaying = false;
-
-                    playBtn.addEventListener('click', () => {
-                        isPlaying = !isPlaying;
-
-                        // Toggle icons
-                        if (isPlaying) {
-                            playIcon.classList.add('hidden');
-                            pauseIcon.classList.remove('hidden');
-
-                            // Animate equalizer bars
-                            equalizers.forEach(bar => {
-                                bar.classList.add('animate-equalizer');
-                            });
-                        } else {
-                            playIcon.classList.remove('hidden');
-                            pauseIcon.classList.add('hidden');
-
-                            // Stop equalizer animation
-                            equalizers.forEach(bar => {
-                                bar.classList.remove('animate-equalizer');
-                            });
-                        }
-                    });
-                </script>
-
                 <!-- end hero -->
 
                 <!-- artiste -->
-                <section class="py-20 bg-background">
+                <style>
+                    /* Masquer la scrollbar mais garder le scroll */
+                    .hide-scrollbar {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+
+                    .hide-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    /* Smooth scroll */
+                    .carousel-container {
+                        scroll-behavior: smooth;
+                        scroll-snap-type: x mandatory;
+                    }
+
+                    .carousel-item {
+                        scroll-snap-align: start;
+                    }
+
+                    /* Indicateurs de carousel */
+                    .carousel-dot {
+                        transition: all 0.3s ease;
+                    }
+                </style>
+                <section class="py-20 ">
                     <div class="container mx-auto px-4">
+
                         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
                             <div>
                                 <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Nos Artistes
                                 </p>
                                 <h2 class="text-3xl md:text-4xl font-bold text-foreground">DJs en Vedette</h2>
-                            </div><a href="./artistes.html"><button
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-border hover:bg-muted">Voir
-                                    tous les artistes</button></a>
+                            </div>
+                            <a href="./boutique.html">
+                                <button
+                                    class="hover:scale-105 transition-transform inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-border hover:bg-muted">
+                                    Voir la boutique</button>
+                            </a>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <!-- 1. DJ MaxFlow -->
+
+                        <!-- Grille pour desktop (lg et plus) -->
+                        <div class="hidden lg:grid grid-cols-4 gap-6">
+                            <!-- DJ MaxFlow -->
                             <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
                                 href="./detail_artiste.html">
                                 <div class="aspect-square overflow-hidden relative">
-                                    <img src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=400&h=400&fit=crop"
+                                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop"
                                         alt="DJ MaxFlow"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
-                                        class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
                                             class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                class="w-7 h-7 text-white ml-1">
                                                 <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <h3
-                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                            DJ MaxFlow</h3>
-                                        <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Deep
+                                    <h3
+                                        class="font-bold text-xl text-gray-800 group-hover:text-primary transition-colors mb-2">
+                                        DJ
+                                        MaxFlow</h3>
+                                    <div class="mb-3">
+                                        <span class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Deep
                                             House</span>
                                     </div>
-                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center justify-between text-sm text-gray-400">
                                         <div class="flex items-center gap-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-headphones w-4 h-4">
+                                                stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                                 <path
                                                     d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                             </svg>
-                                            <span>2.4K followers</span>
+                                            <span class="text-xs">2.4K followers</span>
                                         </div>
-                                        <span>24 tracks</span>
+                                        <button
+                                            class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                            Réserver
+                                        </button>
                                     </div>
                                 </div>
                             </a>
 
-                            <!-- 2. Luna Beats -->
-                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                            <!-- Luna Beats -->
+                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
                                 href="./detail_artiste.html">
                                 <div class="aspect-square overflow-hidden relative">
                                     <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
                                         alt="Luna Beats"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
-                                        class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
                                             class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                class="w-7 h-7 text-white ml-1">
                                                 <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <h3
-                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                            Luna Beats</h3>
+                                    <h3
+                                        class="font-bold text-xl text-gray-800 group-hover:text-primary transition-colors mb-2">
+                                        Luna
+                                        Beats</h3>
+                                    <div class="mb-3">
                                         <span
-                                            class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Techno</span>
+                                            class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Techno</span>
                                     </div>
-                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center justify-between text-sm text-gray-400">
                                         <div class="flex items-center gap-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-headphones w-4 h-4">
+                                                stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                                 <path
                                                     d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                             </svg>
-                                            <span>1.8K followers</span>
+                                            <span class="text-xs">1.8K followers</span>
                                         </div>
-                                        <span>18 tracks</span>
+                                        <button
+                                            class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                            Réserver
+                                        </button>
                                     </div>
                                 </div>
                             </a>
 
-                            <!-- 3. Kenzo -->
-                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                            <!-- Kenzo -->
+                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
                                 href="./detail_artiste.html">
                                 <div class="aspect-square overflow-hidden relative">
                                     <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop"
                                         alt="Kenzo"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
-                                        class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
                                             class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                class="w-7 h-7 text-white ml-1">
                                                 <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <h3
-                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                            Kenzo</h3>
-                                        <span class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Afro
+                                    <h3
+                                        class="font-bold text-xl text-gray-800 group-hover:text-primary transition-colors mb-2">
+                                        Kenzo
+                                    </h3>
+                                    <div class="mb-3">
+                                        <span class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Afro
                                             House</span>
                                     </div>
-                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center justify-between text-sm text-gray-400">
                                         <div class="flex items-center gap-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-headphones w-4 h-4">
+                                                stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                                 <path
                                                     d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                             </svg>
-                                            <span>3.1K followers</span>
+                                            <span class="text-xs">1K followers</span>
                                         </div>
-                                        <span>32 tracks</span>
+                                        <button
+                                            class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                            Réserver
+                                        </button>
                                     </div>
                                 </div>
                             </a>
 
-                            <!-- 4. NightWave -->
-                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
+                            <!-- NightWave -->
+                            <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
                                 href="./detail_artiste.html">
                                 <div class="aspect-square overflow-hidden relative">
                                     <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop"
                                         alt="NightWave"
                                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                                     <div
-                                        class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <div
                                             class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-play w-7 h-7 text-primary-foreground ml-1">
+                                                class="w-7 h-7 text-white ml-1">
                                                 <polygon points="6 3 20 12 6 21 6 3" />
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <h3
-                                            class="font-bold text-xl text-foreground group-hover:text-primary transition-colors">
-                                            NightWave</h3>
+                                    <h3
+                                        class="font-bold text-xl text-gray-800 group-hover:text-primary transition-colors mb-2">
+                                        NightWave</h3>
+                                    <div class="mb-3">
                                         <span
-                                            class="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">Progressive</span>
+                                            class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Progressive</span>
                                     </div>
-                                    <div class="flex items-center justify-between text-sm text-muted-foreground">
+                                    <div class="flex items-center justify-between text-sm text-gray-400">
                                         <div class="flex items-center gap-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round"
-                                                class="lucide lucide-headphones w-4 h-4">
+                                                stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                                 <path
                                                     d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                             </svg>
-                                            <span>1.5K followers</span>
+                                            <span class="text-xs">1K followers</span>
                                         </div>
-                                        <span>15 tracks</span>
+                                        <button
+                                            class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                            Réserver
+                                        </button>
                                     </div>
                                 </div>
                             </a>
                         </div>
+
+                        <!-- Carousel pour mobile/tablette (moins de lg) -->
+                        <div class="lg:hidden relative">
+                            <!-- Flèche gauche -->
+                            <button onclick="scrollCarousel(-1)"
+                                class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
+                                id="prevBtnMobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-white">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+
+                            <!-- Flèche droite -->
+                            <button onclick="scrollCarousel(1)"
+                                class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
+                                id="nextBtnMobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-white">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+
+                            <!-- Carousel -->
+                            <div class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
+                                id="carouselMobile">
+                                <!-- DJ MaxFlow -->
+                                <div
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop"
+                                                alt="DJ MaxFlow" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4">
+                                            <h3 class="font-bold text-lg text-gray-800 hover:text-primary mb-1">DJ
+                                                MaxFlow</h3>
+                                            <div class="mb-2">
+                                                <span
+                                                    class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Deep
+                                                    House</span>
+                                            </div>
+                                            <div class="flex items-center justify-start gap-4  text-sm text-gray-400">
+
+
+                                                <div class="flex items-center gap-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path
+                                                            d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                                    </svg>
+                                                    <span class="text-xs">2.4K followers</span>
+                                                </div>
+
+                                                <button
+                                                    class="bg-primary text-white px-3 py-1.5 rounded-lg hover:bg-primary/80 active:scale-95 transition-all text-xs font-medium">
+                                                    Réserver
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- Luna -->
+                                <div
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
+                                                alt="DJ MaxFlow" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4">
+                                            <h3 class="font-bold text-lg text-gray-800 hover:text-primary mb-1">DJ
+                                                Luna Beats</h3>
+                                            <div class="mb-2">
+                                                <span
+                                                    class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Deep
+                                                    House</span>
+                                            </div>
+                                            <div class="flex items-center justify-start gap-4  text-sm text-gray-400">
+
+
+                                                <div class="flex items-center gap-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path
+                                                            d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                                    </svg>
+                                                    <span class="text-xs">2.4K followers</span>
+                                                </div>
+
+                                                <button
+                                                    class="bg-primary text-white px-3 py-1.5 rounded-lg hover:bg-primary/80 active:scale-95 transition-all text-xs font-medium">
+                                                    Réserver
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- kenzo -->
+                                <div
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop"
+                                                alt="DJ MaxFlow" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4">
+                                            <h3 class="font-bold text-lg text-gray-800 hover:text-primary mb-1">DJ
+                                                Kenzo</h3>
+                                            <div class="mb-2">
+                                                <span
+                                                    class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Deep
+                                                    House</span>
+                                            </div>
+                                            <div class="flex items-center justify-start gap-4  text-sm text-gray-400">
+
+
+                                                <div class="flex items-center gap-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path
+                                                            d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                                    </svg>
+                                                    <span class="text-xs">2.4K followers</span>
+                                                </div>
+
+                                                <button
+                                                    class="bg-primary text-white px-3 py-1.5 rounded-lg hover:bg-primary/80 active:scale-95 transition-all text-xs font-medium">
+                                                    Réserver
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- NightWave-->
+                                <div
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop"
+                                                alt="DJ MaxFlow" class="w-full h-full object-cover">
+                                        </div>
+                                        <div class="p-4">
+                                            <h3 class="font-bold text-lg text-gray-800 hover:text-primary mb-1">DJ
+                                                NightWave</h3>
+                                            <div class="mb-2">
+                                                <span
+                                                    class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Deep
+                                                    House</span>
+                                            </div>
+                                            <div class="flex items-center justify-start gap-4  text-sm text-gray-400">
+
+
+                                                <div class="flex items-center gap-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path
+                                                            d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
+                                                    </svg>
+                                                    <span class="text-xs">1K followers</span>
+                                                </div>
+
+                                                <button
+                                                    class="bg-primary text-white px-3 py-1.5 rounded-lg hover:bg-primary/80 active:scale-95 transition-all text-xs font-medium">
+                                                    Réserver
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <!-- Indicateurs -->
+                            <div class="flex justify-center gap-2 mt-4">
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600 active"
+                                    onclick="scrollToSlide(0)"></button>
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
+                                    onclick="scrollToSlide(1)"></button>
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
+                                    onclick="scrollToSlide(2)"></button>
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
+                                    onclick="scrollToSlide(3)"></button>
+                            </div>
+                        </div>
                     </div>
                 </section>
+
+
                 <!-- end artiste-->
 
-                <!--  SECTION LIVE À VENIR  -->
-                <section class="py-20 bg-card">
-                    <div class="container mx-auto px-4 ">
-                        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-                            <div>
-                                <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Live à venir
-                                </p>
-                                <h2 class="text-3xl md:text-4xl font-bold text-foreground">Prochaines sessions</h2>
-                            </div>
-                            <a href="./live_a_venir.html"><button
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-border hover:bg-muted">
-                                    Tous les lives
-                                </button></a>
-                        </div>
-
-                        <div class="space-y-4">
-                            <!-- session 1 -->
-                            <div
-                                class="group flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300">
-                                <div
-                                    class="relative w-full md:w-20 h-40 md:h-20 rounded-lg overflow-hidden flex-shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400&h=400&fit=crop"
-                                        alt="Morning Boost" class="w-full h-full object-cover">
-                                    <div
-                                        class="absolute top-2 left-2 px-2 py-1 rounded-md bg-primary/10 border border-primary/20 text-primary text-xs font-semibold">
-                                        Dans 2 h
-                                    </div>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-semibold text-lg text-foreground truncate">Morning Boost Live</h3>
-                                    <p class="text-sm text-muted-foreground">DJ MaxFlow</p>
-                                </div>
-                                <div class="flex items-center gap-4 text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            class="w-4 h-4">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <polyline points="12 6 12 12 16 14"></polyline>
-                                        </svg>
-                                        <span>07:00 - 09:00</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            class="w-4 h-4">
-                                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                                            <path d="M3 10h18"></path>
-                                        </svg>
-                                        <span>Mer 14 juin</span>
-                                    </div>
-                                </div>
-                                <button onclick="setReminder('Morning Boost Live')"
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 mr-1">
-                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                    </svg>
-
-                                </button>
-                            </div>
-
-                            <!-- session 2 -->
-                            <div
-                                class="group flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300">
-                                <div
-                                    class="relative w-full md:w-20 h-40 md:h-20 rounded-lg overflow-hidden flex-shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
-                                        alt="Techno Underground" class="w-full h-full object-cover">
-                                    <div
-                                        class="absolute top-2 left-2 px-2 py-1 rounded-md bg-primary/10 border border-primary/20 text-primary text-xs font-semibold">
-                                        Demain 20h
-                                    </div>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-semibold text-lg text-foreground truncate">Techno Underground</h3>
-                                    <p class="text-sm text-muted-foreground">Luna Beats</p>
-                                </div>
-                                <div class="flex items-center gap-4 text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            class="w-4 h-4">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <polyline points="12 6 12 12 16 14"></polyline>
-                                        </svg>
-                                        <span>20:00 - 22:00</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            class="w-4 h-4">
-                                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                                            <path d="M3 10h18"></path>
-                                        </svg>
-                                        <span>Jeu 15 juin</span>
-                                    </div>
-                                </div>
-                                <button onclick="setReminder('Techno Underground')"
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 mr-1">
-                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                    </svg>
-
-                                </button>
-                            </div>
-
-                            <!-- session 3 -->
-                            <div
-                                class="group flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-xl bg-background border border-border hover:border-primary/50 transition-all duration-300">
-                                <div
-                                    class="relative w-full md:w-20 h-40 md:h-20 rounded-lg overflow-hidden flex-shrink-0">
-                                    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&h=400&fit=crop"
-                                        alt="Afro Fusion Mix" class="w-full h-full object-cover">
-                                    <div
-                                        class="absolute top-2 left-2 px-2 py-1 rounded-md bg-primary/10 border border-primary/20 text-primary text-xs font-semibold">
-                                        Sam 17 juin
-                                    </div>
-                                </div>
-                                <div class="flex-1 min-w-0">
-                                    <h3 class="font-semibold text-lg text-foreground truncate">Afro Fusion Mix</h3>
-                                    <p class="text-sm text-muted-foreground">Kenzo</p>
-                                </div>
-                                <div class="flex items-center gap-4 text-sm text-muted-foreground">
-                                    <div class="flex items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            class="w-4 h-4">
-                                            <circle cx="12" cy="12" r="10"></circle>
-                                            <polyline points="12 6 12 12 16 14"></polyline>
-                                        </svg>
-                                        <span>21:00 - 23:00</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            class="w-4 h-4">
-                                            <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                                            <path d="M3 10h18"></path>
-                                        </svg>
-                                        <span>Sam 17 juin</span>
-                                    </div>
-                                </div>
-                                <button onclick="setReminder('Afro Fusion Mix')"
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4 mr-1">
-                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                                    </svg>
-
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- FIN LIVE À VENIR  -->
 
                 <!-- boutique -->
                 <section class="py-20 bg-background">
@@ -755,12 +866,15 @@
                                 <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Boutique</p>
                                 <h2 class="text-3xl md:text-4xl font-bold text-foreground">Produits Exclusifs</h2>
                             </div>
-                            <a href="./boutique.html"><button
-                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-border hover:bg-muted">
-                                    Voir la boutique</button></a>
+                            <a href="./boutique.html">
+                                <button
+                                    class="hover:scale-105 transition-transform inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 py-2 border-border hover:bg-muted">
+                                    Voir la boutique</button>
+                            </a>
                         </div>
-                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                            <!-- 1. T-Shirt Slay Radio -->
+                        <!-- Grille pour desktop (lg et plus) -->
+                        <div class="hidden lg:grid grid-cols-4 gap-6">
+                            <!-- DJ MaxFlow -->
                             <div
                                 class="group gradient-card rounded-xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300">
                                 <div class="aspect-square overflow-hidden bg-muted">
@@ -776,14 +890,15 @@
                                         <button onclick="addToCart('T-Shirt Slay Radio','29.99')"
                                             class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="lucide lucide-shopping-cart w-4 h-4 mr-1">
                                                 <circle cx="8" cy="21" r="1" />
                                                 <circle cx="19" cy="21" r="1" />
                                                 <path
                                                     d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                            </svg>
+                                            <span>Ajouter</span>
                                         </button>
                                     </div>
                                 </div>
@@ -800,19 +915,20 @@
                                 <div class="p-4">
                                     <span class="text-xs text-muted-foreground">Accessoires</span>
                                     <h3 class="font-semibold text-foreground mt-1">Casquette Logo</h3>
-                                    <div class="flex items-center justify-between mt-3">
+                                    <div class=" flex-col sm:flex-row flex items-center justify-between mt-3 ">
                                         <p class="text-xl font-bold text-gradient">24.99€</p>
                                         <button onclick="addToCart('Casquette Logo','24.99')"
                                             class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="lucide lucide-shopping-cart w-4 h-4 mr-1">
                                                 <circle cx="8" cy="21" r="1" />
                                                 <circle cx="19" cy="21" r="1" />
                                                 <path
                                                     d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                            </svg>
+                                            <span>Ajouter</span>
                                         </button>
                                     </div>
                                 </div>
@@ -834,14 +950,15 @@
                                         <button onclick="addToCart('Vinyle Collector','39.99')"
                                             class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="lucide lucide-shopping-cart w-4 h-4 mr-1">
                                                 <circle cx="8" cy="21" r="1" />
                                                 <circle cx="19" cy="21" r="1" />
                                                 <path
                                                     d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                            </svg>
+                                            <span>Ajouter</span>
                                         </button>
                                     </div>
                                 </div>
@@ -858,398 +975,287 @@
                                 <div class="p-4">
                                     <span class="text-xs text-muted-foreground">Vêtements</span>
                                     <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
-                                    <div class="flex items-center justify-between mt-3">
+                                    <div class="flex flex-col sm:flex-row  items-center justify-between mt-3 ">
                                         <p class="text-xl font-bold text-gradient">59.99€</p>
                                         <button onclick="addToCart('Hoodie Premium','59.99')"
                                             class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                                 stroke-linecap="round" stroke-linejoin="round"
                                                 class="lucide lucide-shopping-cart w-4 h-4 mr-1">
                                                 <circle cx="8" cy="21" r="1" />
                                                 <circle cx="19" cy="21" r="1" />
                                                 <path
                                                     d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                                            </svg><span class="hidden sm:flex">Ajouter</span>
+                                            </svg>
+                                            <span>Ajouter</span>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- endboutique -->
 
 
-
-                <!-- ========== NOS SERVICES ========== -->
-                <section class="py-20 bg-background">
-                    <div class="container mx-auto px-4 ">
-                        <!-- en-tête -->
-                        <div class="text-center mb-12">
-                            <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Services</p>
-                            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Ce que nous proposons</h2>
-                            <p class="text-muted-foreground max-w-2xl mx-auto">
-                                Streaming radio, réservation de DJs et boutique solidaire : tout ce dont vous avez
-                                besoin pour vivre la musique locale.
-                            </p>
                         </div>
 
-                        <!-- grille 2x2 -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <!-- 1. Live Radio -->
-                            <div class="gradient-card rounded-xl p-6 border border-border text-center">
+
+                        <!-- Carousel pour mobile/tablette (moins de lg) -->
+                        <div class="lg:hidden relative">
+                            <!-- Flèche gauche -->
+                            <button onclick="scrollCarousel(-1)"
+                                class="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
+                                id="prevBtnMobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-white">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+
+                            <!-- Flèche droite -->
+                            <button onclick="scrollCarousel(1)"
+                                class="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg hover:bg-primary/80 transition-all hover:scale-110 active:scale-95"
+                                id="nextBtnMobile">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="text-white">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+
+                            <!-- Carousel -->
+                            <div class="carousel-container flex overflow-x-auto gap-4 pb-4 hide-scrollbar px-4"
+                                id="carouselMobile">
+                                <!-- DJ MaxFlow -->
                                 <div
-                                    class="w-14 h-14 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-6 h-6 text-primary-foreground">
-                                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
-                                    </svg>
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop"
+                                                alt="Hoodie Premium"
+                                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <div class="p-4">
+                                            <span class="text-xs text-muted-foreground">Vêtements</span>
+                                            <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
+                                            <div class="flex flex-col sm:flex-row  items-center justify-between mt-3 ">
+                                                <p class="text-xl font-bold text-gradient">59.99€</p>
+                                                <button onclick="addToCart('Hoodie Premium','59.99')"
+                                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                        <circle cx="8" cy="21" r="1" />
+                                                        <circle cx="19" cy="21" r="1" />
+                                                        <path
+                                                            d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                                    </svg>
+                                                    <span>Ajouter</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <h3 class="text-lg font-semibold text-foreground mb-2">Live Radio</h3>
-                                <p class="text-sm text-muted-foreground mb-4">
-                                    Streaming audio 24/7 : mixes, sets et émissions en direct ou en replay.
-                                </p>
-                                <a href="./live.html"
-                                    class="inline-flex items-center gap-2 text-sm text-primary hover:underline">
-                                    Écouter maintenant <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-4 h-4">
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <polyline points="12 5 19 12 12 19" />
-                                    </svg>
-                                </a>
-                            </div>
 
-                            <!-- 2. Réservation DJs -->
-                            <div class="gradient-card rounded-xl p-6 border border-border text-center">
+                                <!-- Casquette Logo -->
                                 <div
-                                    class="w-14 h-14 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-6 h-6 text-primary-foreground">
-                                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                                        <circle cx="8.5" cy="7" r="4" />
-                                        <path d="M20 8v6M23 11h-6" />
-                                    </svg>
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=400&h=400&fit=crop"
+                                                alt="Hoodie Premium"
+                                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <div class="p-4">
+                                            <span class="text-xs text-muted-foreground">Vêtements</span>
+                                            <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
+                                            <div class="flex flex-col sm:flex-row  items-center justify-between mt-3 ">
+                                                <p class="text-xl font-bold text-gradient">59.99€</p>
+                                                <button onclick="addToCart('Hoodie Premium','59.99')"
+                                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                        <circle cx="8" cy="21" r="1" />
+                                                        <circle cx="19" cy="21" r="1" />
+                                                        <path
+                                                            d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                                    </svg>
+                                                    <span>Ajouter</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <h3 class="text-lg font-semibold text-foreground mb-2">Réservation DJs</h3>
-                                <p class="text-sm text-muted-foreground mb-4">
-                                    Réservez un DJ ou un artiste pour votre événement en quelques clics.
-                                </p>
-                                <a href="./reservation.html"
-                                    class="inline-flex items-center gap-2 text-sm text-primary hover:underline">
-                                    Réserver <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-4 h-4">
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <polyline points="12 5 19 12 12 19" />
-                                    </svg>
-                                </a>
-                            </div>
 
-                            <!-- 3. Boutique -->
-                            <div class="gradient-card rounded-xl p-6 border border-border text-center">
+
+                                <!--  Vinyle Collecto-->
                                 <div
-                                    class="w-14 h-14 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-6 h-6 text-primary-foreground">
-                                        <circle cx="9" cy="21" r="1" />
-                                        <circle cx="20" cy="21" r="1" />
-                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.58h9.72a2 2 0 0 0 1.95-1.57L23 6H7" />
-                                    </svg>
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1539375665275-f9de415ef9ac?w=400&h=400&fit=crop"
+                                                alt="Hoodie Premium"
+                                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <div class="p-4">
+                                            <span class="text-xs text-muted-foreground">Vêtements</span>
+                                            <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
+                                            <div class="flex flex-col sm:flex-row  items-center justify-between mt-3 ">
+                                                <p class="text-xl font-bold text-gradient">59.99€</p>
+                                                <button onclick="addToCart('Hoodie Premium','59.99')"
+                                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                        <circle cx="8" cy="21" r="1" />
+                                                        <circle cx="19" cy="21" r="1" />
+                                                        <path
+                                                            d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                                    </svg>
+                                                    <span>Ajouter</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <h3 class="text-lg font-semibold text-foreground mb-2">Boutique</h3>
-                                <p class="text-sm text-muted-foreground mb-4">
-                                    Vinyles, vêtements et accessoires exclusifs pour soutenir les artistes.
-                                </p>
-                                <a href="./boutique.html"
-                                    class="inline-flex items-center gap-2 text-sm text-primary hover:underline">
-                                    Visiter la boutique <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-4 h-4">
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <polyline points="12 5 19 12 12 19" />
-                                    </svg>
-                                </a>
-                            </div>
 
-                            <!-- 4. Upload & Stats -->
-                            <div class="gradient-card rounded-xl p-6 border border-border text-center">
+
+                                <!-- DJ MaxFlow -->
                                 <div
-                                    class="w-14 h-14 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-6 h-6 text-primary-foreground">
-                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                                        <polyline points="17 8 12 3 7 8" />
-                                        <line x1="12" x2="12" y1="3" y2="15" />
-                                    </svg>
+                                    class="carousel-item min-w-[240px] sm:min-w-[260px] w-[240px] sm:w-[260px] h-[340px] sm:h-[360px] flex-shrink-0">
+                                    <a class="block gradient-card rounded-2xl overflow-hidden border border-border"
+                                        href="./detail_artiste.html">
+                                        <div
+                                            class="aspect-square w-full h-auto max-h-[180px] sm:max-h-[200px] overflow-hidden relative">
+                                            <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop"
+                                                alt="Hoodie Premium"
+                                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        </div>
+                                        <div class="p-4">
+                                            <span class="text-xs text-muted-foreground">Vêtements</span>
+                                            <h3 class="font-semibold text-foreground mt-1">Hoodie Premium</h3>
+                                            <div class="flex flex-col sm:flex-row  items-center justify-between mt-3 ">
+                                                <p class="text-xl font-bold text-gradient">59.99€</p>
+                                                <button onclick="addToCart('Hoodie Premium','59.99')"
+                                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewbox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                        class="lucide lucide-shopping-cart w-4 h-4 mr-1">
+                                                        <circle cx="8" cy="21" r="1" />
+                                                        <circle cx="19" cy="21" r="1" />
+                                                        <path
+                                                            d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                                                    </svg>
+                                                    <span>Ajouter</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <h3 class="text-lg font-semibold text-foreground mb-2">Upload & Stats</h3>
-                                <p class="text-sm text-muted-foreground mb-4">
-                                    Déposez vos sets et consultez vos performances en temps réel.
-                                </p>
-                                <a href="./dashbord.html"
-                                    class="inline-flex items-center gap-2 text-sm text-primary hover:underline">
-                                    Accéder à l’espace DJ <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        class="w-4 h-4">
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <polyline points="12 5 19 12 12 19" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- ========== FIN NOS SERVICES ========== -->
 
 
-                <!-- ========== MISSION ========== -->
-                <section class=" py-20 bg-background">
-                    <div class="container mx-auto px-4 ">
-                        <div class=" mx-auto text-center bg-gray-200 p-16 rounded-3xl">
-
-                            <!-- petit label -->
-                            <p class="text-primary font-medium text-sm uppercase tracking-wider mb-6 ">
-                                Notre mission
-                            </p>
-
-                            <!-- titre -->
-                            <h2 class="text-3xl md:text-5xl font-bold text-foreground mb-6">
-                                Faire rayonner la scène <span class="text-accent">locale</span>
-                            </h2>
-
-                            <!-- texte -->
-                            <p class="text-lg text-muted-foreground leading-relaxed ">
-                                Slay Radio donne la parole aux DJs de votre quartier.
-                                Pas d’algorithmes, pas de majeurs : ici, ce sont les talents d’à-côté qui mixent, créent
-                                et partagent.
-                                En écoutant, en achetant ou en réservant un artiste, vous financez directement sa
-                                musique et vous tissez les liens qui font vivre la culture.
-                            </p>
-
-                            <!-- CTA -->
-                            <div class="pt-4">
-                                <a href="./apropos.html"
-                                    class="inline-flex items-center justify-center gap-2 h-11 rounded-md gradient-primary text-primary-foreground px-6 font-semibold glow-primary hover:scale-105 transition-transform">
-                                    En savoir plus
-                                </a>
                             </div>
 
-                        </div>
-                    </div>
-                </section>
-                <!-- ========== FIN MISSION ========== -->
-
-                <!-- ========== NOS VALEURS (cards ultra-minimal) ========== -->
-                <section class="py-20 bg-background">
-                    <div class="container mx-auto px-4 text-center space-y-16">
-
-                        <!-- en-tête -->
-                        <div>
-                            <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Nos valeurs</p>
-                            <h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Ce qui nous anime</h2>
-                        </div>
-
-                        <!-- grille 3 colonnes -->
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-                            <!-- 1. Audio Pur -->
-                            <div class="space-y-4">
-                                <div
-                                    class="w-16 h-16 mx-auto rounded-full gradient-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2"
-                                        class="text-primary-foreground">
-                                        <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-semibold text-foreground">Audio Pur</h3>
-                                <p class="text-sm text-muted-foreground">
-                                    Streaming radio et sets audio de qualité, sans visual superflu – l’oreille est roi.
-                                </p>
-                            </div>
-
-                            <!-- 2. Local & Éthique -->
-                            <div class="space-y-4">
-                                <div
-                                    class="w-16 h-16 mx-auto rounded-full gradient-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2"
-                                        class="text-primary-foreground">
-                                        <path
-                                            d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 z" />
-                                        <path d="M12 6v6l4 2" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-semibold text-foreground">Local & Éthique</h3>
-                                <p class="text-sm text-muted-foreground">
-                                    Promouvoir les scènes locales, rémunérer équitablement les artistes et limiter
-                                    l’empreinte numérique.
-                                </p>
-                            </div>
-
-                            <!-- 3. Communauté Unie -->
-                            <div class="space-y-4">
-                                <div
-                                    class="w-16 h-16 mx-auto rounded-full gradient-primary flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2"
-                                        class="text-primary-foreground">
-                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                        <circle cx="12" cy="7" r="4" />
-                                    </svg>
-                                </div>
-                                <h3 class="text-xl font-semibold text-foreground">Communauté Unie</h3>
-                                <p class="text-sm text-muted-foreground">
-                                    Espace de partage et de respect : ici, chaque voix (et chaque set) compte.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- CTA bas -->
-                        <div class="text-center mt-16">
-                            <a href="./live.html"
-                                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-6 gradient-primary glow-primary">
-                                Découvrir nos valeurs en live
-                            </a>
-                        </div>
-                    </div>
-                </section>
-                <!-- ========== FIN NOS VALEURS (ultra-minimal) ========== -->
-
-
-                <!-- ========== CITATION + TEXTE + CTA ========== -->
-                <section class="py-10 bg-background">
-                    <div class="container mx-auto px-4">
-                        <div class=" mx-auto text-center bg-blue-100 p-16 rounded-3xl">
-
-                            <blockquote class="text-2xl md:text-3xl font-medium text-foreground italic mb-6">
-                                « Vos soirées méritent le meilleur son local. »
-                            </blockquote>
-                            <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-                                Écoutez en avant-première les sets de vos DJs régionaux, réservez un artiste en deux
-                                clics,
-                                et rejoignez
-                                une communauté qui bouge vraiment. Le son est à portée de clic… à vous de jouer !
-                            </p>
-
-                            <!-- boutons incitatifs -->
-                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                                <a href="./login.html"
-                                    class="w-full sm:w-auto px-6 py-3 rounded-lg gradient-primary text-primary-foreground font-semibold hover:scale-105 transition-transform text-center">
-                                    Explorer les mixes en ligne
-                                </a>
-                                <a href="./reservation.html"
-                                    class="w-full sm:w-auto px-6 py-3 rounded-lg border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-colors text-center hover:scale-105 transition-transform">
-                                    Réserver un DJ / Artiste maintenant
-                                </a>
+                            <!-- Indicateurs -->
+                            <div class="flex justify-center gap-2 mt-4">
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600 active"
+                                    onclick="scrollToSlide(0)"></button>
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
+                                    onclick="scrollToSlide(1)"></button>
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
+                                    onclick="scrollToSlide(2)"></button>
+                                <button class="carousel-dot w-2 h-2 rounded-full bg-gray-600"
+                                    onclick="scrollToSlide(3)"></button>
                             </div>
                         </div>
 
                     </div>
                 </section>
-                <!-- ========== FIN CITATION + TEXTE + CTA ========== -->
-
-
+                <!-- endboutique -->
 
             </main>
 
 
             <!-- Footer -->
             <footer class="bg-card border-t border-border">
-                <div class="container mx-auto px-4 py-12">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div class="space-y-4">
-                            <a class="flex items-center gap-3" href="./index.html">
-                                <img src="./image/logo.jpg" alt="Slay Radio" class="h-12 w-auto rounded-lg">
-                                <span class="text-xl font-bold text-primary">SLAY RADIO</span>
+                <div class="container mx-auto py-12">
+
+                    <!-- Conteneur flex : 4 colonnes toujours -->
+                    <div class="flex flex-nowrap gap-4 md:gap-6 lg:gap-8 justify-center text center">
+
+                        <!-- Carte 1 : Logo -->
+                        <div class="w-1/4 space-y-2">
+                            <a class="flex items-center gap-2 md:gap-3" href="./index.html">
+                                <img src="./image/logo.jpg" alt="Slay Radio" class="h-8 md:h-12 w-auto rounded-lg">
+                                <span class="text-sm md:text-xl font-bold text-primary hidden sm:flex">SLAY RADIO</span>
                             </a>
-                            <p class="text-sm text-muted-foreground">
+                            <p class="text-[11px] md:text-sm text-muted-foreground leading-tight md:leading-normal">
                                 La plateforme radiophonique dédiée aux DJs locaux.
                             </p>
                         </div>
-                        <div>
-                            <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
-                            <ul class="space-y-3">
-                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+
+                        <!-- Carte 2 : Navigation -->
+                        <div class="w-1/4">
+                            <h4 class="font-semibold text-[12px] md:text-base text-foreground mb-2 md:mb-3">
+                                Navigation
+                            </h4>
+                            <ul class="space-y-1 md:space-y-2">
+                                <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                         href="./index.html">Accueil</a></li>
-                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                         href="./live.html">Live Radio</a></li>
-                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                         href="./artistes.html">Artistes</a></li>
-                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                                <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                         href="./apropos.html">À propos</a></li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
-                            <ul class="space-y-3">
-                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
-                                        href="./login.html">Connexion</a></li>
-                                <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
-                                        href="./dashbord.html">Dashboard</a></li>
+
+                        <!-- Carte 4 : Contact -->
+                        <div class="w-1/4">
+                            <h4 class="font-semibold text-[12px] md:text-base text-foreground mb-2 md:mb-3">
+                                Contact
+                            </h4>
+                            <ul class="space-y-1 md:space-y-2">
+                                <li class="text-[11px] md:text-sm text-muted-foreground break-all">
+                                    contact@slay.live
+                                </li>
+                                <li class="text-[11px] md:text-sm text-muted-foreground">
+                                    +33 1 23 45 67 89
+                                </li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 class="font-semibold text-foreground mb-4">Contact</h4>
-                            <ul class="space-y-3">
-                                <li class="text-sm text-muted-foreground">contact@slay.live</li>
-                                <li class="text-sm text-muted-foreground">+33 1 23 45 67 89</li>
-                            </ul>
-                        </div>
+
                     </div>
-                    <div class="border-t border-border mt-8 pt-8 text-center">
-                        <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en
-                            Sociologie.
-                            Tous
-                            droits réservés.</p>
+
+                    <!-- Bas du footer -->
+                    <div class="border-t border-border mt-6 md:mt-8 pt-4 md:pt-6 text-center">
+                        <p class="text-[11px] md:text-sm text-muted-foreground">
+                            © 2025 Slay Radio. Tous droits réservés.
+                        </p>
                     </div>
+
                 </div>
             </footer>
+            <!-- End Footer -->
+
         </div>
     </div>
 
 
     <!-- ========= SCRIPTS ========= -->
-    <script>
-        // Récupération des éléments
-        const burgerBtn = document.getElementById('burgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeMenuBtn = document.getElementById('closeMenuBtn');
-        const menuLinks = document.querySelectorAll('.menu-link');
-
-        // Ouvre le menu
-        burgerBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-y-full');
-        });
-
-        // Ferme le menu (bouton X)
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-y-full');
-        });
-
-        // Ferme le menu quand on clique sur un lien
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-y-full');
-            });
-        });
-
-        // Ferme aussi si on clique sur le fond sombre
-        mobileMenu.addEventListener('click', function (e) {
-            if (e.target === mobileMenu) {
-                mobileMenu.classList.add('translate-y-full');
-            }
-        });
-    </script>
+    <script src="./main.js"></script>
 
 </body>
-
-<chatgpt-sidebar data-gpts-theme="light"></chatgpt-sidebar>
 
 </html>

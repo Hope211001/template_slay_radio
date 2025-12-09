@@ -1,76 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJ MaxFlow - Slay Radio</title>
+  <title>Slay Radio - La Radio des DJs Locaux</title>
 
-  <!-- Tailwind déjà présent dans ton projet -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Configuration -->
   <script>
     tailwind.config = {
-      theme:{
-        extend:{
-          fontFamily:{sans:['Sora','system-ui','sans-serif']},
-          colors:{
-            border:'hsl(var(--border))',
-            background:'hsl(var(--background))',
-            foreground:'hsl(var(--foreground))',
-            primary:{DEFAULT:'hsl(var(--primary))',foreground:'hsl(var(--primary-foreground))'},
-            muted:{DEFAULT:'hsl(var(--muted))',foreground:'hsl(var(--muted-foreground))'},
-            accent:{DEFAULT:'hsl(var(--accent))',foreground:'hsl(var(--accent-foreground))'},
-            card:{DEFAULT:'hsl(var(--card))',foreground:'hsl(var(--card-foreground))'}
-          }
+      theme: {
+        extend: {
+          fontFamily: {
+            // 🎸 ROCK ALTERNATIF REBEL - Fonts Artistiques
+            'title': ['Black Ops One', 'sans-serif'],      // Grands titres
+            'heading': ['Permanent Marker', 'sans-serif'],  // Sous-titres
+            'body': ['Archivo Black', 'sans-serif'],        // Paragraphes
+            sans: ['Archivo Black', 'sans-serif'],          // Par défaut
+          },
+          colors: {
+            border: 'hsl(var(--border))',
+            input: 'hsl(var(--input))',
+            ring: 'hsl(var(--ring))',
+            background: 'hsl(var(--background))',
+            foreground: 'hsl(var(--foreground))',
+            primary: {
+              DEFAULT: 'hsl(var(--primary))',
+              foreground: 'hsl(var(--primary-foreground))',
+            },
+            secondary: {
+              DEFAULT: 'hsl(var(--secondary))',
+              foreground: 'hsl(var(--secondary-foreground))',
+            },
+            destructive: {
+              DEFAULT: 'hsl(var(--destructive))',
+              foreground: 'hsl(var(--destructive-foreground))',
+            },
+            muted: {
+              DEFAULT: 'hsl(var(--muted))',
+              foreground: 'hsl(var(--muted-foreground))',
+            },
+            accent: {
+              DEFAULT: 'hsl(var(--accent))',
+              foreground: 'hsl(var(--accent-foreground))',
+            },
+            sidebar: {
+              DEFAULT: 'hsl(var(--sidebar-background))',
+              foreground: 'hsl(var(--sidebar-foreground))',
+            },
+          },
+          borderRadius: {
+            lg: 'var(--radius)',
+            md: 'calc(var(--radius) - 2px)',
+            sm: 'calc(var(--radius) - 4px)',
+          },
         }
       }
-    };
+    }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- 🎸 Google Fonts - ROCK ALTERNATIF REBEL -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Permanent+Marker&family=Archivo+Black&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ========================================
+           🎸 SLAY RADIO - ROCK ALTERNATIF REBEL
+           Typographie Artistique
+           ======================================== */
+
+    /* GRANDS TITRES - H1 */
+    h1 {
+      font-family: 'Black Ops One', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    /* SOUS-TITRES - H2 */
+    h2 {
+      font-family: 'Permanent Marker', sans-serif;
+      font-weight: 400;
+    }
+
+    /* SOUS-TITRES - H3 */
+    h3 {
+      font-family: 'Permanent Marker', sans-serif;
+      font-weight: 400;
+    }
+
+    /* SOUS-TITRES - H4, H5, H6 */
+    h4,
+    h5,
+    h6 {
+      font-family: 'Permanent Marker', sans-serif;
+      font-weight: 400;
+    }
+
+    /* PARAGRAPHES & TEXTE BODY */
+    p {
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      line-height: 1.6;
+    }
+
+    /* TEXTE GÉNÉRAL (body, div, span par défaut) */
+    body {
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 400;
+    }
+
+    /* LABELS & PETITS TEXTES */
+    label,
+    small {
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* BOUTONS */
+    button,
+    .btn {
+      font-family: 'Permanent Marker', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    /* LIENS */
+    a {
+      font-family: 'Archivo Black', sans-serif;
+      font-weight: 400;
+    }
+
+    /* ========================================
+           ANIMATIONS
+           ======================================== */
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .scrolling-text {
+      animation: scroll 25s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes equalizer {
+
+      0%,
+      100% {
+        height: 8px;
+      }
+
+      50% {
+        height: 100%;
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1s ease-out;
+    }
+
+    .animate-equalizer {
+      animation: equalizer 0.8s ease-in-out infinite;
+    }
+  </style>
+
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <!-- Sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body class="bg-background text-foreground">
-  <!-- NAVBAR (copie exacte de ton artistes.html) -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
     <div class="container mx-auto px-4">
       <div class="flex items-center justify-between h-16 md:h-20">
-        <a class="flex items-center gap-3" href="./index.html">
-          <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
+        <!-- LOGO -->
+        <a class="flex items-center gap-3" href="{{ path('app_home') }}">
+          <img src="{{ asset('images/logo.jpg') }}" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
           <span class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span>
         </a>
+        <!-- ================= MENU DESKTOP ================= -->
         <div class="hidden lg:flex items-center gap-8">
-          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./index.html">Accueil</a>
-          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./live.html">Live Radio</a>
-          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./artistes.html">Artistes</a>
-          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./boutique.html">Boutique</a>
-          <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors" href="./apropos.html">À propos</a>
+
+          {% set route = app.request.attributes.get('_route') %}
+
+          {% set links = [
+          {'name': 'Accueil', 'route': 'app_home'},
+          {'name': 'Live Radio', 'route': 'app_home_live'},
+          {'name': 'Artistes', 'route': 'app_home_artistes'},
+          {'name': 'Boutique', 'route': 'app_home_boutique'},
+          {'name': 'À propos', 'route': 'app_home_apropos'}
+          ] %}
+
+          {% for link in links %}
+          <a href="{{ path(link.route) }}" class="group text-sm font-medium transition-colors relative
+															{{ route == link.route
+																? 'text-primary'
+																: 'text-muted-foreground hover:text-primary' }}">
+
+            {{ link.name }}
+
+            <!-- ✅ LIGNE ACTIVE + SURVOL -->
+            <span class="absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300
+																{{ route == link.route ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
+          </a>
+          {% endfor %}
+
         </div>
+
+        <!-- ================= ACTIONS DESKTOP ================= -->
         <div class="hidden lg:flex items-center gap-4">
-          <button class="h-10 w-10 grid place-items-center hover:bg-muted rounded-md text-muted-foreground hover:text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
-          </button>
-          <a href="./login.html"><button class="px-3 py-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm">Connexion</button></a>
-          <a href="./dashbord.html"><button class="px-3 py-2 rounded-md gradient-primary text-primary-foreground text-sm glow-primary">Espace DJ</button></a>
+
+          {# <button class="h-10 w-10 text-muted-foreground hover:text-primary transition-colors">
+            🛒
+          </button> #}
+
+          <a href="./login.html">
+            <button class="border border-primary text-primary px-4 py-1.5 rounded-md
+																hover:bg-primary hover:text-white hover:scale-105 transition-all duration-300">
+              Connexion
+            </button>
+          </a>
+
+          <a href="{{ path('app_admin') }}">
+            <button class="bg-primary text-white px-4 py-1.5 rounded-md
+																hover:bg-primary/90 hover:scale-105 transition-all duration-300">
+              Espace Admin
+            </button>
+          </a>
         </div>
-        <button class="lg:hidden p-2 text-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
+
+        <!-- ================= BURGER MOBILE ================= -->
+        <button id="burgerBtn" class="lg:hidden p-2 text-foreground">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- AUDIO PLAYER HEADER (sous la navbar) -->
+  <div class="fixed top-16 md:top-20 left-0 right-0 z-40 bg-primary shadow-xl">
+    <div class="container mx-auto px-4 py-2 sm:py-3">
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Play Button -->
+        <button id="playBtnTop"
+          class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-primary-foreground flex items-center justify-center shadow-2xl hover:scale-110 transition-transform flex-shrink-0">
+          <svg id="playIconTop" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary ml-1">
+            <polygon points="6 3 20 12 6 21 6 3"></polygon>
+          </svg>
+          <svg id="pauseIconTop" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary hidden">
+            <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+            <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+          </svg>
+        </button>
+
+        <!-- Scrolling Text -->
+        <div class="flex-1 overflow-hidden min-w-0">
+          <div class="scrolling-text text-primary-foreground font-bold text-sm sm:text-lg md:text-xl lg:text-2xl">
+            🎵 EN DIRECT: DJ MaxFlow - Deep House Session 🎧 La Radio des DJs Locaux 🔥 Soutenez vos
+            artistes préférés 🎶
+          </div>
+        </div>
+
+        <!-- Live Indicator -->
+        <div
+          class="flex items-center gap-2 bg-red-500 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full flex-shrink-0">
+          <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white animate-pulse"></span>
+          <span class="text-xs sm:text-sm font-bold text-white hidden sm:inline">LIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= MENU MOBILE ================= -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl
+		            translate-y-full transition-transform duration-300
+		            flex flex-col p-6">
+
+    <!-- HEADER MOBILE -->
+    <div class="flex items-center justify-between mb-8">
+      <span class="text-lg font-bold text-primary">Menu</span>
+      <button id="closeMenuBtn" class="p-2 text-foreground">
+        ✖
+      </button>
+    </div>
+
+    <!-- LIENS MOBILE -->
+    <nav class="flex flex-col gap-6 text-lg font-medium">
+      <a href="{{ path('app_home') }}" class="hover:text-primary transition-colors">Accueil</a>
+      <a href="{{ path('app_home_live') }}" class="hover:text-primary transition-colors">Live Radio</a>
+      <a href="{{ path('app_home_artistes') }}" class="hover:text-primary transition-colors">Artistes</a>
+      <a href="{{ path('app_home_boutique') }}" class="hover:text-primary transition-colors">Boutique</a>
+      <a href="{{ path('app_home_apropos') }}" class="hover:text-primary transition-colors">À propos</a>
+    </nav>
+
+    <!-- ACTIONS MOBILE -->
+    <div class="mt-auto flex flex-col gap-4">
+      <a href="{{path('app_login')}}" class="border border-primary text-primary px-4 py-2 rounded-md text-center
+						   hover:bg-primary hover:text-white transition">
+        Connexion
+      </a>
+
+      <a href="{{ path('app_admin') }}" class="bg-primary text-white px-4 py-2 rounded-md text-center
+						   hover:bg-primary/90 transition">
+        Espace Admin
+      </a>
+    </div>
+  </div>
+
+
+
+  <!-- MENU MOBILE (slide depuis le bas) -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl
+            translate-y-full transition-transform duration-300
+            flex flex-col p-6">
+    <!-- en-tête -->
+    <div class="flex items-center justify-between mb-8">
+      <span class="text-lg font-bold text-primary">Menu</span>
+      <button id="closeMenuBtn" class="p-2 text-foreground">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" class="w-6 h-6">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- liens -->
+    <nav class="flex flex-col gap-6 text-lg font-medium text-foreground">
+      <a href="./index.html" class="menu-link hover:text-primary transition-colors">Accueil</a>
+      <a href="./live.html" class="menu-link hover:text-primary transition-colors">Live Radio</a>
+      <a href="./artistes.html" class="menu-link hover:text-primary transition-colors">Artistes</a>
+      <a href="./boutique.html" class="menu-link hover:text-primary transition-colors">Boutique</a>
+      <a href="./apropos.html" class="menu-link hover:text-primary transition-colors">À propos</a>
+    </nav>
+
+    <!-- actions du bas -->
+    <div class="mt-auto flex flex-col gap-4">
+      <a href="./login.html"
+        class="w-full px-4 py-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-center">Connexion</a>
+      <a href="./dashbord.html"
+        class="w-full px-4 py-2 rounded-md gradient-primary text-primary-foreground text-center">Espace
+        DJ</a>
+    </div>
+  </div>
 
   <!-- CONTENU PRINCIPAL -->
   <main class="pt-24 pb-20">
     <div class="container mx-auto px-4 max-w-5xl">
       <!-- Retour liste -->
-      <a href="./artistes.html" class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      <a href="./artistes.html"
+        class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" class="w-4 h-4">
+          <line x1="19" y1="12" x2="5" y2="12" />
+          <polyline points="12 19 5 12 12 5" />
+        </svg>
         Retour aux artistes
       </a>
 
       <!-- Carte artiste -->
       <div class="gradient-card rounded-2xl border border-border p-6 md:p-8">
         <div class="flex flex-col md:flex-row gap-6">
-          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop"
-               alt="DJ MaxFlow" class="w-40 h-40 md:w-48 md:h-48 rounded-xl object-cover flex-shrink-0">
+          <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=300&h=300&fit=crop" alt="DJ MaxFlow"
+            class="w-40 h-40 md:w-48 md:h-48 rounded-xl object-cover flex-shrink-0">
           <div class="flex-1">
             <div class="flex items-start justify-between mb-3">
               <div>
@@ -78,7 +418,7 @@
                 <p class="text-muted-foreground">Deep House • Techno</p>
               </div>
               <button id="followBtn" onclick="toggleFollow()"
-                      class="px-3 py-1.5 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm">
+                class="px-3 py-1.5 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm">
                 Suivre
               </button>
             </div>
@@ -90,14 +430,22 @@
             </div>
 
             <p class="text-sm text-muted-foreground leading-relaxed mb-4">
-              Passionné de Deep House, DJ MaxFlow transporte son public dans un univers mélodique et envoûtant. Ses sets sont des voyages sonores où chaque piste raconte une histoire.
+              Passionné de Deep House, DJ MaxFlow transporte son public dans un univers mélodique et envoûtant. Ses sets
+              sont des voyages sonores où chaque piste raconte une histoire.
             </p>
 
             <div class="flex items-center gap-3">
-              <a href="https://instagram.com/djmaxflow" target="_blank" class="w-8 h-8 grid place-items-center rounded-full bg-muted text-muted-foreground hover:text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M7 12a5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5z"/></svg>
+              <a href="https://instagram.com/djmaxflow" target="_blank"
+                class="w-8 h-8 grid place-items-center rounded-full bg-muted text-muted-foreground hover:text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                  class="w-4 h-4">
+                  <path
+                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M7 12a5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5z" />
+                </svg>
               </a>
-              <a href="./morceau.html" class="px-3 py-1.5 rounded-md bg-primary hover:bg-transparent border border-primary text-white hover:text-primary text-sm">Voir tout le morceaux</a>
+              <a href="./morceau.html"
+                class="px-3 py-1.5 rounded-md bg-primary hover:bg-transparent border border-primary text-white hover:text-primary text-sm">Voir
+                tout le morceaux</a>
             </div>
           </div>
         </div>
@@ -109,9 +457,16 @@
         <div class="gradient-card rounded-xl border border-border divide-y divide-border">
           <!-- piste 1 -->
           <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
-            <button onclick="playTrack(this)" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
-              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            <button onclick="playTrack(this)"
+              class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
+              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polygon points="6 3 20 12 6 21 6 3" />
+              </svg>
+              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
             </button>
             <div class="flex-1">
               <p class="font-medium text-foreground">Deep House Vibes</p>
@@ -122,9 +477,16 @@
           </div>
           <!-- piste 2 -->
           <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
-            <button onclick="playTrack(this)" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
-              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            <button onclick="playTrack(this)"
+              class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
+              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polygon points="6 3 20 12 6 21 6 3" />
+              </svg>
+              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
             </button>
             <div class="flex-1">
               <p class="font-medium text-foreground">Summer Mix 2024</p>
@@ -135,9 +497,16 @@
           </div>
           <!-- piste 3 -->
           <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
-            <button onclick="playTrack(this)" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
-              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg>
-              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+            <button onclick="playTrack(this)"
+              class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20">
+              <svg class="w-5 h-5 play-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <polygon points="6 3 20 12 6 21 6 3" />
+              </svg>
+              <svg class="w-5 h-5 pause-icon hidden" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <rect x="6" y="4" width="4" height="16" rx="1" />
+                <rect x="14" y="4" width="4" height="16" rx="1" />
+              </svg>
             </button>
             <div class="flex-1">
               <p class="font-medium text-foreground">Chill Session #12</p>
@@ -165,17 +534,23 @@
         <div>
           <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
           <ul class="space-y-3">
-            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./index.html">Accueil</a></li>
-            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./live.html">Live Radio</a></li>
-            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./artistes.html">Artistes</a></li>
-            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./apropos.html">À propos</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                href="./index.html">Accueil</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./live.html">Live
+                Radio</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                href="./artistes.html">Artistes</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./apropos.html">À
+                propos</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
           <ul class="space-y-3">
-            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./login.html">Connexion</a></li>
-            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="./dashbord.html">Dashboard</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                href="./login.html">Connexion</a></li>
+            <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                href="./dashbord.html">Dashboard</a></li>
           </ul>
         </div>
         <div>
@@ -187,14 +562,15 @@
         </div>
       </div>
       <div class="border-t border-border mt-8 pt-8 text-center">
-        <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie. Tous droits réservés.</p>
+        <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie. Tous droits
+          réservés.</p>
       </div>
     </div>
   </footer>
 
   <!-- Mini-JS : suivre + lecteur fake -->
   <script>
-    function toggleFollow(){
+    function toggleFollow() {
       const btn = document.getElementById('followBtn');
       const suivre = btn.textContent === 'Suivre';
       btn.textContent = suivre ? 'Suivi' : 'Suivre';
@@ -202,21 +578,25 @@
       btn.classList.toggle('text-primary-foreground', suivre);
       btn.classList.toggle('border-primary', !suivre);
     }
-    function playTrack(btn){
+    function playTrack(btn) {
       const play = btn.querySelector('.play-icon');
       const pause = btn.querySelector('.pause-icon');
       const isPlay = !play.classList.contains('hidden');
       // reset tous les autres
-      document.querySelectorAll('.play-icon').forEach(i=>i.classList.remove('hidden'));
-      document.querySelectorAll('.pause-icon').forEach(i=>i.classList.add('hidden'));
-      if(isPlay){
+      document.querySelectorAll('.play-icon').forEach(i => i.classList.remove('hidden'));
+      document.querySelectorAll('.pause-icon').forEach(i => i.classList.add('hidden'));
+      if (isPlay) {
         play.classList.add('hidden');
         pause.classList.remove('hidden');
-      }else{
+      } else {
         play.classList.remove('hidden');
         pause.classList.add('hidden');
       }
     }
   </script>
+
+      <!-- ========= SCRIPTS ========= -->
+    <script src="./main.js"></script>
 </body>
+
 </html>

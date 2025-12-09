@@ -14,7 +14,11 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Sora', 'system-ui', 'sans-serif'],
+                        // 🎸 ROCK ALTERNATIF REBEL - Fonts Artistiques
+                        'title': ['Black Ops One', 'sans-serif'],      // Grands titres
+                        'heading': ['Permanent Marker', 'sans-serif'],  // Sous-titres
+                        'body': ['Archivo Black', 'sans-serif'],        // Paragraphes
+                        sans: ['Archivo Black', 'sans-serif'],          // Par défaut
                     },
                     colors: {
                         border: 'hsl(var(--border))',
@@ -56,9 +60,141 @@
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"
+
+
+        <!-- 🎸 Google Fonts - ROCK ALTERNATIF REBEL -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Permanent+Marker&family=Archivo+Black&display=swap"
         rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* ========================================
+           🎸 SLAY RADIO - ROCK ALTERNATIF REBEL
+           Typographie Artistique
+           ======================================== */
+
+        /* GRANDS TITRES - H1 */
+        h1 {
+            font-family: 'Black Ops One', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        /* SOUS-TITRES - H2 */
+        h2 {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+        }
+
+        /* SOUS-TITRES - H3 */
+        h3 {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+        }
+
+        /* SOUS-TITRES - H4, H5, H6 */
+        h4,
+        h5,
+        h6 {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+        }
+
+        /* PARAGRAPHES & TEXTE BODY */
+        p {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+
+        /* TEXTE GÉNÉRAL (body, div, span par défaut) */
+        body {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+        }
+
+        /* LABELS & PETITS TEXTES */
+        label,
+        small {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* BOUTONS */
+        button,
+        .btn {
+            font-family: 'Permanent Marker', sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* LIENS */
+        a {
+            font-family: 'Archivo Black', sans-serif;
+            font-weight: 400;
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .scrolling-text {
+            animation: scroll 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes equalizer {
+
+            0%,
+            100% {
+                height: 8px;
+            }
+
+            50% {
+                height: 100%;
+            }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 1s ease-out;
+        }
+
+        .animate-equalizer {
+            animation: equalizer 0.8s ease-in-out infinite;
+        }
+    </style>
+
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -74,61 +210,149 @@
 
 
 <body class="bg-background">
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between h-16 md:h-20">
-                <a class="flex items-center gap-3" href="./index.html">
-                    <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg">
-                    <span class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span>
-                </a>
-                <div class="hidden lg:flex items-center gap-8">
-                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
-                        href="./index.html">
-                        Accueil
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                    </a>
-                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
-                        href="./live.html">
-                        Live Radio
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                    </a>
-                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
-                        href="./artistes.html">
-                        Artistes
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                    </a>
-                    <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
-                        href="./boutique.html">
-                        Boutique
-                        <span
-                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                    </a>
-                    <a class="text-sm font-medium text-primary transition-colors relative group" href="./apropos.html">
-                        À propos
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"></span>
-                    </a>
+    <!--  navbar -->
+                <!-- Desktop -->
+                <nav
+                    class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-border shadow-sm">
+                    <div class="container mx-auto px-4">
+                        <div class="flex items-center justify-between h-16 md:h-20">
+                            <a class="flex items-center gap-3" href="./index.html">
+                                <img src="./image/logo.jpg" alt="Slay Radio" class="h-10 md:h-12 w-auto rounded-lg"><span
+                                    class="text-xl font-bold text-primary hidden sm:block">SLAY RADIO</span></a>
+                            <div class="hidden lg:flex items-center gap-8">
+                                <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                    href="./index.html">Accueil<span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                                <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                    href="./live.html">Live Radio<span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                                <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                    href="./artistes.html">Artistes<span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                                <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                    href="./boutique.html">Boutique<span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                                <a class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                                    href="./apropos.html">À propos<span
+                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span></a>
+                            </div>
+                            <div class="hidden lg:flex items-center gap-4">
+                                <button
+                                    class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-10 w-10 text-muted-foreground hover:text-primary"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-shopping-cart w-5 h-5">
+                                        <circle cx="8" cy="21" r="1"></circle>
+                                        <circle cx="19" cy="21" r="1"></circle>
+                                        <path
+                                            d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                                        </path>
+                                    </svg></button>
+                                <a href="./login.html">
+                                    <button
+                                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background h-9 rounded-md px-3 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                                        Connexion</button>
+                                </a>
+                                <a href="./dashbord.html">
+                                    <button
+                                        class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-9 rounded-md px-3 gradient-primary text-primary-foreground glow-primary">
+                                        Espace Admin
+                                    </button>
+                                </a>
+                            </div>
+
+                            <!-- BOUTON BURGER (visible mobile) -->
+                            <button id="burgerBtn" class="lg:hidden p-2 text-foreground">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" class="w-6 h-6">
+                                    <line x1="4" x2="20" y1="12" y2="12" />
+                                    <line x1="4" x2="20" y1="6" y2="6" />
+                                    <line x1="4" x2="20" y1="18" y2="18" />
+                                </svg>
+                            </button>
+
+                        </div>
+                    </div>
+                </nav>
+        
+                <!-- AUDIO PLAYER HEADER (sous la navbar) -->
+                <div class="fixed top-16 md:top-20 left-0 right-0 z-40 bg-primary shadow-xl">
+                    <div class="container mx-auto px-4 py-2 sm:py-3">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <!-- Play Button -->
+                            <button id="playBtnTop"
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-primary-foreground flex items-center justify-center shadow-2xl hover:scale-110 transition-transform flex-shrink-0">
+                                <svg id="playIconTop" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary ml-1">
+                                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                                </svg>
+                                <svg id="pauseIconTop" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary hidden">
+                                    <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                                    <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                                </svg>
+                            </button>
+
+                            <!-- Scrolling Text -->
+                            <div class="flex-1 overflow-hidden min-w-0">
+                                <div
+                                    class="scrolling-text text-primary-foreground font-bold text-sm sm:text-lg md:text-xl lg:text-2xl">
+                                    🎵 EN DIRECT: DJ MaxFlow - Deep House Session 🎧 La Radio des DJs Locaux 🔥 Soutenez vos
+                                    artistes préférés 🎶
+                                </div>
+                            </div>
+
+                            <!-- Live Indicator -->
+                            <div
+                                class="flex items-center gap-2 bg-red-500 px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full flex-shrink-0">
+                                <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white animate-pulse"></span>
+                                <span class="text-xs sm:text-sm font-bold text-white hidden sm:inline">LIVE</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="hidden lg:flex items-center gap-4">
-                    <a href="./login.html">
-                        <button
-                            class="inline-flex items-center justify-center h-9 rounded-md px-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
-                            Connexion
+
+                <!-- MENU MOBILE (slide depuis le bas) -->
+                <div id="mobileMenu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl
+                translate-y-full transition-transform duration-300
+                flex flex-col p-6">
+                    <!-- en-tête -->
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="text-lg font-bold text-primary">Menu</span>
+                        <button id="closeMenuBtn" class="p-2 text-foreground">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" class="w-6 h-6">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
                         </button>
-                    </a>
-                    <a href="./dashbord.html">
-                        <button
-                            class="inline-flex items-center justify-center h-9 rounded-md px-3 gradient-primary text-primary-foreground">
-                            Espace DJ
-                        </button>
-                    </a>
+                    </div>
+
+                    <!-- liens -->
+                    <nav class="flex flex-col gap-6 text-lg font-medium text-foreground">
+                        <a href="./index.html" class="menu-link hover:text-primary transition-colors">Accueil</a>
+                        <a href="./live.html" class="menu-link hover:text-primary transition-colors">Live Radio</a>
+                        <a href="./artistes.html" class="menu-link hover:text-primary transition-colors">Artistes</a>
+                        <a href="./boutique.html" class="menu-link hover:text-primary transition-colors">Boutique</a>
+                        <a href="./apropos.html" class="menu-link hover:text-primary transition-colors">À propos</a>
+                    </nav>
+
+                    <!-- actions du bas -->
+                    <div class="mt-auto flex flex-col gap-4">
+                        <a href="./login.html"
+                            class="w-full px-4 py-2 rounded-md border border-primary text-primary hover:bg-primary hover:text-primary-foreground text-center">Connexion</a>
+                        <a href="./dashbord.html"
+                            class="w-full px-4 py-2 rounded-md gradient-primary text-primary-foreground text-center"> Espace
+                            Admin</a>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </nav>
+    <!--  end navbar -->
+
+    
 
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 overflow-hidden">
@@ -242,95 +466,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="py-20 bg-card">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <p class="text-primary font-medium text-sm uppercase tracking-wider mb-2">Notre Équipe</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-foreground">Les créateurs de Slay Radio</h2>
-            </div>
-            <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <div class="text-center group">
-                    <div class="relative mb-4 overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
-                            alt="Team member"
-                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                    </div>
-                    <h3 class="font-semibold text-lg text-foreground">Lucas Martin</h3>
-                    <p class="text-sm text-primary">Chef de Projet</p>
-                </div>
-
-                <div class="text-center group">
-                    <div class="relative mb-4 overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop"
-                            alt="Team member"
-                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                    </div>
-                    <h3 class="font-semibold text-lg text-foreground">Sophie Dubois</h3>
-                    <p class="text-sm text-primary">Développeuse Web</p>
-                </div>
-
-                <div class="text-center group">
-                    <div class="relative mb-4 overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop"
-                            alt="Team member"
-                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                    </div>
-                    <h3 class="font-semibold text-lg text-foreground">Thomas Leroy</h3>
-                    <p class="text-sm text-primary">Sociologue</p>
-                </div>
-
-                <div class="text-center group">
-                    <div class="relative mb-4 overflow-hidden rounded-2xl">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop"
-                            alt="Team member"
-                            class="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-110">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                        </div>
-                    </div>
-                    <h3 class="font-semibold text-lg text-foreground">Emma Bernard</h3>
-                    <p class="text-sm text-primary">Designer UX/UI</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-20 bg-background">
-        <div class="container mx-auto px-4">
-            <div class="gradient-card rounded-3xl p-12 border border-border max-w-6xl mx-auto">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="text-center">
-                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">50+</p>
-                        <p class="text-muted-foreground">DJs Actifs</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">1.2K</p>
-                        <p class="text-muted-foreground">Auditeurs</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">200+</p>
-                        <p class="text-muted-foreground">Podcasts</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-4xl md:text-5xl font-bold text-gradient mb-2">24/7</p>
-                        <p class="text-muted-foreground">En Direct</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="py-20 bg-card">
         <div class="container mx-auto px-4">
@@ -343,12 +478,6 @@
                     communauté.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="./dashbord.html">
-                        <button
-                            class="inline-flex items-center justify-center h-11 rounded-md px-8 gradient-primary text-primary-foreground font-semibold">
-                            Devenir DJ
-                        </button>
-                    </a>
                     <a href="./live.html">
                         <button
                             class="inline-flex items-center justify-center h-11 rounded-md px-8 border border-border text-foreground hover:bg-muted">
@@ -362,55 +491,68 @@
 
     <!-- Footer -->
     <footer class="bg-card border-t border-border">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="space-y-4">
-                    <a class="flex items-center gap-3" href="./index.html">
-                        <img src="./image/logo.jpg" alt="Slay Radio" class="h-12 w-auto rounded-lg">
-                        <span class="text-xl font-bold text-primary">SLAY RADIO</span>
+        <div class="container mx-auto py-12">
+
+            <!-- Conteneur flex : 4 colonnes toujours -->
+            <div class="flex flex-nowrap gap-4 md:gap-6 lg:gap-8 justify-center text center">
+
+                <!-- Carte 1 : Logo -->
+                <div class="w-1/4 space-y-2">
+                    <a class="flex items-center gap-2 md:gap-3" href="./index.html">
+                        <img src="./image/logo.jpg" alt="Slay Radio" class="h-8 md:h-12 w-auto rounded-lg">
+                        <span class="text-sm md:text-xl font-bold text-primary hidden sm:flex">SLAY RADIO</span>
                     </a>
-                    <p class="text-sm text-muted-foreground">
+                    <p class="text-[11px] md:text-sm text-muted-foreground leading-tight md:leading-normal">
                         La plateforme radiophonique dédiée aux DJs locaux.
                     </p>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-foreground mb-4">Navigation</h4>
-                    <ul class="space-y-3">
-                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+
+                <!-- Carte 2 : Navigation -->
+                <div class="w-1/4">
+                    <h4 class="font-semibold text-[12px] md:text-base text-foreground mb-2 md:mb-3">
+                        Navigation
+                    </h4>
+                    <ul class="space-y-1 md:space-y-2">
+                        <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                 href="./index.html">Accueil</a></li>
-                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                 href="./live.html">Live Radio</a></li>
-                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                 href="./artistes.html">Artistes</a></li>
-                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        <li><a class="text-[11px] md:text-sm text-muted-foreground hover:text-primary transition-colors"
                                 href="./apropos.html">À propos</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-foreground mb-4">Espace DJ</h4>
-                    <ul class="space-y-3">
-                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
-                                href="./login.html">Connexion</a></li>
-                        <li><a class="text-sm text-muted-foreground hover:text-primary transition-colors"
-                                href="./dashbord.html">Dashboard</a></li>
+
+                <!-- Carte 4 : Contact -->
+                <div class="w-1/4">
+                    <h4 class="font-semibold text-[12px] md:text-base text-foreground mb-2 md:mb-3">
+                        Contact
+                    </h4>
+                    <ul class="space-y-1 md:space-y-2">
+                        <li class="text-[11px] md:text-sm text-muted-foreground break-all">
+                            contact@slay.live
+                        </li>
+                        <li class="text-[11px] md:text-sm text-muted-foreground">
+                            +33 1 23 45 67 89
+                        </li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-foreground mb-4">Contact</h4>
-                    <ul class="space-y-3">
-                        <li class="text-sm text-muted-foreground">contact@slay.live</li>
-                        <li class="text-sm text-muted-foreground">+33 1 23 45 67 89</li>
-                    </ul>
-                </div>
+
             </div>
-            <div class="border-t border-border mt-8 pt-8 text-center">
-                <p class="text-sm text-muted-foreground">© 2025 Slay Radio. Projet universitaire en Sociologie.
-                    Tous
-                    droits réservés.</p>
+
+            <!-- Bas du footer -->
+            <div class="border-t border-border mt-6 md:mt-8 pt-4 md:pt-6 text-center">
+                <p class="text-[11px] md:text-sm text-muted-foreground">
+                    © 2025 Slay Radio. Tous droits réservés.
+                </p>
             </div>
+
         </div>
     </footer>
-    <!-- end Footer -->
+    <!-- End Footer -->
+    <!-- ========= SCRIPTS ========= -->
+    <script src="./main.js"></script>
 </body>
 
 </html>
