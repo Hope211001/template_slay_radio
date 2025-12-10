@@ -362,12 +362,12 @@
             <main class=" pb-20">
                 <div class="container mx-auto px-4 py-20">
                     <!-- en-tête -->
-                    <div class="mb-8 sm:mb-10 md:mb-12 text-center mt-16 sm:mt-18 md:mt-20 pt-16 sm:pt-18 md:pt-20 px-4">
-                        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4 leading-tight">
+                    <div class="mb-12 text-center mt-20 pt-20">
+                        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
                             Nos
                             <span class="text-gradient">Artistes</span>
                         </h1>
-                        <p class="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                        <p class="text-muted-foreground max-w-2xl mx-auto">
                             Découvrez les talents de la scène locale. Explorez leurs univers musicaux et suivez leurs
                             dernières créations.
                         </p>
@@ -402,72 +402,62 @@
 
                     <!-- grille 4 colonnes -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
                         <!-- DJ MaxFlow -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop"
                                     alt="DJ MaxFlow"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
+                                <!-- <div
+                                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div
+                                                class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-7 h-7 text-white ml-1">
+                                                    <polygon points="6 3 20 12 6 21 6 3" />
+                                                </svg>
+                                            </div>
+                                        </div> -->
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex-col">
                                 <h3
                                     class="font-bold text-xl text-gray-800 group-hover:text-primary transition-colors mb-2">
-                                    DJ
-                                    MaxFlow</h3>
+                                    DJ MaxFlow</h3>
                                 <div class="mb-3">
                                     <span class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Deep
                                         House</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">2.4K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+
 
                         <!-- Luna Beats -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary ">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
                                     alt="Luna Beats"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
                             </div>
                             <div class="p-6">
                                 <h3
@@ -478,42 +468,31 @@
                                     <span class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Techno</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">1.8K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
                         <!-- Kenzo -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary ">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop"
                                     alt="Kenzo"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
                             </div>
                             <div class="p-6">
                                 <h3
@@ -525,42 +504,31 @@
                                         House</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">1K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
                         <!-- NightWave -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop"
                                     alt="NightWave"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
                             </div>
                             <div class="p-6">
                                 <h3
@@ -571,90 +539,80 @@
                                         class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Progressive</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">1K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
 
                         <!-- DJ MaxFlow -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400&h=400&fit=crop"
                                     alt="DJ MaxFlow"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
+                                <!-- <div
+                                            class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                            <div
+                                                class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="w-7 h-7 text-white ml-1">
+                                                    <polygon points="6 3 20 12 6 21 6 3" />
+                                                </svg>
+                                            </div>
+                                        </div> -->
                             </div>
-                            <div class="p-6">
+                            <div class="p-6 flex-col">
                                 <h3
                                     class="font-bold text-xl text-gray-800 group-hover:text-primary transition-colors mb-2">
-                                    DJ
-                                    MaxFlow</h3>
+                                    DJ MaxFlow</h3>
                                 <div class="mb-3">
                                     <span class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Deep
                                         House</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">2.4K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
+
 
                         <!-- Luna Beats -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary ">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop"
                                     alt="Luna Beats"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
                             </div>
                             <div class="p-6">
                                 <h3
@@ -665,42 +623,31 @@
                                     <span class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Techno</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">1.8K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
                         <!-- Kenzo -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary ">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop"
                                     alt="Kenzo"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
                             </div>
                             <div class="p-6">
                                 <h3
@@ -712,42 +659,31 @@
                                         House</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">1K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-purple-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
 
                         <!-- NightWave -->
-                        <a class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2"
-                            href="./detail_artiste.html">
+                        <div
+                            class="group gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary">
                             <div class="aspect-square overflow-hidden relative">
                                 <img src="https://images.unsplash.com/photo-1574169208507-84376144848b?w=400&h=400&fit=crop"
                                     alt="NightWave"
                                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <div
-                                        class="w-16 h-16 rounded-full gradient-primary flex items-center justify-center glow-primary">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="w-7 h-7 text-white ml-1">
-                                            <polygon points="6 3 20 12 6 21 6 3" />
-                                        </svg>
-                                    </div>
-                                </div>
                             </div>
                             <div class="p-6">
                                 <h3
@@ -758,23 +694,23 @@
                                         class="text-xs px-2 py-1 bg-gray-200 rounded-full text-gray-400">Progressive</span>
                                 </div>
                                 <div class="flex items-center justify-between text-sm text-gray-400">
-                                    <div class="flex items-center gap-1">
+                                    <a href="./detail_artiste.html" class="flex items-center gap-1 hover:text-primary ">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                                             <path
                                                 d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
                                         </svg>
-                                        <span class="text-xs">1K followers</span>
-                                    </div>
-                                    <button
-                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 active:scale-95 transition-all duration-200 text-sm font-medium">
+                                        <span class="text-xs">Voir plus</span>
+                                    </a>
+
+                                    <a href="./reservation.html"
+                                        class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all duration-300 hover:-translate-y-2">
                                         Réserver
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
-
+                        </div>
 
                     </div>
                     <!-- /grille -->

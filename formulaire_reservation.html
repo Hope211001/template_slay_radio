@@ -413,7 +413,7 @@
             <!--  end navbar -->
 
             <main class="pt-20 pb-20 ">
-                <div class="pt-10 sm:pt-24">
+                <div class="pt-10 sm:pt-24"> 
                     <div class="min-h-screen py-8 px-4 ">
                         <div class="max-w-4xl mx-auto">
                             <!-- Header -->
@@ -480,35 +480,32 @@
                             </div>
 
                             <!-- Form Container -->
-                            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                            <div class="bg-white rounded-2xl shadow-xl p-8">
                                 <form id="bookingForm">
-
-                                    <!-- Step 1 -->
+                                    <!-- Step 1: Sélection de l'artiste -->
                                     <div id="step1" class="step-content fade-in">
-                                        <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">Choisissez
-                                            votre artiste</h2>
+                                        <h2 class="text-2xl font-bold mb-6 text-primary">Choisissez votre artiste</h2>
 
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                                            <!-- Lieu -->
+                                            <!-- Artiste -->
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1 md:mb-2">
-                                                    Lieu de l'événement
-                                                </label>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Lieu de
+                                                    l'événement</label>
                                                 <input type="text" name="location" required
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                                                    placeholder="Entrer le lieu d'événement">
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                                    placeholder="Entrer le lieu d'évenement">
+
                                             </div>
 
-                                            <!-- Type événement -->
+
+                                            <!-- type evenement -->
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1 md:mb-2">
-                                                    Type d'événement *
-                                                </label>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Type
+                                                    d'événement
+                                                    *</label>
                                                 <select name="eventType" required
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-transparent">
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-transparent">
                                                     <option value="">Sélectionnez...</option>
                                                     <option value="wedding">Mariage</option>
                                                     <option value="birthday">Anniversaire</option>
@@ -523,119 +520,103 @@
                                     </div>
 
 
-                                    <!-- Step 2 -->
+                                    <!-- Step 2: Date et Heure -->
                                     <div id="step2" class="step-content hidden">
-                                        <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">Sélectionnez
-                                            la date et l'heure</h2>
+                                        <h2 class="text-2xl font-bold mb-6 text-primary">Sélectionnez la date et l'heure
+                                        </h2>
 
                                         <!-- Calendrier -->
-                                        <div class="mb-6 md:mb-8">
-                                            <div class="flex justify-between items-center mb-3">
+                                        <div class="mb-8">
+                                            <div class="flex justify-between items-center mb-4">
                                                 <button type="button" id="prevMonth"
-                                                    class="p-1.5 hover:bg-gray-100 rounded-lg">
-                                                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none"
-                                                        stroke="currentColor">
-                                                        <path stroke-width="2" d="M15 19l-7-7 7-7" />
+                                                    class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                                                    <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M15 19l-7-7 7-7" />
                                                     </svg>
                                                 </button>
-
-                                                <h3 id="currentMonth" class="text-lg md:text-xl font-bold"></h3>
-
+                                                <h3 id="currentMonth" class="text-xl font-bold"></h3>
                                                 <button type="button" id="nextMonth"
-                                                    class="p-1.5 hover:bg-gray-100 rounded-lg">
-                                                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none"
-                                                        stroke="currentColor">
-                                                        <path stroke-width="2" d="M9 5l7 7-7 7" />
+                                                    class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                                                    <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2" d="M9 5l7 7-7 7" />
                                                     </svg>
                                                 </button>
                                             </div>
 
-                                            <div class="grid grid-cols-7 gap-1.5 md:gap-2 mb-2">
-                                                <div class="text-center font-bold text-[10px] md:text-sm text-gray-600">
-                                                    Lun</div>
-                                                <div class="text-center font-bold text-[10px] md:text-sm text-gray-600">
-                                                    Mar</div>
-                                                <div class="text-center font-bold text-[10px] md:text-sm text-gray-600">
-                                                    Mer</div>
-                                                <div class="text-center font-bold text-[10px] md:text-sm text-gray-600">
-                                                    Jeu</div>
-                                                <div class="text-center font-bold text-[10px] md:text-sm text-gray-600">
-                                                    Ven</div>
-                                                <div class="text-center font-bold text-[10px] md:text-sm text-gray-600">
-                                                    Sam</div>
-                                                <div class="text-center font-bold text-[10px] md:text-sm text-gray-600">
-                                                    Dim</div>
+                                            <div class="grid grid-cols-7 gap-2 mb-2">
+                                                <div class="text-center font-bold text-sm text-gray-600">Lun</div>
+                                                <div class="text-center font-bold text-sm text-gray-600">Mar</div>
+                                                <div class="text-center font-bold text-sm text-gray-600">Mer</div>
+                                                <div class="text-center font-bold text-sm text-gray-600">Jeu</div>
+                                                <div class="text-center font-bold text-sm text-gray-600">Ven</div>
+                                                <div class="text-center font-bold text-sm text-gray-600">Sam</div>
+                                                <div class="text-center font-bold text-sm text-gray-600">Dim</div>
                                             </div>
 
-                                            <div id="calendarDays" class="grid grid-cols-7 gap-1.5 md:gap-2"></div>
+                                            <div id="calendarDays" class="grid grid-cols-7 gap-2"></div>
                                         </div>
 
-                                        <!-- Créneaux -->
+                                        <!-- Créneaux horaires -->
                                         <div id="timeSlotsContainer" class="hidden">
-                                            <h3 class="text-base md:text-lg font-bold mb-3">Choisissez un créneau
-                                                horaire</h3>
-                                            <div id="timeSlots" class="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-3">
-                                            </div>
+                                            <h3 class="text-lg font-bold mb-4">Choisissez un créneau horaire</h3>
+                                            <div id="timeSlots" class="grid grid-cols-3 md:grid-cols-4 gap-3"></div>
                                         </div>
                                     </div>
 
-
-                                    <!-- Step 3 -->
+                                    <!-- Step 3: Détails de l'événement -->
                                     <div id="step3" class="step-content hidden">
-                                        <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">Détails de
-                                            votre événement</h2>
+                                        <h2 class="text-2xl font-bold mb-6 text-primary">Détails de votre événement</h2>
 
-                                        <div class="space-y-3 md:space-y-4">
-
+                                        <div class="space-y-4">
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Nom
-                                                    complet *</label>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Nom complet
+                                                    *</label>
                                                 <input type="text" name="fullName" required
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                                             </div>
 
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Email
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Email
                                                     *</label>
                                                 <input type="email" name="email" required
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                                             </div>
 
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Téléphone
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Téléphone
                                                     *</label>
                                                 <input type="tel" name="phone" required
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                                             </div>
+
 
                                         </div>
                                     </div>
 
-
-                                    <!-- Step 4 -->
+                                    <!-- Step 4: Confirmation -->
                                     <div id="step4" class="step-content hidden">
-                                        <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary">Détails de
-                                            votre événement</h2>
+                                        <h2 class="text-2xl font-bold mb-6 text-primary">Détails de votre événement</h2>
 
-                                        <div class="space-y-3 md:space-y-4 mb-10">
-
+                                        <div class="space-y-4 mb-16">
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Nombre
-                                                    d'invités *</label>
-                                                <input type="number" name="guests" min="1" required
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Nombre
+                                                    d'invités
+                                                    estimé
+                                                    *</label>
+                                                <input type="number" name="guests" required min="1"
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                                             </div>
 
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Durée
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Durée de la
+                                                    prestation
                                                     *</label>
                                                 <select name="duration" required
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500">
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
                                                     <option value="">Sélectionnez...</option>
                                                     <option value="2">2 heures</option>
                                                     <option value="3">3 heures</option>
@@ -646,48 +627,46 @@
                                             </div>
 
                                             <div>
-                                                <label
-                                                    class="block text-xs md:text-sm font-medium text-gray-700 mb-1">Informations
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Informations
                                                     complémentaires</label>
                                                 <textarea name="notes" rows="4"
-                                                    class="w-full px-4 py-2.5 md:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
-                                                    placeholder="Ambiance, demandes spéciales, équipements..."></textarea>
+                                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                                                    placeholder="Ambiance souhaitée, demandes spéciales, équipement disponible..."></textarea>
                                             </div>
-
                                         </div>
+
+
 
                                         <label class="flex items-start gap-3 mb-6">
                                             <input type="checkbox" required
-                                                class="mt-1 w-4 h-4 md:w-5 md:h-5 text-purple-600">
-                                            <span class="text-xs md:text-sm text-gray-700">
-                                                J'accepte les <a href="#" class="text-purple-600 underline">conditions
-                                                    générales</a>
+                                                class="mt-1 w-5 h-5 text-purple-600 rounded focus:ring-purple-500">
+                                            <span class="text-sm text-gray-700">
+                                                J'accepte les <a href="#"
+                                                    class="text-purple-600 hover:underline">conditions
+                                                    générales</a> et la <a href="#"
+                                                    class="text-purple-600 hover:underline">politique de
+                                                    confidentialité</a>
                                             </span>
                                         </label>
                                     </div>
 
-
-                                    <!-- Navigation -->
-                                    <div class="flex justify-between mt-6 pt-4 border-t">
+                                    <!-- Navigation Buttons -->
+                                    <div class="flex justify-between mt-8 pt-6 border-t">
                                         <button type="button" id="prevBtn"
-                                            class="px-4 py-2.5 md:px-6 md:py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 hidden">
+                                            class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors hidden">
                                             Précédent
                                         </button>
-
                                         <button type="button" id="nextBtn"
-                                            class="px-4 py-2.5 md:px-6 md:py-3 gradient-primary text-white rounded-lg font-medium hover:opacity-90 ml-auto">
+                                            class="px-6 py-3 gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity ml-auto">
                                             Suivant
                                         </button>
-
                                         <button type="submit" id="submitBtn"
-                                            class="px-4 py-2.5 md:px-6 md:py-3 gradient-primary text-white rounded-lg font-medium hover:opacity-90 ml-auto hidden">
+                                            class="px-6 py-3 gradient-primary text-white rounded-lg font-medium hover:opacity-90 transition-opacity ml-auto hidden">
                                             Confirmer
                                         </button>
                                     </div>
-
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>

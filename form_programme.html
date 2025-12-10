@@ -212,136 +212,155 @@
 
                 <!--titre -->
                 <!-- recherche + titre -->
-                <div class="max-w-5xl mx-auto w-full">
-                    <!-- titre -->
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pt-1 sm:pt-16">
-                        <div>
-                            <h1 class="text-2xl md:text-3xl font-bold text-foreground">Liste d'Artiste</h1>
-                        </div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pt-1 sm:pt-16">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-foreground">PROGRAMME</h1>
                     </div>
-
-                    <!-- Barre de recherche -->
-                    <form action="" method="get" class="flex flex-col sm:flex-row gap-3 items-center mb-6">
-                        <input type="text" name="q" placeholder="Rechercher un titre, un artiste…"
-                            class="w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" />
-
-                        <button type="submit"
-                            class="w-full sm:w-auto px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-gray-800 transition flex items-center justify-center gap-2">
-                            <i class="fa fa-search"></i>
-                            <span>Rechercher</span>
+                    <a href="./list_programme.html">
+                        <button
+                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary glow-primary w-full md:w-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-upload w-4 h-4">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" x2="12" y1="3" y2="15"></line>
+                            </svg>Retour à la liste
                         </button>
-                        <a href="?"
-                            class="w-full sm:w-auto px-4 py-2 bg-gray-500 text-gray-100 rounded-lg hover:bg-primary hover:text-white transition flex items-center justify-center gap-2">
-                            <i class="fa fa-refresh"></i>
-                            <span>Actualiser</span>
-                        </a>
-                        <a href="./form_artiste.html"
-                            class="w-full sm:w-auto px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-primary hover:text-white transition flex items-center justify-center gap-2">
-                            <i class="fa fa-plus"></i>
-                            <span>Ajouter</span>
-                        </a>
-                    </form>
+                    </a>
                 </div>
 
-
                 <!-- liste -->
-                <div class="flex-auto px-0 pt-0 pb-2">
-                    <div class="p-0 overflow-x-auto max-w-5xl mx-auto">
+                <!-- Formulaire : NOUVEAU PROGRAMME – streaming radio -->
+                <div class="max-w-5xl mx-auto p-6 bg-white rounded-xl shadow border border-border">
+                    <h2 class="text-2xl font-bold text-foreground mb-6">Créer un programme radio</h2>
 
-                        <table
-                            class="items-center w-full mb-0 align-top border border-gray-200 text-slate-600 rounded-lg overflow-hidden">
+                    <form id="programForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Titre -->
+                        <div class="md:col-span-2">
+                            <label for="title" class="block text-sm font-medium text-gray-700 mb-2">Titre de l’émission
+                                *</label>
+                            <input type="text" id="title" name="title" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                            <!-- En-tête -->
-                            <thead class="bg-gray-100 text-primary">
-                                <tr>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">Nom de l’artiste</th>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">Date de création</th>
-                                    <th class="px-6 py-3 text-center text-sm font-bold uppercase">Actions</th>
-                                </tr>
-                            </thead>
+                        <!-- Description -->
+                        <div class="md:col-span-2">
+                            <label for="description" class="block text-sm font-medium text-gray-700 mb-2">Description /
+                                synopsis</label>
+                            <textarea id="description" name="description" rows="3"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
 
-                            <!-- Corps -->
-                            <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Type d’émission -->
+                        <div>
+                            <label for="type" class="block text-sm font-medium text-gray-700 mb-2">Type *</label>
+                            <select id="type" name="type" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-transparent">
+                                <option value="">Sélectionnez…</option>
+                                <option value="live">Direct / Live</option>
+                                <option value="delayed">Différé</option>
+                                <option value="podcast">Podcast</option>
+                                <option value="magazine">Magazine</option>
+                                <option value="talk">Talk-show</option>
+                                <option value="music">Music-only</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
 
-                                <!-- Artiste 1 -->
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">DJ Siska</td>
-                                    <td class="px-6 py-4">10/03/2024</td>
+                        <!-- Langue -->
+                        <div>
+                            <label for="language" class="block text-sm font-medium text-gray-700 mb-2">Langue *</label>
+                            <select id="language" name="language" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-transparent">
+                                <option value="">Sélectionnez…</option>
+                                <option value="fr">Français</option>
+                                <option value="en">English</option>
+                                <option value="es">Español</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
 
-                                    <td class="px-6 py-4">
-                                        <div class="flex flex-row items-center justify-center gap-3">
+                        <!-- Jour / Heure de début -->
+                        <div>
+                            <label for="day" class="block text-sm font-medium text-gray-700 mb-2">Jour *</label>
+                            <select id="day" name="day" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-transparent">
+                                <option value="">Sélectionnez…</option>
+                                <option value="monday">Lundi</option>
+                                <option value="tuesday">Mardi</option>
+                                <option value="wednesday">Mercredi</option>
+                                <option value="thursday">Jeudi</option>
+                                <option value="friday">Vendredi</option>
+                                <option value="saturday">Samedi</option>
+                                <option value="sunday">Dimanche</option>
+                            </select>
+                        </div>
 
-                                            <!-- Voir -->
-                                            <button class="text-blue-600 hover:text-blue-800" title="Voir">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </button>
+                        <div>
+                            <label for="startTime" class="block text-sm font-medium text-gray-700 mb-2">Heure de début
+                                *</label>
+                            <input type="time" id="startTime" name="startTime" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                                            <!-- Modifier -->
-                                            <button class="text-yellow-500 hover:text-yellow-700" title="Modifier">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
+                        <!-- Durée (min) -->
+                        <div>
+                            <label for="duration" class="block text-sm font-medium text-gray-700 mb-2">Durée (min)
+                                *</label>
+                            <input type="number" id="duration" name="duration" min="1" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                                            <!-- Supprimer -->
-                                            <button class="text-red-600 hover:text-red-800" title="Supprimer">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
+                        <!-- Public cible -->
+                        <div>
+                            <label for="targetAudience" class="block text-sm font-medium text-gray-700 mb-2">Année</label>
+                            <select id="targetAudience" name="targetAudience"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-transparent">
+                                <option value="">Sélectionnez…</option>
+                                <option value="general">2024</option>
+                                <option value="general">2025</option>
+                                <option value="general">2026</option>
+                                
+                            </select>
+                        </div>
 
-                                        </div>
-                                    </td>
-                                </tr>
+                        <!-- Fichiers audio -->
+                        <div class="md:col-span-2">
+                            <label for="audioFile" class="block text-sm font-medium text-gray-700 mb-2">Fichier audio
+                                (jingle, replay, podcast)</label>
+                            <input type="file" id="audioFile" name="audioFile" accept="audio/*"
+                                class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20">
+                            <p class="text-xs text-gray-500 mt-1">Formats acceptés : MP3, WAV, M4A – max 50 Mo</p>
+                        </div>
 
-                                <!-- Artiste 2 -->
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">MC Black</td>
-                                    <td class="px-6 py-4">22/02/2024</td>
+                        <!-- Flux streaming -->
+                        <div class="md:col-span-2">
+                            <label for="streamUrl" class="block text-sm font-medium text-gray-700 mb-2">URL du flux
+                                streaming (Shoutcast / Icecast)</label>
+                            <input type="url" id="streamUrl" name="streamUrl"
+                                placeholder="https://stream.monserver.com:8000/radio.mp3"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                                    <td class="px-6 py-4">
-                                        <div class="flex flex-row items-center justify-center gap-3">
-
-                                            <button class="text-blue-600 hover:text-blue-800">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </button>
-
-                                            <button class="text-yellow-500 hover:text-yellow-700">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
-
-                                            <button class="text-red-600 hover:text-red-800">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- Artiste 3 -->
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">Nina Melody</td>
-                                    <td class="px-6 py-4">05/01/2024</td>
-
-                                    <td class="px-6 py-4">
-                                        <div class="flex flex-row items-center justify-center gap-3">
-
-                                            <button class="text-blue-600 hover:text-blue-800">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </button>
-
-                                            <button class="text-yellow-500 hover:text-yellow-700">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
-
-                                            <button class="text-red-600 hover:text-red-800">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-
-                    </div>
+                        <!-- Boutons -->
+                        <div class="md:col-span-2 flex items-center justify-end gap-4 pt-4">
+                            <a href="./list_programme.html"
+                                class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                                Annuler
+                            </a>
+                            <button type="submit"
+                                class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg gradient-primary text-white hover:opacity-90 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-send">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                                Créer le programme
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </main>
         </div>

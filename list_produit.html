@@ -235,7 +235,7 @@
                             <i class="fa fa-refresh"></i>
                             <span>Actualiser</span>
                         </a>
-                        <a href="?"
+                        <a href="./form_produit.html"
                             class="w-full sm:w-auto px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-primary hover:text-white transition flex items-center justify-center gap-2">
                             <i class="fa fa-plus"></i>
                             <span>Ajouter</span>
@@ -256,7 +256,9 @@
                                 <tr>
                                     <th class="px-6 py-3 text-left text-sm font-bold uppercase">Nom du produit</th>
                                     <th class="px-6 py-3 text-left text-sm font-bold uppercase">Quantité en stock</th>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">État du stock</th>
+                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase min-w-[140px]">
+                                        État du stock
+                                    </th>
                                     <th class="px-6 py-3 text-left text-sm font-bold uppercase">Prix</th>
                                     <th class="px-6 py-3 text-center text-sm font-bold uppercase">Actions</th>
                                 </tr>
@@ -270,9 +272,10 @@
                                     <td class="px-6 py-4 font-semibold">Casque Audio Pro</td>
                                     <td class="px-6 py-4">45</td>
 
+                                    <!-- et chaque cellule État -->
                                     <td class="px-6 py-4">
                                         <span
-                                            class="px-3 py-1 text-xs font-bold text-green-700 bg-green-100 rounded-full">
+                                            class="px-2 py-1 text-[11px] font-bold text-green-700 bg-green-100 rounded-full whitespace-nowrap">
                                             En stock
                                         </span>
                                     </td>
@@ -301,10 +304,11 @@
                                     <td class="px-6 py-4 font-semibold">Microphone Studio</td>
                                     <td class="px-6 py-4">8</td>
 
+                                    <!-- et chaque cellule État -->
                                     <td class="px-6 py-4">
                                         <span
-                                            class="px-3 py-1 text-xs font-bold text-yellow-700 bg-yellow-100 rounded-full">
-                                            Stock faible
+                                            class="px-2 py-1 text-[11px] font-bold text-green-700 bg-green-100 rounded-full whitespace-nowrap">
+                                            En stock
                                         </span>
                                     </td>
 
@@ -330,12 +334,14 @@
                                     <td class="px-6 py-4 font-semibold">Table de mixage DJ</td>
                                     <td class="px-6 py-4">0</td>
 
+                                    <!-- et chaque cellule État -->
                                     <td class="px-6 py-4">
-                                        <span class="px-3 py-1 text-xs font-bold text-red-700 bg-red-100 rounded-full">
-                                            Rupture de stock
+                                        <span
+                                            class="px-2 py-1 text-[11px] font-bold text-green-700 bg-green-100 rounded-full whitespace-nowrap">
+                                            En stock
                                         </span>
                                     </td>
-
+                                    
                                     <td class="px-6 py-4 font-semibold">650 000€</td>
 
                                     <td class="px-6 py-4">

@@ -212,136 +212,109 @@
 
                 <!--titre -->
                 <!-- recherche + titre -->
-                <div class="max-w-5xl mx-auto w-full">
-                    <!-- titre -->
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pt-1 sm:pt-16">
-                        <div>
-                            <h1 class="text-2xl md:text-3xl font-bold text-foreground">Liste d'Artiste</h1>
-                        </div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pt-1 sm:pt-16">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-foreground">PRODUIT</h1>
                     </div>
-
-                    <!-- Barre de recherche -->
-                    <form action="" method="get" class="flex flex-col sm:flex-row gap-3 items-center mb-6">
-                        <input type="text" name="q" placeholder="Rechercher un titre, un artiste…"
-                            class="w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition" />
-
-                        <button type="submit"
-                            class="w-full sm:w-auto px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-gray-800 transition flex items-center justify-center gap-2">
-                            <i class="fa fa-search"></i>
-                            <span>Rechercher</span>
+                    <a href="./list_produit.html">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary glow-primary w-full md:w-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload w-4 h-4">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" x2="12" y1="3" y2="15"></line>
+                            </svg>Retour à la liste
                         </button>
-                        <a href="?"
-                            class="w-full sm:w-auto px-4 py-2 bg-gray-500 text-gray-100 rounded-lg hover:bg-primary hover:text-white transition flex items-center justify-center gap-2">
-                            <i class="fa fa-refresh"></i>
-                            <span>Actualiser</span>
-                        </a>
-                        <a href="./form_artiste.html"
-                            class="w-full sm:w-auto px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-primary hover:text-white transition flex items-center justify-center gap-2">
-                            <i class="fa fa-plus"></i>
-                            <span>Ajouter</span>
-                        </a>
-                    </form>
+                    </a>
                 </div>
 
-
                 <!-- liste -->
-                <div class="flex-auto px-0 pt-0 pb-2">
-                    <div class="p-0 overflow-x-auto max-w-5xl mx-auto">
+                <!-- Formulaire Produit -->
+                <div class="max-w-4xl mx-auto p-6 bg-white rounded-xl shadow border border-border">
 
-                        <table
-                            class="items-center w-full mb-0 align-top border border-gray-200 text-slate-600 rounded-lg overflow-hidden">
+                    <h2 class="text-2xl font-bold text-foreground mb-6">Nouveau produit</h2>
 
-                            <!-- En-tête -->
-                            <thead class="bg-gray-100 text-primary">
-                                <tr>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">Nom de l’artiste</th>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">Date de création</th>
-                                    <th class="px-6 py-3 text-center text-sm font-bold uppercase">Actions</th>
-                                </tr>
-                            </thead>
+                    <form id="productForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Nom -->
+                        <div class="md:col-span-2">
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nom du produit
+                                *</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                            <!-- Corps -->
-                            <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Description -->
+                        <div class="md:col-span-2">
+                            <label for="description"
+                                class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                            <textarea id="description" name="description" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                        </div>
 
-                                <!-- Artiste 1 -->
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">DJ Siska</td>
-                                    <td class="px-6 py-4">10/03/2024</td>
+                        <!-- Prix -->
+                        <div>
+                            <label for="price" class="block text-sm font-medium text-gray-700 mb-2">Prix (€) *</label>
+                            <input type="number" id="price" name="price" min="0" step="0.01" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                                    <td class="px-6 py-4">
-                                        <div class="flex flex-row items-center justify-center gap-3">
+                        <!-- Stock -->
+                        <div>
+                            <label for="stock" class="block text-sm font-medium text-gray-700 mb-2">Stock *</label>
+                            <input type="number" id="stock" name="stock" min="0" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
 
-                                            <!-- Voir -->
-                                            <button class="text-blue-600 hover:text-blue-800" title="Voir">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </button>
+                        <!-- Catégorie -->
+                        <div>
+                            <label for="category" class="block text-sm font-medium text-gray-700 mb-2">Catégorie
+                                *</label>
+                            <select id="category" name="category" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-transparent">
+                                <option value="">Sélectionnez...</option>
+                                <option value="clothing">Vêtements</option>
+                                <option value="accessories">Accessoires</option>
+                                <option value="music">Musique</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
 
-                                            <!-- Modifier -->
-                                            <button class="text-yellow-500 hover:text-yellow-700" title="Modifier">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
+                        <!-- Statut -->
+                        <div>
+                            <label for="status" class="block text-sm font-medium text-gray-700 mb-2">Statut *</label>
+                            <select id="status" name="status" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-transparent">
+                                <option value="active">Actif</option>
+                                <option value="inactive">Inactif</option>
+                            </select>
+                        </div>
 
-                                            <!-- Supprimer -->
-                                            <button class="text-red-600 hover:text-red-800" title="Supprimer">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
+                        <!-- Image -->
+                        <div class="md:col-span-2">
+                            <label for="image" class="block text-sm font-medium text-gray-700 mb-2">Image du
+                                produit</label>
+                            <input type="file" id="image" name="image" accept="image/*"
+                                class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20">
+                        </div>
 
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- Artiste 2 -->
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">MC Black</td>
-                                    <td class="px-6 py-4">22/02/2024</td>
-
-                                    <td class="px-6 py-4">
-                                        <div class="flex flex-row items-center justify-center gap-3">
-
-                                            <button class="text-blue-600 hover:text-blue-800">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </button>
-
-                                            <button class="text-yellow-500 hover:text-yellow-700">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
-
-                                            <button class="text-red-600 hover:text-red-800">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <!-- Artiste 3 -->
-                                <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">Nina Melody</td>
-                                    <td class="px-6 py-4">05/01/2024</td>
-
-                                    <td class="px-6 py-4">
-                                        <div class="flex flex-row items-center justify-center gap-3">
-
-                                            <button class="text-blue-600 hover:text-blue-800">
-                                                <i class="fa-solid fa-eye"></i>
-                                            </button>
-
-                                            <button class="text-yellow-500 hover:text-yellow-700">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
-
-                                            <button class="text-red-600 hover:text-red-800">
-                                                <i class="fa-solid fa-trash"></i>
-                                            </button>
-
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-
-                    </div>
+                        <!-- Boutons -->
+                        <div class="md:col-span-2 flex items-center justify-end gap-4 pt-4">
+                            <a href="./list_produit.html"
+                                class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                                Annuler
+                            </a>
+                            <button type="submit"
+                                class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg gradient-primary text-white hover:opacity-90 transition">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-save">
+                                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                                    <polyline points="17 21 17 13 7 13 7 21" />
+                                    <polyline points="7 3 7 8 15 8" />
+                                </svg>
+                                Enregistrer
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </main>
         </div>
