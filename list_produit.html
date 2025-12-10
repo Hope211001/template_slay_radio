@@ -212,7 +212,7 @@
 
                 <!--titre -->
                 <!-- recherche + titre -->
-                <div class="max-w-5xl mx-auto w-full">
+                <div class="max-w-6xl mx-auto w-full">
                     <!-- titre -->
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pt-1 sm:pt-16">
                         <div>
@@ -252,109 +252,80 @@
                             class="items-center w-full mb-0 align-top border border-gray-200 text-slate-600 rounded-lg overflow-hidden">
 
                             <!-- En-tête -->
-                            <thead class="bg-gray-100 text-primary">
+                            <thead class="bg-gray-100 text-primary text-xs sm:text-sm">
                                 <tr>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">Nom du produit</th>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">Quantité en stock</th>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase min-w-[140px]">
-                                        État du stock
+                                    <th class="px-6 py-3 text-left font-bold uppercase whitespace-nowrap">Nom du produit
                                     </th>
-                                    <th class="px-6 py-3 text-left text-sm font-bold uppercase">Prix</th>
-                                    <th class="px-6 py-3 text-center text-sm font-bold uppercase">Actions</th>
+                                    <th class="px-6 py-3 text-left font-bold uppercase whitespace-nowrap">Quantité en
+                                        stock</th>
+                                    <th class="px-6 py-3 text-left font-bold uppercase whitespace-nowrap min-w-[140px]">
+                                        État du stock</th>
+                                    <th class="px-6 py-3 text-left font-bold uppercase whitespace-nowrap">Prix</th>
+                                    <th class="px-6 py-3 text-center font-bold uppercase whitespace-nowrap">Actions</th>
                                 </tr>
                             </thead>
 
                             <!-- Corps -->
-                            <tbody class="bg-white divide-y divide-gray-200">
-
+                            <tbody class="bg-white divide-y divide-gray-200 text-xs sm:text-sm">
                                 <!-- Produit 1 -->
                                 <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">Casque Audio Pro</td>
-                                    <td class="px-6 py-4">45</td>
-
-                                    <!-- et chaque cellule État -->
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="px-2 py-1 text-[11px] font-bold text-green-700 bg-green-100 rounded-full whitespace-nowrap">
-                                            En stock
-                                        </span>
+                                    <td class="px-6 py-4 font-semibold whitespace-nowrap">Casque Audio Pro</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">45</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 font-bold text-green-700 bg-green-100 rounded-full">En
+                                            stock</span>
                                     </td>
-
-                                    <td class="px-6 py-4 font-semibold">120 000€</td>
-
+                                    <td class="px-6 py-4 font-semibold whitespace-nowrap">120€</td>
                                     <td class="px-6 py-4">
                                         <div class="flex flex-row items-center justify-center gap-3">
-
-                                            <!-- Voir -->
                                             <button class="text-blue-600 hover:text-blue-800" title="Voir">
                                                 <i class="fa-solid fa-eye"></i>
                                             </button>
-
-                                            <!-- Modifier -->
                                             <button class="text-yellow-500 hover:text-yellow-700" title="Modifier">
                                                 <i class="fa-solid fa-pen"></i>
                                             </button>
-
                                         </div>
                                     </td>
                                 </tr>
 
                                 <!-- Produit 2 -->
                                 <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">Microphone Studio</td>
-                                    <td class="px-6 py-4">8</td>
-
-                                    <!-- et chaque cellule État -->
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="px-2 py-1 text-[11px] font-bold text-green-700 bg-green-100 rounded-full whitespace-nowrap">
-                                            En stock
-                                        </span>
+                                    <td class="px-6 py-4 font-semibold whitespace-nowrap">Microphone Studio</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">8</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 font-bold text-green-700 bg-green-100 rounded-full">En
+                                            stock</span>
                                     </td>
-
-                                    <td class="px-6 py-4 font-semibold">180 000€</td>
-
+                                    <td class="px-6 py-4 font-semibold whitespace-nowrap">180€</td>
                                     <td class="px-6 py-4">
                                         <div class="flex flex-row items-center justify-center gap-3">
-
                                             <button class="text-blue-600 hover:text-blue-800">
                                                 <i class="fa-solid fa-eye"></i>
                                             </button>
-
                                             <button class="text-yellow-500 hover:text-yellow-700">
                                                 <i class="fa-solid fa-pen"></i>
                                             </button>
-
                                         </div>
                                     </td>
                                 </tr>
 
                                 <!-- Produit 3 -->
                                 <tr class="hover:bg-gray-50">
-                                    <td class="px-6 py-4 font-semibold">Table de mixage DJ</td>
-                                    <td class="px-6 py-4">0</td>
-
-                                    <!-- et chaque cellule État -->
-                                    <td class="px-6 py-4">
-                                        <span
-                                            class="px-2 py-1 text-[11px] font-bold text-green-700 bg-green-100 rounded-full whitespace-nowrap">
-                                            En stock
-                                        </span>
+                                    <td class="px-6 py-4 font-semibold whitespace-nowrap">Table de mixage DJ</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">0</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="px-2 py-1 font-bold text-green-700 bg-green-100 rounded-full">En
+                                            stock</span>
                                     </td>
-                                    
-                                    <td class="px-6 py-4 font-semibold">650 000€</td>
-
+                                    <td class="px-6 py-4 font-semibold whitespace-nowrap">650€</td>
                                     <td class="px-6 py-4">
                                         <div class="flex flex-row items-center justify-center gap-3">
-
                                             <button class="text-blue-600 hover:text-blue-800">
                                                 <i class="fa-solid fa-eye"></i>
                                             </button>
-
                                             <button class="text-yellow-500 hover:text-yellow-700">
                                                 <i class="fa-solid fa-pen"></i>
                                             </button>
-
                                         </div>
                                     </td>
                                 </tr>
@@ -364,6 +335,8 @@
 
                     </div>
                 </div>
+
+
 
 
             </main>
