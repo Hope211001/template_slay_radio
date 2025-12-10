@@ -395,11 +395,11 @@
 
             <!--  main -->
             <!-- ========== BOUTIQUE – 4 COLONNES ========== -->
-            <main class="py-20 pb-20 ">
-                <div class="container mx-auto px-4 pt-24">
+            <main class="py-20 pb-20  ">
+                <div class="container mx-auto px-4 ">
                     <!-- titre + panier -->
                     <div
-                        class="pt-6flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-10 md:mb-12 gap-4 px-4">
+                        class="pt-16 sm:pt-24  flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-10 md:mb-12 gap-4 px-4">
                         <div>
                             <h1
                                 class="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-1 sm:mb-2 leading-tight">
@@ -768,6 +768,34 @@
                         </div>
                     </div>
                     <!-- /fin grille -->
+
+                    <!-- pagination-->
+                    <nav class="flex items-center justify-center gap-1 text-sm py-20" aria-label="Pagination">
+                        <!-- Précédent -->
+                        <button class="px-2 py-1 rounded hover:bg-gray-100 disabled:opacity-50" data-page="prev">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Page active -->
+                        <span class="px-3 py-1 rounded bg-blue-600 text-white">1</span>
+
+                        <!-- Autres pages -->
+                        <button class="px-3 py-1 rounded hover:bg-gray-100" data-page="2">2</button>
+                        <button class="px-3 py-1 rounded hover:bg-gray-100" data-page="3">3</button>
+
+                        <!-- Suivant -->
+                        <button class="px-2 py-1 rounded hover:bg-gray-100" data-page="next">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </nav>
+                    <!-- end pagination-->
+
                 </div>
             </main>
             <!-- ========== /BOUTIQUE ========== -->

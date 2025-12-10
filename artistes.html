@@ -362,7 +362,7 @@
             <main class=" pb-20">
                 <div class="container mx-auto px-4 py-20">
                     <!-- en-tête -->
-                    <div class="mb-12 text-center mt-20 pt-20">
+                    <div class="mb-12 text-center mt-20 pt-16">
                         <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
                             Nos
                             <span class="text-gradient">Artistes</span>
@@ -714,6 +714,34 @@
 
                     </div>
                     <!-- /grille -->
+
+                    <!-- pagination-->
+                    <nav class="flex items-center justify-center gap-1 text-sm py-20" aria-label="Pagination">
+                        <!-- Précédent -->
+                        <button class="px-2 py-1 rounded hover:bg-gray-100 disabled:opacity-50" data-page="prev">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- Page active -->
+                        <span class="px-3 py-1 rounded bg-blue-600 text-white">1</span>
+
+                        <!-- Autres pages -->
+                        <button class="px-3 py-1 rounded hover:bg-gray-100" data-page="2">2</button>
+                        <button class="px-3 py-1 rounded hover:bg-gray-100" data-page="3">3</button>
+
+                        <!-- Suivant -->
+                        <button class="px-2 py-1 rounded hover:bg-gray-100" data-page="next">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </nav>
+                    <!-- end pagination-->
+
                 </div>
             </main>
             <!--  end main -->
