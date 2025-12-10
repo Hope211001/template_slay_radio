@@ -72,14 +72,25 @@
         }
     </script>
 
-    <!-- Votre fichier CSS personnalisé -->
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- berger -->
+
+    <link rel="stylesheet" href="stylesAdmin.css">
+    
+    <!-- coleur -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <div id="root">
         <div class="min-h-screen bg-background">
-            <aside class="fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border flex flex-col">
+            <!-- Overlay pour mobile -->
+            <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+            <!-- Aside à gauche -->
+            <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-sidebar border-r border-sidebar-border flex flex-col overflow-y-auto">
                 <div class="p-6 border-b border-sidebar-border">
                     <a class="flex items-center gap-2" href="./index.html">
                         <div class="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
@@ -90,7 +101,8 @@
                 </div>
                 <nav class="flex-1 p-4 space-y-2">
                     <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all bg-sidebar-accent gradient-primary text-primary-foreground"
-                        href="./dashbord.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        href="./dashbord.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-layout-dashboard w-5 h-5">
@@ -98,236 +110,221 @@
                             <rect width="7" height="5" x="14" y="3" rx="1"></rect>
                             <rect width="7" height="9" x="14" y="12" rx="1"></rect>
                             <rect width="7" height="5" x="3" y="16" rx="1"></rect>
-                        </svg>Dashboard</a>
-                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
-                        href="./mes_music.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music w-5 h-5">
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./list_music.html" data-page="mes_music">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music w-5 h-5">
                             <path d="M9 18V5l12-2v13"></path>
                             <circle cx="6" cy="18" r="3"></circle>
                             <circle cx="18" cy="16" r="3"></circle>
-                        </svg>Mes Musiques</a>
-                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
-                        href="./upload.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload w-5 h-5">
+                        </svg>Musiques
+                    </a>
+                    <a class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./list_reservation.html" data-page="upload">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload w-5 h-5">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="17 8 12 3 7 8"></polyline>
                             <line x1="12" x2="12" y1="3" y2="15"></line>
-                        </svg>Upload</a>
-                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
-                        href="./table.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-5 h-5">
+                        </svg>Réservation
+                    </a>
+                    <a class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./list_artiste.html" data-page="table">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-5 h-5">
                             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                        </svg>Table model</a>
-                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
-                        href="/dashboard/stats"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-column w-5 h-5">
-                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
-                            <path d="M18 17V9"></path>
-                            <path d="M13 17V5"></path>
-                            <path d="M8 17v-3"></path>
-                        </svg>Statistiques</a>
-                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
-                        href="/dashboard/settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-5 h-5">
-                            <path
-                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
-                            </path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>Paramètres</a>
-
-                    <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
-                        href="./produit.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-5 h-5">
-                            <path
-                                d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z">
-                            </path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>Produits</a>
-
+                        </svg>Artistes/DJ
+                    </a>
+                    <a class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./list_programme.html" data-page="programme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar w-5 h-5">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
+                            <line x1="16" x2="16" y1="2" y2="6"></line>
+                            <line x1="8" x2="8" y1="2" y2="6"></line>
+                            <line x1="3" x2="21" y1="10" y2="10"></line>
+                        </svg>Programme
+                    </a>
+                    <a class="nav-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all text-sidebar-foreground hover:bg-sidebar-accent"
+                        href="./list_produit.html" data-page="produit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package w-5 h-5">
+                            <path d="m7.5 4.27 9 5.15"></path>
+                            <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path>
+                            <path d="m3.3 7 8.7 5 8.7-5"></path>
+                            <path d="M12 22V12"></path>
+                        </svg>Produits
+                    </a>
                 </nav>
                 <div class="p-4 border-t border-sidebar-border">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-full bg-muted flex items-center justify-center"><span
-                                class="text-sm font-bold text-foreground">DJ</span></div>
+                        <div class="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                            <span class="text-sm font-bold text-foreground">SP</span>
+                        </div>
                         <div class="flex-1 min-w-0">
-                            <p class="text-sm font-medium text-sidebar-foreground truncate">DJ MaxFlow</p>
+                            <p class="text-sm font-medium text-sidebar-foreground truncate">Super Admin</p>
                             <p class="text-xs text-muted-foreground truncate">maxflow@slayradio.com</p>
                         </div>
-                    </div><a
-                        class="flex items-center gap-2 text-sm text-muted-foreground hover:text-destructive transition-colors"
-                        href="/login"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="lucide lucide-log-out w-4 h-4">
+                    </div>
+                    <a class="flex items-center gap-2 text-sm text-muted-foreground hover:text-destructive transition-colors"
+                        href="/login">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out w-4 h-4">
                             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                             <polyline points="16 17 21 12 16 7"></polyline>
                             <line x1="21" x2="9" y1="12" y2="12"></line>
-                        </svg>Déconnexion</a>
+                        </svg>Déconnexion
+                    </a>
                 </div>
             </aside>
-            <main class="ml-64 p-8">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+
+            <!-- Header en haut -->
+            <nav class="fixed top-0 left-0 right-0 md:left-64 bg-background border-b border-border z-30 h-16">
+                <div class="flex items-center justify-between px-4 md:px-8 h-full">
+                    <div class="flex items-center gap-4">
+                        <button id="sidenavToggle" class="md:hidden text-foreground text-xl p-2 hover:bg-muted rounded-lg transition-colors" aria-label="Toggle sidebar">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h3 class="text-lg md:text-xl font-bold text-gradient hidden md:block">SLAY RADIO</h3>
+                    </div>
+                    <div class="text-right">
+                        <p class="font-bold text-sm md:text-base text-foreground">Super Admin</p>
+                        <p class="text-xs text-muted-foreground hidden md:block">maxflow@slayradio.com</p>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenu principal -->
+            <main class="md:ml-64 pt-16 p-4 md:p-8 max-w-7xl ">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pt-1 sm:pt-16">
                     <div>
-                        <h1 class="text-3xl font-bold text-foreground">Bienvenue, DJ MaxFlow</h1>
-                        <p class="text-muted-foreground">Voici un aperçu de votre activité</p>
-                    </div><a href="/dashboard/upload"><button
-                            class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary glow-primary"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-upload w-4 h-4 mr-2">
+                        <h1 class="text-2xl md:text-3xl font-bold text-foreground">Bienvenue</h1>
+                    </div>
+                    <a href="/dashboard/upload">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 gradient-primary glow-primary w-full md:w-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload w-4 h-4">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="17 8 12 3 7 8"></polyline>
                                 <line x1="12" x2="12" y1="3" y2="15"></line>
-                            </svg>Upload une musique</button></a>
+                            </svg>Upload une musique
+                        </button>
+                    </a>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
                     <div class="gradient-card rounded-xl p-6 border border-border">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-headphones w-6 h-6 text-primary">
-                                    <path
-                                        d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3">
-                                    </path>
-                                </svg></div><span class="text-sm font-medium text-accent">+12%</span>
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones w-6 h-6 text-primary">
+                                    <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path>
+                                </svg>
+                            </div>
                         </div>
-                        <p class="text-3xl font-bold text-foreground">12.4K</p>
-                        <p class="text-sm text-muted-foreground">Écoutes totales</p>
+                        <p class="text-3xl font-bold text-foreground">120</p>
+                        <p class="text-sm text-muted-foreground">Artiste & DJ</p>
                     </div>
                     <div class="gradient-card rounded-xl p-6 border border-border">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-music w-6 h-6 text-primary">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music w-6 h-6 text-primary">
                                     <path d="M9 18V5l12-2v13"></path>
                                     <circle cx="6" cy="18" r="3"></circle>
                                     <circle cx="18" cy="16" r="3"></circle>
-                                </svg></div><span class="text-sm font-medium text-accent">+3</span>
+                                </svg>
+                            </div>
                         </div>
                         <p class="text-3xl font-bold text-foreground">24</p>
-                        <p class="text-sm text-muted-foreground">Musiques publiées</p>
+                        <p class="text-sm text-muted-foreground">Total musique</p>
                     </div>
                     <div class="gradient-card rounded-xl p-6 border border-border">
                         <div class="flex items-center justify-between mb-4">
-                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center"><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-trending-up w-6 h-6 text-primary">
+                            <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up w-6 h-6 text-primary">
                                     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
                                     <polyline points="16 7 22 7 22 13"></polyline>
-                                </svg></div><span class="text-sm font-medium text-accent">+156</span>
+                                </svg>
+                            </div>
                         </div>
-                        <p class="text-3xl font-bold text-foreground">2.4K</p>
-                        <p class="text-sm text-muted-foreground">Followers</p>
+                        <p class="text-3xl font-bold text-foreground">256</p>
+                        <p class="text-sm text-muted-foreground">Total programme</p>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
                     <div class="gradient-card rounded-xl border border-border">
                         <div class="p-6 border-b border-border">
-                            <h2 class="text-lg font-semibold text-foreground">Musiques récentes</h2>
+                            <h2 class="text-lg font-semibold text-foreground">Exemple de programme</h2>
                         </div>
                         <div class="divide-y divide-border">
-                            <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors"><button
-                                    class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-play w-4 h-4 text-primary">
+                            <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+                                <button class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-4 h-4 text-primary">
                                         <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                    </svg></button>
+                                    </svg>
+                                </button>
                                 <div class="flex-1 min-w-0">
-                                    <p class="font-medium text-foreground truncate">Deep House Vibes</p>
-                                    <p class="text-sm text-muted-foreground">Il y a 2 jours</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-medium text-foreground">4.2K</p>
-                                    <p class="text-xs text-muted-foreground">écoutes</p>
+                                    <p class="font-medium text-foreground truncate">Programme 1</p>
+                                    <p class="text-sm text-muted-foreground">11/12/24</p>
                                 </div>
                             </div>
-                            <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors"><button
-                                    class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-play w-4 h-4 text-primary">
+                            <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+                                <button class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-4 h-4 text-primary">
                                         <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                    </svg></button>
+                                    </svg>
+                                </button>
                                 <div class="flex-1 min-w-0">
-                                    <p class="font-medium text-foreground truncate">Summer Mix 2024</p>
-                                    <p class="text-sm text-muted-foreground">Il y a 5 jours</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-medium text-foreground">3.8K</p>
-                                    <p class="text-xs text-muted-foreground">écoutes</p>
+                                    <p class="font-medium text-foreground truncate">Programme 2</p>
+                                    <p class="text-sm text-muted-foreground">14/12/24</p>
                                 </div>
                             </div>
-                            <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors"><button
-                                    class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="lucide lucide-play w-4 h-4 text-primary">
+                            <div class="p-4 flex items-center gap-4 hover:bg-muted/50 transition-colors">
+                                <button class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-4 h-4 text-primary">
                                         <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                    </svg></button>
+                                    </svg>
+                                </button>
                                 <div class="flex-1 min-w-0">
-                                    <p class="font-medium text-foreground truncate">Chill Session #12</p>
-                                    <p class="text-sm text-muted-foreground">Il y a 1 semaine</p>
-                                </div>
-                                <div class="text-right">
-                                    <p class="font-medium text-foreground">2.1K</p>
-                                    <p class="text-xs text-muted-foreground">écoutes</p>
+                                    <p class="font-medium text-foreground truncate">Programme 3</p>
+                                    <p class="text-sm text-muted-foreground">11/01/25</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="p-4 border-t border-border"><a class="text-sm text-primary hover:underline"
-                                href="/dashboard/music">Voir toutes les musiques →</a></div>
+                        <div class="p-4 border-t border-border">
+                            <a class="text-sm text-primary hover:underline" href="/dashboard/music">Voir tout les programmes →</a>
+                        </div>
                     </div>
+
                     <div class="gradient-card rounded-xl p-6 border border-border">
                         <h2 class="text-lg font-semibold text-foreground mb-6">Actions rapides</h2>
                         <div class="space-y-4">
-                            <a class="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
-                                href="/dashboard/upload">
-                                <div class="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-upload w-5 h-5 text-primary-foreground">
+                            <a class="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors" href="/dashboard/upload">
+                                <div class="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload w-5 h-5 text-primary-foreground">
                                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                         <polyline points="17 8 12 3 7 8"></polyline>
                                         <line x1="12" x2="12" y1="3" y2="15"></line>
-                                    </svg></div>
+                                    </svg>
+                                </div>
                                 <div>
                                     <p class="font-medium text-foreground">Uploader une musique</p>
-                                    <p class="text-sm text-muted-foreground">Partagez votre dernière création</p>
-                                </div>
-                            </a>
-                            <a class="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
-                                href="/dashboard/messages">
-                                <div class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-message-circle w-5 h-5 text-secondary-foreground">
-                                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                                    </svg></div>
-                                <div>
-                                    <p class="font-medium text-foreground">Gerer mon profil</p>
                                     <p class="text-sm text-muted-foreground">voir le detail</p>
                                 </div>
                             </a>
-                            <a class="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
-                                href="/live">
-                                <div class="w-12 h-12 rounded-lg bg-accent flex items-center justify-center"><svg
-                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="lucide lucide-play w-5 h-5 text-accent-foreground">
+                            <a class="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors" href="/dashboard/messages">
+                                <div class="w-12 h-12 rounded-lg bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-5 h-5 text-secondary-foreground">
+                                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-foreground">Ajouter une artise / DJ</p>
+                                    <p class="text-sm text-muted-foreground">voir le detail</p>
+                                </div>
+                            </a>
+                            <a class="flex items-center gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors" href="/live">
+                                <div class="w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play w-5 h-5 text-accent-foreground">
                                         <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                                    </svg></div>
+                                    </svg>
+                                </div>
                                 <div>
                                     <p class="font-medium text-foreground">Lancer un Live</p>
                                     <p class="text-sm text-muted-foreground">Diffusez en direct</p>
@@ -339,8 +336,8 @@
             </main>
         </div>
     </div>
-    <script type="module" src="/src/main.tsx"></script>
 
+    <script src="./admin.js"></script>
 
 </body>
 
